@@ -1,0 +1,42 @@
+.sidebar-toggle {
+    padding-right: 1.25rem;
+    text-decoration: none;
+    color: var(--text-hint-color);
+    font-size: 3.5rem;
+  }
+  img.ddlogo {
+    height: 70px;
+    filter: drop-shadow(10px 5px 2px black);
+  }
+
+  img.dragon {
+    height:330px;
+    position:fixed;
+    bottom:0px;
+    filter: drop-shadow(10px 5px 2px black);
+  }
+
+  img.hotfire {
+    height:100px;
+    width: 100%;
+    position:fixed;
+    bottom:0px;
+    filter: drop-shadow(10px 5px 2px black);
+  }
+
+  .login {
+    top: 20px; /* your required value */
+    right: 0;
+    width: 150px;
+    height: 100%;
+    position: fixed;
+  }
+
+  nb-icon {
+    margin: 5px;
+  }
+
+  .fas {
+    margin:9px;
+    filter: drop-shadow(4px 4px 5px black);
+  }

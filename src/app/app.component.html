@@ -1,0 +1,48 @@
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <nb-icon (click)="toggleSidebar()" class="sidebar-toggle" icon="menu-2-outline"></nb-icon>
+    <h2><img class="ddlogo" src="/assets/images/ddlogo.png" class="ddlogo"></h2>
+
+<div class="login">
+  <span *ngIf="auth.user$ | async; then logout else login"></span>
+</div>
+
+
+  </nb-layout-header>
+//Left Sidebar
+    <nb-sidebar class="menu-sidebar" responsive start>
+    <nb-menu [items]="items"></nb-menu>
+    <img class="dragon" src="/assets/images/dragon1.png">
+  </nb-sidebar>
+
+
+  
+ //Main Content
+  <nb-layout-column >
+  <router-outlet></router-outlet>
+  </nb-layout-column>
+
+    
+ 
+  //Right Sidebar
+<nb-sidebar class="gameStats" right >
+  <nb-menu [items]="items1"></nb-menu>
+</nb-sidebar>
+
+
+
+  <nb-layout-footer fixed>
+    <p>Copyright:<i class="fas fa-copyright"></i>Just some educational learning</p>
+  </nb-layout-footer>
+
+</nb-layout>
+
+
+
+<ng-template #logout>
+  <a class="nav-item nav-link" id="nav-login-link" (click)="auth.signOut()" *ngIf="auth.user$ | async as user;"><nb-icon icon="google"></nb-icon>{{ user.displayName }}</a>
+</ng-template>
+<ng-template #login>
+  <a class="nav-item nav-link" id="nav-login-link" (click)="auth.googleSignin()"><nb-icon icon="google-outline"></nb-icon>Login</a>
+</ng-template>
