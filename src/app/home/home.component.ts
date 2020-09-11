@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {  AuthService } from '../services/auth.service';
+import { firestore } from 'firebase';
 
 @Component({
   selector: 'app-home',
@@ -19,4 +21,6 @@ flipped: boolean = false;
   toggleView() {
     this.flipped = !this.flipped;
     }
+
+    
 }
