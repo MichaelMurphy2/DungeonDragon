@@ -25,6 +25,7 @@ import { NavComponent } from './nav/nav.component';
 import { GamePlayComponent } from './game-play/game-play.component';
 import { LoadGameComponent } from './load-game/load-game.component';
 import { CharsheetComponent } from './charsheet/charsheet.component';
+import { DiceCodeComponent } from './dice-code/dice-code.component';
 
 
 
@@ -41,6 +42,7 @@ import { CharsheetComponent } from './charsheet/charsheet.component';
     GamePlayComponent,
     LoadGameComponent,
     CharsheetComponent,
+    DiceCodeComponent,
   ],
   imports: [
     BrowserModule,
