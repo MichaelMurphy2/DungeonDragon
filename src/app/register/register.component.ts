@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NbInputModule } from '@nebular/theme';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-register',

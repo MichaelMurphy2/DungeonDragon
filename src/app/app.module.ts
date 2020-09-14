@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from "@angular/common/http";
+//Nebular Imports
 import { NbIconModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbThemeModule} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbUserModule } from '@nebular/theme';
@@ -12,25 +14,22 @@ import { NbInputModule } from '@nebular/theme';
 import { NbCardModule } from '@nebular/theme';
 import { NbChatModule } from '@nebular/theme';
 import { NbButtonModule } from '@nebular/theme';
-
-
-
-
+import { NbWindowModule } from '@nebular/theme';
+//Firebase Imports
 import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+//Components
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { NavComponent } from './nav/nav.component';
 import { GamePlayComponent } from './game-play/game-play.component';
 import { LoadGameComponent } from './load-game/load-game.component';
 import { CharsheetComponent } from './charsheet/charsheet.component';
-import { DiceCodeComponent } from './dice-code/dice-code.component';
-
-
-
-
-
+import { CharModalComponent } from './char-modal/char-modal.component';
+import { DiceRollerComponent } from './dice-roller/dice-roller.component';
+import { ConversationalUIComponent } from './conversational-ui/conversational-ui.component';
+import { GamePanelComponent } from './game-panel/game-panel.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +41,10 @@ import { DiceCodeComponent } from './dice-code/dice-code.component';
     GamePlayComponent,
     LoadGameComponent,
     CharsheetComponent,
-    DiceCodeComponent,
+    CharModalComponent,
+    DiceRollerComponent,
+    ConversationalUIComponent,
+    GamePanelComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,9 @@ import { DiceCodeComponent } from './dice-code/dice-code.component';
     NbButtonModule,
     NbUserModule,
     NbChatModule,
-    NbCardModule
+    NbCardModule,
+    NbWindowModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

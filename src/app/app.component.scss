@@ -4,25 +4,20 @@
     color: var(--text-hint-color);
     font-size: 3.5rem;
   }
+  
   img.ddlogo {
-    height: 70px;
+    height: 50px;
     filter: drop-shadow(10px 5px 2px black);
   }
 
   img.dragon {
-    height:330px;
+    height:230px;
     position:fixed;
+    padding-left: 30px;
     bottom:0px;
     filter: drop-shadow(10px 5px 2px black);
   }
 
-  img.hotfire {
-    height:100px;
-    width: 100%;
-    position:fixed;
-    bottom:0px;
-    filter: drop-shadow(10px 5px 2px black);
-  }
 
   .login {
     top: 20px; /* your required value */
@@ -37,6 +32,20 @@
   }
 
   .fas {
-    margin:9px;
+    margin-right:5px;
     filter: drop-shadow(4px 4px 5px black);
   }
+  .fab {
+    margin-right:5px;
+    filter: drop-shadow(4px 4px 5px black);
+  }
+
+.far {
+  margin-right:5px;
+  filter: drop-shadow(4px 4px 5px black);
+}
+
+button { 
+  width: 200px !important;
+  filter: drop-shadow(4px 4px 5px black);
+}

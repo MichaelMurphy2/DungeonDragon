@@ -1,18 +1,7 @@
-
-
 <input type="text" [(ngModel)]="title" name="title" nbInput fullWidth placeholder="Name">
 <input type="text" [(ngModel)]="content" name="content" nbInput fullWidth placeholder="Message">
 
 <button nbButton status="primary" type=submit value="Add a Post" (click)="addPost()" ><nb-icon icon="star"></nb-icon>submit</button>
-
-
-
-
-
-
-
-  
-
 
 
 <div *ngFor="let post of posts | async">
