@@ -6,6 +6,7 @@ import { NbWindowService } from '@nebular/theme';
 import { CharsheetComponent } from '../app/charsheet/charsheet.component';
 import { DiceRollerComponent } from '../app/dice-roller/dice-roller.component';
 import { ChatComponent } from "../app/chat/chat.component";
+import { ViewCharComponent } from "../app/components/view-char/view-char.component"
 
 @Component({
   selector: 'app-root',
@@ -40,6 +41,10 @@ export class AppComponent {
 
   openWindow3() {
     this.windowService.open(ChatComponent, {title: 'Game Chat'});
+    this.playAudio();
+  }
+  openWindow4() {
+    this.windowService.open(ViewCharComponent, {title: 'Character Information'});
     this.playAudio();
   }
 

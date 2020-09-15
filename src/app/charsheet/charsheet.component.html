@@ -1,12 +1,50 @@
-<form class="charsheet">
+
+<div class="format"><!--Changed to angular from original, when You click the submit button it works-->
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value); form.reset();" class="charsheet">
     <header>
       <section class="charname">
-        <label for="charname">Character Name</label><input name="charname" placeholder="Thoradin Fireforge" />
+      
+      
+      
+         <!--Original HTML-->
+        <!--label for="charname">Character Name</label><input name="charname" placeholder="Thoradin Fireforge" / -->
+        <!-- Angular Form Version-->
+        <label for="charname">Character Name
+          <input 
+            required
+            placeholder="IronGut the bloated"
+            minlength='3'  
+            maxlength="30" 
+            ngModel 
+            #firstName="ngModel"
+            name="charname"  
+            id=charname 
+            type="text" 
+            class="form-control">
+          </label>
+
       </section>
       <section class="misc">
         <ul>
           <li>
-            <label for="classlevel">Class & Level</label><input name="classlevel" placeholder="Paladin 2" />
+            <label for="classlevel">Class & Level<input 
+            required
+            minlength='3'  
+            maxlength="30" 
+            name="classlevel" 
+            placeholder="Paladin 2"
+            ngModel 
+            #firstName="ngModel"
+            name="classlevel"  
+            id= classlevel 
+            type="text" 
+            class="form-control">
+          </label>
+          
+          
+          
+          
+          
           </li>
           <li>
             <label for="background">Background</label><input name="background" placeholder="Acolyte" />
@@ -362,4 +400,8 @@
         </section>
       </section>
     </main>
+    <div class="btn-align">
+    <button ngButton class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+  </div>
   </form>
+</div>

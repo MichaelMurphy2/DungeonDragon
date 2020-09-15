@@ -21,6 +21,8 @@
   //Main Content
   <nb-layout-column>
     <router-outlet></router-outlet>
+
+    
   </nb-layout-column>
 
 
@@ -43,11 +45,19 @@
     </ng-template>
 <p></p>
 
+
+<button nbButton outline status="control" (click)="openWindow4()"><i class="far fa-comments"></i>Char Info View</button>
+    <ng-template #contentTemplate let-data>
+    </ng-template>
+
   </nb-sidebar>
 
 
 
   <nb-layout-footer fixed>
+
+    <app-game-panel></app-game-panel>
+
     <p>Copyright:<i class="fas fa-copyright"></i>Just some educational learning</p>
   </nb-layout-footer>
 </nb-layout>

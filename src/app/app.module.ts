@@ -30,6 +30,7 @@ import { CharModalComponent } from './char-modal/char-modal.component';
 import { DiceRollerComponent } from './dice-roller/dice-roller.component';
 import { ConversationalUIComponent } from './conversational-ui/conversational-ui.component';
 import { GamePanelComponent } from './game-panel/game-panel.component';
+import { ViewCharComponent } from './components/view-char/view-char.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { GamePanelComponent } from './game-panel/game-panel.component';
     CharModalComponent,
     DiceRollerComponent,
     ConversationalUIComponent,
-    GamePanelComponent
+    GamePanelComponent,
+    ViewCharComponent
   ],
   imports: [
     BrowserModule,

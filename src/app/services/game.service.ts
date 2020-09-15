@@ -3,21 +3,27 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
-
-  constructor(private http: HttpClient) {
+baseUrl:string ="https://api.open5e.com/";
+  constructor(private httpClient: HttpClient) {
 
     
    }
  
 
-  configUrl ='"spells": "https://api.open5e.com/spells/",';
-  getConfig() {
-    return this.http.get(this.configUrl);
-  }
+   
+get_Jobs(){
+  return this.httpClient.get(this.baseUrl);
+}
+
+
+
+
+
 }
 
 

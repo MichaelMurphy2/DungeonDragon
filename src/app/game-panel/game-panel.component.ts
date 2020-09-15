@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { GameService } from '../../app/services/game.service';
-
+import { Observable } from 'rxjs';
+import { DataService } from "../../app/services/data.service";
+import { gameInfo } from "../../app/models/gameInfo";
+import { subscribeOn } from 'rxjs/operators';
 @Component({
   selector: 'app-game-panel',
   templateUrl: './game-panel.component.html',
@@ -10,10 +13,20 @@ import { GameService } from '../../app/services/game.service';
 })
 export class GamePanelComponent implements OnInit {
 
-  constructor(private GameService: GameService) { }
+  private info: gameInfo[] = [];
 
-  ngOnInit(): void {
-  }
+  constructor(private DataService: DataService) {
+    
+    }
+   
+    ngOnInit(){
+      let resp = this.DataService.getJobs();
+      resp.subscribe((data)=>console.log)
+       }
+
+ 
+
+ 
 
 
  
