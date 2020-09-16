@@ -47,19 +47,68 @@
           
           </li>
           <li>
-            <label for="background">Background</label><input name="background" placeholder="Acolyte" />
+            <label for="background">Background<input
+            required
+            name="background"
+            placeholder="Acolyte" 
+            ngModel
+            #firstName="ngModel"
+            name="background"
+            id= background
+            type="text"
+            class="form-control">
+            </label>
           </li>
           <li>
-            <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface">
+            <label for="playername">Player Name<input 
+              required
+              name="playername" 
+              placeholder="Player McPlayerface"
+              ngModel
+              #firstName="ngModel"
+              name="playername"
+              id= playername
+              type="text"
+              class="form-control">
+              </label>
           </li>
           <li>
-            <label for="race">Race</label><input name="race" placeholder="Half-elf" />
+            <label for="race">Race<input 
+            required
+            name="race" 
+            placeholder="Half-elf"
+            ngModel
+            #firstName="ngModel"
+            name="race"
+            id= race
+            type="text"
+            class="form-control" >
+            </label>
           </li>
           <li>
-            <label for="alignment">Alignment</label><input name="alignment" placeholder="Lawful Good" />
+            <label for="alignment">Alignment<input 
+            name="alignment" 
+            placeholder="Lawful Good" 
+            ngModel
+            #firstName="ngModel"
+            name="alignment"
+            id= alignment
+            type="text"
+            class="form-control">
+            </label>
           </li>
           <li>
-            <label for="experiencepoints">Experience Points</label><input name="experiencepoints" placeholder="3240" />
+            <label for="experiencepoints">Experience Points<input
+              required 
+              name="experiencepoints" 
+              placeholder="3240" 
+              ngModel
+              #firstName="ngModel"
+              name="experiencepoints"
+              id= experiencepoints
+              type="number"
+              class="form-control">
+            </label>
           </li>
         </ul>
       </section>
@@ -71,50 +120,166 @@
             <ul>
               <li>
                 <div class="score">
-                  <label for="Strengthscore">Strength</label><input name="Strengthscore" placeholder="10" class="stat"/>
+                  <label for="Strengthscore">Strength<input 
+                    name="Strengthscore" 
+                    placeholder="10" 
+                    class="stat"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Strengthscore"
+                    id= Strengthscore
+                    type="number"
+                    class="form-control">
+                    </label>
                 </div>
                 <div class="modifier">
-                  <input name="Strengthmod" placeholder="+0" class="statmod"/>
+                  <input 
+                  name="Strengthmod" 
+                  placeholder="+0" 
+                  class="statmod"
+                  ngModel
+                  #firstName="ngModel"
+                  name="Strengthmod"
+                  id=Strengthmod
+                  type="text"
+                  class="form-control"
+                  />
                 </div>
               </li>
               <li>
                 <div class="score">
-                  <label for="Dexterityscore">Dexterity</label><input name="Dexterityscore" placeholder="10" class="stat"/>
+                  <label for="Dexterityscore">Dexterity<input 
+                    name="Dexterityscore" 
+                    placeholder="10" 
+                    class="stat"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Dexterityscore"
+                    id=Dexterityscore
+                    type="number"
+                    class="form-control"/>
+                    </label>
                 </div>
                 <div class="modifier">
-                  <input name="Dexteritymod" placeholder="+0" class=statmod/>
+                  <input 
+                  name="Dexteritymod" 
+                  placeholder="+0" 
+                  class=statmod
+                  ngModel
+                  #firstName="ngModel"
+                  name="Dexteritymod"
+                  id=Dexteritymod
+                  type="text"
+                  class="form-control"/>
                 </div>
               </li>
               <li>
                 <div class="score">
-                  <label for="Constitutionscore">Constitution</label><input name="Constitutionscore" placeholder="10" class="stat"/>
+                  <label for="Constitutionscore">Constitution<input 
+                    name="Constitutionscore" 
+                    placeholder="10" 
+                    class="stat"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Constitutionscore"
+                    id=Constitutionscore
+                    type="number"
+                    class="form-control"/>
+                    </label>
                 </div>
                 <div class="modifier">
-                  <input name="Constitutionmod" placeholder="+0" class="statmod"/>
+                  <input 
+                  name="Constitutionmod" 
+                  placeholder="+0" 
+                  class="statmod"
+                  ngModel
+                  #firstName="ngModel"
+                  name="Constitutionmod"
+                  id=Constitutionmod
+                  type="text"
+                  class="form-control"/>
                 </div>
               </li>
               <li>
                 <div class="score">
-                  <label for="Wisdomscore">Wisdom</label><input name="Wisdomscore" placeholder="10" class="stat"/>
+                  <label for="Wisdomscore">Wisdom<input 
+                    name="Wisdomscore" 
+                    placeholder="10" 
+                    class="stat"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Wisdomscore"
+                    id=Wisdomscore
+                    type="number"
+                    class="form-control"
+                    />
+                    </label>
                 </div>
                 <div class="modifier">
-                  <input name="Wisdommod" placeholder="+0" />
+                  <input 
+                  name="Wisdommod" 
+                  placeholder="+0"
+                  class="statmod"
+                  ngModel
+                  #firstName="ngModel"
+                  name="Wisdommod"
+                  id=Wisdommod
+                  type="text"
+                  class="form-control" />
                 </div>
               </li>
               <li>
                 <div class="score">
-                  <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore" placeholder="10" class="stat"/>
+                  <label for="Intelligencescore">Intelligence<input 
+                    name="Intelligencescore"
+                     placeholder="10" 
+                     class="stat"
+                     ngModel
+                     #firstName="ngModel"
+                     name="Intelligencescore"
+                     id=Intelligencescore
+                     type="number"
+                     class="form-control"/>
+                     </label>
                 </div>
                 <div class="modifier">
-                  <input name="Intelligencemod" placeholder="+0" class="statmod"/>
+                  <input 
+                  name="Intelligencemod" 
+                  placeholder="+0" 
+                  class="statmod"
+                  ngModel
+                  #firstName="ngModel"
+                  name="Intelligencemod"
+                  id=Intelligencemod
+                  type="text"
+                  class="form-control"/>
                 </div>
               </li>
               <li>
                 <div class="score">
-                  <label for="Charismascore">Charisma</label><input name="Charismascore" placeholder="10" class="stat"/>
+                  <label for="Charismascore">Charisma<input 
+                    name="Charismascore" 
+                    placeholder="10" 
+                    class="stat"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Charismascore"
+                    id=Charismascore
+                    type="number"
+                    class="form-control"/>
+                    </label>
                 </div>
                 <div class="modifier">
-                  <input name="Charismamod" placeholder="+0" class="statmod"/>
+                  <input 
+                  name="Charismamod" 
+                  placeholder="+0" 
+                  class="statmod"
+                  ngModel
+                  #firstName="ngModel"
+                  name="Charismamod"
+                  id=Charismamod
+                  type="text"
+                  class="form-control"/>
                 </div>
               </li>
             </ul>
@@ -124,33 +289,159 @@
               <div class="label-container">
                 <label for="inspiration">Inspiration</label>
               </div>
-              <input name="inspiration" type="checkbox" />
+              <input 
+              name="inspiration" 
+              type="checkbox"
+              ngModel
+              #firstName="ngModel"
+              name="inspiration"
+              id=inspiration
+              type="checkbox"
+              class="form-control" />
             </div>
             <div class="proficiencybonus box">
               <div class="label-container">
                 <label for="proficiencybonus">Proficiency Bonus</label>
               </div>
-              <input name="proficiencybonus" placeholder="+2" />
+              <input 
+              name="proficiencybonus" 
+              placeholder="+2"
+              ngModel
+              #firstName="ngModel"
+              name="proficiencybonus"
+              id=proficiencybonus
+              type="text"
+              class="form-control" />
             </div>
             <div class="saves list-section box">
               <ul>
                 <li>
-                  <label for="Strength-save">Strength</label><input name="Strength-save" placeholder="+0" type="text" /><input name="Strength-save-prof" type="checkbox" />
+                  <label for="Strength-save">Strength<input 
+                    name="Strength-save" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Strength-save"
+                    id=Strength-save
+                    type="text"
+                    class="form-control"/>
+                    </label>
+                    <input 
+                    name="Strength-save-prof" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Strength-save-prof"
+                    id=Strength-save-prof
+                    type="checkbox"
+                    class="form-control" />
                 </li>
                 <li>
-                  <label for="Dexterity-save">Dexterity</label><input name="Dexterity-save" placeholder="+0" type="text" /><input name="Dexterity-save-prof" type="checkbox" />
+                  <label for="Dexterity-save">Dexterity<input 
+                    name="Dexterity-save" 
+                    placeholder="+0" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Dexterity-save"
+                    id=Dexterity-save
+                    type="text"
+                    class="form-control" /></label>
+                    <input 
+                    name="Dexterity-save-prof" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Dexterity-save-prof"
+                    id=Dexterity-save-prof
+                    type="checkbox"
+                    class="form-control"/>
                 </li>
                 <li>
-                  <label for="Constitution-save">Constitution</label><input name="Constitution-save" placeholder="+0" type="text" /><input name="Constitution-save-prof" type="checkbox" />
+                  <label for="Constitution-save">Constitution<input 
+                    name="Constitution-save" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Constitution-save"
+                    id=Constitutionmod
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Constitution-save-prof" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Constitution-save-prof"
+                    id=Constitution-save-prof
+                    type="checkbox"
+                    class="form-control" />
                 </li>
                 <li>
-                  <label for="Wisdom-save">Wisdom</label><input name="Wisdom-save" placeholder="+0" type="text" /><input name="Wisdom-save-prof" type="checkbox" />
+                  <label for="Wisdom-save">Wisdom<input 
+                    name="Wisdom-save" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Wisdom-save"
+                    id=Wisdom-save
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Wisdom-save-prof" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Wisdom-save-prof"
+                    id=Wisdom-save-prof
+                    type="checkbox"
+                    class="form-control" />
                 </li>
                 <li>
-                  <label for="Intelligence-save">Intelligence</label><input name="Intelligence-save" placeholder="+0" type="text" /><input name="Intelligence-save-prof" type="checkbox" />
+                  <label for="Intelligence-save">Intelligence<input 
+                    name="Intelligence-save" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Intelligence-save"
+                    id=Intelligence-save
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Intelligence-save-prof" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Intelligence-save-prof"
+                    id=Intelligence-save-prof
+                    type="checkbox"
+                    class="form-control" />
                 </li>
                 <li>
-                  <label for="Charisma-save">Charisma</label><input name="Charisma-save" placeholder="+0" type="text" /><input name="Charisma-save-prof" type="checkbox" />
+                  <label for="Charisma-save">Charisma
+                    <input 
+                    name="Charisma-save" 
+                    placeholder="+0" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Charisma-save"
+                    id=Charisma-save
+                    type="text"
+                    class="form-control" /></label>
+                    <input 
+                    name="Charisma-save-prof" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Charisma-save-prof"
+                    id=Charisma-save-prof
+                    type="checkbox"
+                    class="form-control" />
                 </li>
               </ul>
               <div class="label">
@@ -160,58 +451,392 @@
             <div class="skills list-section box">
               <ul>
                 <li>
-                  <label for="Acrobatics">Acrobatics <span class="skill">(Dex)</span></label><input name="Acrobatics" placeholder="+0" type="text" /><input name="Acrobatics-prof" type="checkbox" />
+                  <label for="Acrobatics">Acrobatics <span class="skill">(Dex)</span><input 
+                    name="Acrobatics" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Acrobatics"
+                    id=Acrobatics
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Acrobatics-prof" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Acrobatics-prof"
+                    id=Acrobatics-prof
+                    type="checkbox"
+                    class="form-control" />
                 </li>
                 <li>
-                  <label for="Animal Handling">Animal Handling <span class="skill">(Wis)</span></label><input name="Animal Handling" placeholder="+0" type="text" /><input name="Animal Handling-prof" type="checkbox" />
+                  <!--this one doesn't work quite right for id-->
+                  <label for="Animal Handling">Animal Handling <span class="skill">(Wis)</span>
+                    <input 
+                    name="Animal Handling" 
+                    placeholder="+0" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Animal Handling"
+                    id=AnimalHandling 
+                    type="text"
+                    class="form-control" /></label>
+                    <input 
+                    name="Animal Handling-prof" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Animal Handling-prof"
+                    id=AnimalHandling-prof 
+                    type="checkbox"
+                    class="form-control"
+                    />
                 </li>
                 <li>
-                  <label for="Arcana">Arcana <span class="skill">(Int)</span></label><input name="Arcana" placeholder="+0" type="text" /><input name="Arcana-prof" type="checkbox" />
+                  <label for="Arcana">Arcana <span class="skill">(Int)</span><input 
+                    name="Arcana" 
+                    placeholder="+0" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Arcana"
+                    id=Arcana
+                    type="text"
+                    class="form-control" /></label>
+                    <input name="Arcana-prof" type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Arcana-prof"
+                    id=Arcana-prof 
+                    type="checkbox"
+                    class="form-control" />
                 </li>
                 <li>
-                  <label for="Athletics">Athletics <span class="skill">(Str)</span></label><input name="Athletics" placeholder="+0" type="text" /><input name="Athletics-prof" type="checkbox" />
+                  <label for="Athletics">Athletics <span class="skill">(Str)</span>
+                    <input 
+                    name="Athletics" 
+                    placeholder="+0" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Athletics"
+                    id=Athletics
+                    type="text"
+                    class="form-control" /></label>
+                    <input 
+                    name="Athletics-prof" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Athletics-prof"
+                    id=Athletics-prof
+                    type="checkbox"
+                    class="form-control"/>
                 </li>
                 <li>
-                  <label for="Deception">Deception <span class="skill">(Cha)</span></label><input name="Deception" placeholder="+0" type="text" /><input name="Deception-prof" type="checkbox" />
+                  <label for="Deception">Deception <span class="skill">(Cha)</span>
+                    <input 
+                    name="Deception" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Deception"
+                    id=Deception
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Deception-prof" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Deception-prof"
+                    id=Deception-prof
+                    type="checkbox"
+                    class="form-control"/>
                 </li>
                 <li>
-                  <label for="History">History <span class="skill">(Int)</span></label><input name="History" placeholder="+0" type="text" /><input name="History-prof" type="checkbox" />
+                  <label for="History">History <span class="skill">(Int)</span>
+                    <input 
+                    name="History" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="History"
+                    id=History 
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="History-prof" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="History-prof"
+                    id=History-prof
+                    type="checkbox"
+                    class="form-control" />
                 </li>
                 <li>
-                  <label for="Insight">Insight <span class="skill">(Wis)</span></label><input name="Insight" placeholder="+0" type="text" /><input name="Insight-prof" type="checkbox" />
+                  <label for="Insight">Insight <span class="skill">(Wis)</span>
+                    <input 
+                    name="Insight" 
+                    placeholder="+0" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Insight"
+                    id=Insight
+                    type="text"
+                    class="form-control" /></label>
+                    <input
+                     name="Insight-prof" 
+                     type="checkbox"
+                     ngModel
+                     #firstName="ngModel"
+                     name="Insight-prof"
+                     id=Insight-prof
+                     type="checkbox"
+                     class="form-control" />
                 </li>
                 <li>
-                  <label for="Intimidation">Intimidation <span class="skill">(Cha)</span></label><input name="Intimidation" placeholder="+0" type="text" /><input name="Intimidation-prof" type="checkbox" />
+                  <label for="Intimidation">Intimidation <span class="skill">(Cha)</span>
+                    <input 
+                    name="Intimidation" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Intimidation"
+                    id=Intimidation 
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Intimidation-prof" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Intimidation-prof"
+                    id=Intimidation-prof 
+                    type="checkbox"
+                    class="form-control" />
                 </li>
                 <li>
-                  <label for="Investigation">Investigation <span class="skill">(Int)</span></label><input name="Investigation" placeholder="+0" type="text" /><input name="Investigation-prof" type="checkbox" />
+                  <label for="Investigation">Investigation <span class="skill">(Int)</span>
+                    <input 
+                    name="Investigation" 
+                    placeholder="+0" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Investigation"
+                    id=Investigation
+                    type="text"
+                    class="form-control" /></label>
+                    <input 
+                    name="Investigation-prof" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Investigation-prof"
+                    id=Investigation-prof 
+                    type="checkbox"
+                    class="form-control"/>
                 </li>
                 <li>
-                  <label for="Medicine">Medicine <span class="skill">(Wis)</span></label><input name="Medicine" placeholder="+0" type="text" /><input name="Medicine-prof" type="checkbox" />
+                  <label for="Medicine">Medicine <span class="skill">(Wis)</span>
+                    <input
+                     name="Medicine" 
+                     placeholder="+0" 
+                     type="text" 
+                     ngModel
+                     #firstName="ngModel"
+                     name="Medicine"
+                     id=Medicine 
+                     type="text"
+                     class="form-control"/></label><input 
+                     name="Medicine-prof" 
+                     type="checkbox" 
+                     ngModel
+                     #firstName="ngModel"
+                     name="Medicine-prof"
+                     id=Medicine-prof
+                     type="checkbox"
+                     class="form-control"/>
                 </li>
                 <li>
-                  <label for="Nature">Nature <span class="skill">(Int)</span></label><input name="Nature" placeholder="+0" type="text" /><input name="Nature-prof" type="checkbox" />
+                  <label for="Nature">Nature <span class="skill">(Int)</span>
+                    <input 
+                    name="Nature" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Nature"
+                    id=Nature 
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Nature-prof" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Nature-prof"
+                    id=Nature-prof 
+                    type="checkbox"
+                    class="form-control"/>
                 </li>
                 <li>
-                  <label for="Perception">Perception <span class="skill">(Wis)</span></label><input name="Perception" placeholder="+0" type="text" /><input name="Perception-prof" type="checkbox" />
+                  <label for="Perception">Perception <span class="skill">(Wis)</span><input 
+                    name="Perception" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Perception"
+                    id=Perception 
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Perception-prof" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Perception-prof"
+                    id=Perception-prof
+                    type="checkbox"
+                    class="form-control"/>
                 </li>
                 <li>
-                  <label for="Performance">Performance <span class="skill">(Cha)</span></label><input name="Performance" placeholder="+0" type="text" /><input name="Performance-prof" type="checkbox" />
+                  <label for="Performance">Performance <span class="skill">(Cha)</span>
+                    <input 
+                    name="Performance" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Performance"
+                    id=Performance
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Performance-prof" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Performance-prof"
+                    id=Performance-prof
+                    type="checkbox"
+                    class="form-control" />
                 </li>
                 <li>
-                  <label for="Persuasion">Persuasion <span class="skill">(Cha)</span></label><input name="Persuasion" placeholder="+0" type="text" /><input name="Persuasion-prof" type="checkbox" />
+                  <label for="Persuasion">Persuasion <span class="skill">(Cha)</span>
+                    <input 
+                    name="Persuasion" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Persuasion"
+                    id=Persuasion 
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Persuasion-prof" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Persuasion-prof"
+                    id=Persuasion-prof 
+                    type="checkbox"
+                    class="form-control"/>
                 </li>
                 <li>
-                  <label for="Religion">Religion <span class="skill">(Int)</span></label><input name="Religion" placeholder="+0" type="text" /><input name="Religion-prof" type="checkbox" />
+                  <label for="Religion">Religion <span class="skill">(Int)</span><input 
+                    name="Religion" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Religion"
+                    id=Religion 
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Religion-prof" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="Religion-prof"
+                    id=Religion-prof
+                    type=""
+                    class="form-control" />
                 </li>
                 <li>
-                  <label for="Sleight of Hand">Sleight of Hand <span class="skill">(Dex)</span></label><input name="Sleight of Hand" placeholder="+0" type="text" /><input name="Sleight of Hand-prof" type="checkbox" />
+                  <!--another weird one for id-->
+                  <label for="Sleight of Hand">Sleight of Hand <span class="skill">(Dex)</span><input 
+                    name="Sleight of Hand" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Sleight of Hand"
+                    id=Sleight-of-Hand 
+                    type="text"
+                    class="form-control"/></label>
+                    <input 
+                    name="Sleight of Hand-prof" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Sleight of Hand-prof"
+                    id=Sleight-of-Hand-prof
+                    type="checkbox"
+                    class="form-control"/>
                 </li>
                 <li>
-                  <label for="Stealth">Stealth <span class="skill">(Dex)</span></label><input name="Stealth" placeholder="+0" type="text" /><input name="Stealth-prof" type="checkbox" />
+                  <label for="Stealth">Stealth <span class="skill">(Dex)</span><input 
+                    name="Stealth" 
+                    placeholder="+0" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Stealth"
+                    id=Stealth 
+                    type="text"
+                    class="form-control"/></label><input 
+                    name="Stealth-prof" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="Stealth-prof"
+                    id=Stealth-prof
+                    type="checkbox"
+                    class="form-control"/>
                 </li>
                 <li>
-                  <label for="Survival">Survival <span class="skill">(Wis)</span></label><input name="Survival" placeholder="+0" type="text" /><input name="Survival-prof" type="checkbox" />
+                  <label for="Survival">Survival <span class="skill">(Wis)</span>
+                    <input
+                     name="Survival" 
+                     placeholder="+0" 
+                     type="text" 
+                     ngModel
+                     #firstName="ngModel"
+                     name="Survival"
+                     id=Survival
+                     type="text"
+                     class="form-control"/></label><input 
+                     name="Survival-prof" 
+                     type="checkbox" 
+                     ngModel
+                     #firstName="ngModel"
+                     name="Survival-prof"
+                     id=Survival-prof
+                     type="checkbox"
+                     class="form-control"/>
                 </li>
               </ul>
               <div class="label">
@@ -224,49 +849,142 @@
           <div class="label-container">
             <label for="passiveperception">Passive Wisdom (Perception)</label>
           </div>
-          <input name="passiveperception" placeholder="10" />
+          <input 
+          name="passiveperception" 
+          placeholder="10" 
+          ngModel
+          #firstName="ngModel"
+          name="passiveperception"
+          id=passiveperception
+          type="number"
+          class="form-control"/>
         </div>
         <div class="otherprofs box textblock">
-          <label for="otherprofs">Other Proficiencies and Languages</label><textarea name="otherprofs"></textarea>
+          <label for="otherprofs">Other Proficiencies and Languages<textarea 
+            name="otherprofs"
+            ngModel
+            #firstName="ngModel"
+            name="otherprofs"
+            id=otherprofs 
+            type="text"
+            class="form-control"></textarea>
+          </label>
         </div>
       </section>
       <section>
         <section class="combat">
           <div class="armorclass">
             <div>
-              <label for="ac">Armor Class</label><input name="ac" placeholder="10" type="text" />
+              <label for="ac">Armor Class<input 
+                name="ac" 
+                placeholder="10" 
+                type="text"
+                ngModel
+                #firstName="ngModel"
+                name="ac"
+                id=ac
+                type="text"
+                class="form-control" />
+                </label>
             </div>
           </div>
           <div class="initiative">
             <div>
-              <label for="initiative">Initiative</label><input name="initiative" placeholder="+0" type="text" />
+              <label for="initiative">Initiative<input 
+                name="initiative" 
+                placeholder="+0" 
+                type="text" 
+                ngModel
+                #firstName="ngModel"
+                name="initiative"
+                id=initiative 
+                type="text"
+                class="form-control"/>
+                </label>
             </div>
           </div>
           <div class="speed">
             <div>
-              <label for="speed">Speed</label><input name="speed" placeholder="30" type="text" />
+              <label for="speed">Speed<input 
+                name="speed" 
+                placeholder="30" 
+                type="text"
+                ngModel
+                #firstName="ngModel"
+                name="speed"
+                id=speed 
+                type="text"
+                class="form-control" />
+                </label>
             </div>
           </div>
           <div class="hp">
             <div class="regular">
               <div class="max">
-                <label for="maxhp">Hit Point Maximum</label><input name="maxhp" placeholder="10" type="text" />
+                <label for="maxhp">Hit Point Maximum<input 
+                  name="maxhp" 
+                  placeholder="10" 
+                  type="text" 
+                  ngModel
+                  #firstName="ngModel"
+                  name="maxhp"
+                  id=maxhp
+                  type="text"
+                  class="form-control"/>
+                  </label>
               </div>
               <div class="current">
-                <label for="currenthp">Current Hit Points</label><input name="currenthp" type="text" />
+                <label for="currenthp">Current Hit Points<input 
+                  name="currenthp"
+                  type="text"
+                  ngModel
+                  #firstName="ngModel"
+                  name="currenthp"
+                  id=currenthp
+                  type="text"
+                  class="form-control" />
+                  </label>
               </div>
             </div>
             <div class="temporary">
-              <label for="temphp">Temporary Hit Points</label><input name="temphp" type="text" />
+              <label for="temphp">Temporary Hit Points<input 
+                name="temphp" 
+                type="text" 
+                ngModel
+                #firstName="ngModel"
+                name="temphp"
+                id=temphp 
+                type="text"
+                class="form-control"/>
+                </label>
             </div>
           </div>
           <div class="hitdice">
             <div>
               <div class="total">
-                <label onclick="totalhd_clicked()" for="totalhd">Total</label><input name="totalhd" placeholder="2d10" type="text" />
+                <label onclick="totalhd_clicked()" for="totalhd">Total<input 
+                  name="totalhd"
+                   placeholder="2d10" 
+                   type="text"
+                   ngModel
+                   #firstName="ngModel"
+                   name="totalhd"
+                   id=totalhd 
+                   type="text"
+                   class="form-control" />
+                   </label>
               </div>
               <div class="remaining">
-                <label for="remaininghd">Hit Dice</label><input name="remaininghd" type="text" />
+                <label for="remaininghd">Hit Dice<input 
+                  name="remaininghd" 
+                  type="text"
+                  ngModel
+                  #firstName="ngModel"
+                  name="remaininghd"
+                  id=remaininghd 
+                  type="text"
+                  class="form-control" />
+                  </label>
               </div>
             </div>
           </div>
@@ -279,17 +997,65 @@
                 <div class="deathsuccesses">
                   <label>Successes</label>
                   <div class="bubbles">
-                    <input name="deathsuccess1" type="checkbox" />
-                    <input name="deathsuccess2" type="checkbox" />
-                    <input name="deathsuccess3" type="checkbox" />
+                    <input 
+                    name="deathsuccess1" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="deathsuccess1"
+                    id=deathsuccess1
+                    type="checkbox"
+                    class="form-control"/>
+                    <input 
+                    name="deathsuccess2" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="deathsuccess2"
+                    id=deathsuccess2
+                    type="checkbox"
+                    class="form-control"/>
+                    <input 
+                    name="deathsuccess3" 
+                    type="checkbox" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="deathsuccess3"
+                    id=deathsuccess3 
+                    type="checkbox"
+                    class="form-control"/>
                   </div>
                 </div>
                 <div class="deathfails">
                   <label>Failures</label>
                   <div class="bubbles">
-                    <input name="deathfail1" type="checkbox" />
-                    <input name="deathfail2" type="checkbox" />
-                    <input name="deathfail3" type="checkbox" />
+                    <input 
+                    name="deathfail1" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="deathfail1"
+                    id=deathfail1
+                    type="checkbox"
+                    class="form-control" />
+                    <input 
+                    name="deathfail2" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="deathfail2"
+                    id=deathfail2
+                    type="checkbox"
+                    class="form-control" />
+                    <input 
+                    name="deathfail3" 
+                    type="checkbox"
+                    ngModel
+                    #firstName="ngModel"
+                    name="deathfail3"
+                    id=deathfail3
+                    type="checkbox"
+                    class="form-control" />
                   </div>
                 </div>
               </div>
@@ -316,35 +1082,107 @@
               <tbody>
                 <tr>
                   <td>
-                    <input name="atkname1" type="text" />
+                    <input 
+                    name="atkname1" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="atkname1"
+                    id=atkname1
+                    type="text"
+                    class="form-control" />
                   </td>
                   <td>
-                    <input name="atkbonus1" type="text" />
+                    <input 
+                    name="atkbonus1" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="atkbonus1"
+                    id=atkbonus1
+                    type="text"
+                    class="form-control" />
                   </td>
                   <td>
-                    <input name="atkdamage1" type="text" />
+                    <input 
+                    name="atkdamage1" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="atkdamage1"
+                    id=atkdamage1
+                    type="text"
+                    class="form-control" />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <input name="atkname2" type="text" />
+                    <input 
+                    name="atkname2" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="atkname2"
+                    id=atkname2
+                    type="text"
+                    class="form-control" />
                   </td>
                   <td>
-                    <input name="atkbonus2" type="text" />
+                    <input 
+                    name="atkbonus2" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="atkbonus2"
+                    id=atkbonus2
+                    type="text"
+                    class="form-control"/>
                   </td>
                   <td>
-                    <input name="atkdamage2" type="text" />
+                    <input 
+                    name="atkdamage2" 
+                    type="text"
+                    ngModel
+                    #firstName="ngModel"
+                    name="atkdamage2"
+                    id=atkdamage2
+                    type="text"
+                    class="form-control" />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <input name="atkname3" type="text" />
+                    <input 
+                    name="atkname3" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="atkname3"
+                    id=atkname3
+                    type="text"
+                    class="form-control"/>
                   </td>
                   <td>
-                    <input name="atkbonus3" type="text" />
+                    <input 
+                    name="atkbonus3" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="atkbonus3"
+                    id=atkbonus3
+                    type="text"
+                    class="form-control"/>
                   </td>
                   <td>
-                    <input name="atkdamage3" type="text" />
+                    <input 
+                    name="atkdamage3" 
+                    type="text" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="atkdamage3"
+                    id=atkdamage3
+                    type="text"
+                    class="form-control"/>
                   </td>
                 </tr>
               </tbody>
@@ -358,22 +1196,63 @@
             <div class="money">
               <ul>
                 <li>
-                  <label for="cp">cp</label><input name="cp" />
+                  <label for="cp">cp<input 
+                    name="cp" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="cp"
+                    id=cp
+                    type="text"
+                    class="form-control"/>
+                    </label>
                 </li>
                 <li>
-                  <label for="sp">sp</label><input name="sp" />
+                  <label for="sp">sp<input 
+                    name="sp" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="sp"
+                    id=sp
+                    type="text"
+                    class="form-control"/>
+                    </label>
                 </li>
                 <li>
-                  <label for="ep">ep</label><input name="ep" />
+                  <label for="ep">ep<input 
+                    name="ep" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="ep"
+                    id=ep
+                    type="text"
+                    class="form-control"/>
+                    </label>
                 </li>
                 <li>
-                  <label for="gp">gp</label><input name="gp" />
+                  <label for="gp">gp<input 
+                    name="gp" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="gp"
+                    id=gp
+                    type="text"
+                    class="form-control"/>
+                    </label>
                 </li>
                 <li>
-                  <label for="pp">pp</label><input name="pp" />
+                  <label for="pp">pp<input 
+                    name="pp" 
+                    ngModel
+                    #firstName="ngModel"
+                    name="pp"
+                    id=pp
+                    type="text"
+                    class="form-control"/>
+                    </label>
                 </li>
               </ul>
             </div>
+            <!--does this textarea need it? No name-->
             <textarea placeholder="Equipment list here"></textarea>
           </div>
         </section>
@@ -381,21 +1260,63 @@
       <section>
         <section class="flavor">
           <div class="personality">
-            <label for="personality">Personality</label><textarea name="personality"></textarea>
+            <label for="personality">Personality<textarea 
+              name="personality"
+              ngModel
+              #firstName="ngModel"
+              name="personality"
+              id= personality
+              type="text"
+              class="form-control"
+            ></textarea>
+              </label>
           </div>
           <div class="ideals">
-            <label for="ideals">Ideals</label><textarea name="ideals"></textarea>
+            <label for="ideals">Ideals<textarea 
+              name="ideals"
+              ngModel
+              #firstName="ngModel"
+              name="ideals"
+              id=ideals
+              type="text"
+              class="form-control"></textarea>
+              </label>
           </div>
           <div class="bonds">
-            <label for="bonds">Bonds</label><textarea name="bonds"></textarea>
+            <label for="bonds">Bonds<textarea 
+              name="bonds"
+              ngModel
+              #firstName="ngModel"
+              name="bonds"
+              id=bonds
+              type="text"
+              class="form-control"></textarea>
+              </label>
           </div>
           <div class="flaws">
-            <label for="flaws">Flaws</label><textarea name="flaws"></textarea>
+            <label for="flaws">Flaws<textarea 
+              name="flaws"
+              ngModel
+              #firstName="ngModel"
+              name="flaws"
+              id=flaws
+              type="text"
+              class="form-control"
+              ></textarea>
+              </label>
           </div>
         </section>
         <section class="features">
           <div>
-            <label for="features">Features & Traits</label><textarea name="features"></textarea>
+            <label for="features">Features & Traits<textarea 
+              name="features"
+              ngModel
+              #firstName="ngModel"
+              name="features"
+              id=features
+              type="text"
+              class="form-control"></textarea>
+              </label>
           </div>
         </section>
       </section>
