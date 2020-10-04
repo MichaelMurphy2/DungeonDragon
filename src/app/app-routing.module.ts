@@ -1,22 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { GamePlayComponent } from '../app/game-play/game-play.component';
-import { HomeComponent } from '../app/home/home.component';
-import { RegisterComponent } from "../app/register/register.component";
-import { CharsheetComponent } from "../app/charsheet/charsheet.component";
-import { AuthGuard } from './auth.guard';
-
+import { RegisterComponent } from '../app/components/register/register.component';
+import { CharsheetComponent } from './components/charsheet/charsheet.component';
+import { HomeComponent } from './components/home/home.component';
+import { SpellbookComponent } from '../app/components/open5e/spells/spellbook/spellbook.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
-  
+  {path:'charsheet', component: CharsheetComponent},
   {path: 'home', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'game-play', component: GamePlayComponent,canActivate: [AuthGuard]},
-  {path: 'charsheet', component: CharsheetComponent, canActivate: [AuthGuard]},
+  {path: 'spellbook', component:SpellbookComponent},
   {path: '**', redirectTo: 'home'}
-  
+
 ];
 
 @NgModule({

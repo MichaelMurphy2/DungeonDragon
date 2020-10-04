@@ -1,73 +1,84 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+
+
+
+
 //Nebular Imports
-import { NbIconModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbThemeModule} from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule, NbMenuModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbUserModule } from '@nebular/theme';
-import { ChatComponent } from './chat/chat.component';
 import { NbInputModule } from '@nebular/theme';
 import { NbCardModule } from '@nebular/theme';
-import { NbChatModule } from '@nebular/theme';
-import { NbButtonModule } from '@nebular/theme';
 import { NbWindowModule } from '@nebular/theme';
-//Firebase Imports
-import {environment} from '../environments/environment';
+import { NbCheckboxModule } from '@nebular/theme';
+import { NbToastrModule } from '@nebular/theme';
+import { NbDialogModule } from '@nebular/theme';
+
+//Firebase
+import { environment } from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
-//Components
-import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
-import { NavComponent } from './nav/nav.component';
-import { GamePlayComponent } from './game-play/game-play.component';
-import { LoadGameComponent } from './load-game/load-game.component';
-import { CharsheetComponent } from './charsheet/charsheet.component';
-import { CharModalComponent } from './char-modal/char-modal.component';
-import { DiceRollerComponent } from './dice-roller/dice-roller.component';
-import { ConversationalUIComponent } from './conversational-ui/conversational-ui.component';
-import { GamePanelComponent } from './game-panel/game-panel.component';
-import { ViewCharComponent } from './components/view-char/view-char.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
+
+//components
+import { RegisterComponent } from './components/register/register.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { HomeComponent } from './components/home/home.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { GamepanelComponent } from './components/gamepanel/gamepanel.component';
+import { CharsheetComponent } from './components/charsheet/charsheet.component';
+import { DiceRollerComponent } from './components/dice-roller/dice-roller.component';
+import { SpellbookComponent } from './components/open5e/spells/spellbook/spellbook.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent,
-    HomeComponent,
     RegisterComponent,
-    NavComponent,
-    GamePlayComponent,
-    LoadGameComponent,
-    CharsheetComponent,
-    CharModalComponent,
+    DialogComponent,
+    HomeComponent,
+    CarouselComponent,
+    ChatComponent,
+    GamepanelComponent,
     DiceRollerComponent,
-    ConversationalUIComponent,
-    GamePanelComponent,
-    ViewCharComponent
+    CharsheetComponent,
+    SpellbookComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
-    NbIconModule,               
-    NbSidebarModule.forRoot(),  // <---------
-    NbMenuModule.forRoot(),     // <---------
-    NbThemeModule.forRoot({name: 'cosmic'}),
-    NbLayoutModule,
-    NbEvaIconsModule,
-    NbInputModule,
-    NbButtonModule,
-    NbUserModule,
-    NbChatModule,
-    NbCardModule,
+    NbThemeModule.forRoot({ name: 'cosmic' }),
+    NbMenuModule.forRoot(),
     NbWindowModule.forRoot(),
-    HttpClientModule
+    NbUserModule,
+    NbInputModule,
+    NbCardModule,
+    NbWindowModule,
+    NbCheckboxModule,
+    NbDialogModule.forRoot(),
+    NbLayoutModule,
+    NbSidebarModule.forRoot(),
+    NbButtonModule,
+    NbToastrModule.forRoot(),
+    NbEvaIconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

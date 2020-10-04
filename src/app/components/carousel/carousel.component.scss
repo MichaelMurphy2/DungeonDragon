@@ -1,0 +1,41 @@
+.carousel-container{
+    margin: 20px;
+    filter: drop-shadow(10px 10px 12px black);
+}
+.carousel-inner > .carousel-item {
+    height:55vh;
+}
+
+.carousel-item  img {
+    height: auto;
+    max-height: 700px;
+    position: relative;
+    background:cover;
+    top: 0;
+    transform: translateY(-15%);
+    width: 100%;
+}
+
+.flipcard {
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .carousel-container{
+        margin: 20px;
+        border:none;
+    }
+    .carousel-inner > .carousel-item {
+        height:20vh;
+    }
+    
+    .carousel-item  img {
+        height: auto;
+        max-height: 200px;
+        position: relative;
+        background:cover;
+        top: 0;
+        transform: translateY(-15%);
+        width: 100%;
+    }
+}

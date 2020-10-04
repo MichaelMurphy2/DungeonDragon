@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Piazzolla:ital,wght@1,600&display=swap');
+card-title {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px black(255, 0, 0);
+    
+}
+
+li {
+    color: black;
+    font-size: 1rem;
+    
+}
+
+input {
+    margin:10px;
+}
+
+button {
+    margin: 10px;
+}
+
+nb-card {
+    filter: drop-shadow( 5px 5px 8px black);
+}
+
+.addedtext{
+    padding:5px;
+}
+.card-style {
+    filter:none;
+    
+}
+nb-user{
+    filter: drop-shadow( 5px 5px 8px black);
+}
+
+p {
+    font-family: 'Bitter', serif;
+    font-size: 1.2em;
+    filter: drop-shadow( 5px 5px 8px black);
+}

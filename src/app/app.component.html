@@ -1,76 +1,85 @@
 <nb-layout>
-
   <nb-layout-header fixed>
-    <nb-icon (click)="toggleSidebar()" class="sidebar-toggle" icon="menu-2-outline"></nb-icon>
-    <h2><img class="ddlogo" src="/assets/images/ddlogo.png" class="ddlogo"></h2>
+
+    <ul>
+     <li><button nbButton status="success" size="tiny" (click)="toggle()">Toggle left menu</button></li> 
+     <li><button nbButton status="info" size="tiny" (click)="toggleCompact()">Toggle chat panel</button></li>
+    </ul>
+   
+    <img class="ddlogo" src="/assets/images/ddlogo.png" class="ddlogo">
 
     <div class="login">
       <span *ngIf="auth.user$ | async; then logout else login"></span>
     </div>
 
 
-  </nb-layout-header>
-  //Left Sidebar
-  <nb-sidebar class="menu-sidebar" responsive start>
-    <nb-menu [items]="items"></nb-menu>
-    <img class="dragon" src="/assets/images/dragon1.png">
-  </nb-sidebar>
-
-
-
-  //Main Content
-  <nb-layout-column>
-    <router-outlet></router-outlet>
-
     
-  </nb-layout-column>
+  </nb-layout-header>
 
-
-
-  //Right Sidebar
-  <nb-sidebar class="gameStats" right>
-
-    <button nbButton outline status="control" (click)="openWindow()"><i class="fab fa-d-and-d"></i>Character Sheet</button>
-    <ng-template #contentTemplate let-data>
-    </ng-template>
-
-    <p></p>
+  <nb-sidebar tag="left">
+   
+      <nb-menu [items]="items" autoCollapse="true">
+      </nb-menu>
+    
+      
+        <img class="dragon" src="/assets/images/dragon1.png">
+     
+    
   
-    <button nbButton outline status="control" (click)="openWindow2()"><i class="fas fa-dice-d20"></i>Dice Roller</button>
-    <ng-template #contentTemplate let-data>
-    </ng-template>
-    <p></p>
-    <button nbButton outline status="control" (click)="openWindow3()"><i class="far fa-comments"></i>Chat v1.0</button>
-    <ng-template #contentTemplate let-data>
-    </ng-template>
-<p></p>
+    
+
+  </nb-sidebar>
+
+  <nb-sidebar right tag="right" class="chatpanel">
+    
+    <div *ngIf="auth.user$ | async as user;">
+    <app-chat></app-chat>
+   </div>
 
 
-<button nbButton outline status="control" (click)="openWindow4()"><i class="far fa-comments"></i>Char Info View</button>
+    <button nbButton outline status="control" (click)="openWindow()"><i class="fab fa-d-and-d"></i>Roll The Dice</button>
     <ng-template #contentTemplate let-data>
     </ng-template>
 
   </nb-sidebar>
 
+  <nb-layout-column class="colored-column-warning">
 
+
+    <div *ngIf="userID" style="color:green"><h1>Hey I'm true.....The dungeon master has arrived!</h1><div style="width:100%;height:0;padding-bottom:55%;position:relative;"><iframe src="https://giphy.com/embed/5IMcyqKbkg0O4" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/party-cheers-jay-gatsby-5IMcyqKbkg0O4">via GIPHY</a></p></div>
+    <div *ngIf="!userID" style="color:red"><h1>The dungeon master is nowhere to be found!</h1></div>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+  </nb-layout-column>
 
   <nb-layout-footer fixed>
 
-    <app-game-panel></app-game-panel>
+   
+
 
     <p>Copyright:<i class="fas fa-copyright"></i>Just some educational learning</p>
   </nb-layout-footer>
-</nb-layout>
 
+</nb-layout>
 
 
 <ng-template #logout>
   <a class="nav-item nav-link" id="nav-login-link" (click)="auth.signOut()" *ngIf="auth.user$ | async as user;">
-    <nb-icon icon="google"></nb-icon>{{ user.displayName }}
+    <i class="fas fa-unlock"></i><p class="saysme" style="display: inline;">Logout</p>
   </a>
 </ng-template>
+
 <ng-template #login>
   <a class="nav-item nav-link" id="nav-login-link" (click)="auth.googleSignin()">
-    <nb-icon icon="google-outline"></nb-icon>Login
+    <i class="fas fa-lock"></i><p class="saysme" style="display: inline;">Login</p>
   </a>
 </ng-template>
