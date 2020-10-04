@@ -84,7 +84,7 @@
     border-radius: 10px 0 0 10px;
     padding: 5px 0;
     background-color:#6a6a94;
-    width: 30%;
+    width: 25%;
     display: flex;
     flex-direction: column-reverse;
     bottom: 0;
@@ -95,6 +95,8 @@
     padding: 0.5em;
     margin: 5px;
     border: 0;
+    width:95%;
+   
   }
   form.charsheet header section.charname label {
     padding-left: 1em;
@@ -122,6 +124,7 @@
   form.charsheet header section.misc ul li input {
     border: 0;
     border-bottom: 1px solid #6a6a94;
+    width: 150px;
   }
   form.charsheet main {
     display: flex;
@@ -174,7 +177,7 @@
     height: 100%;
   }
   form.charsheet main > section section.attributes div.scores ul li {
-    height: 80px;
+    height: 71px;
     width: 70px;
     background-color: #6a6a94;
     border: 1px solid black;
@@ -188,11 +191,10 @@
     padding: 0;
     border: 0;
   }
-  form.charsheet main > section section.attributes div.scores ul li div.score input {
+  form.charsheet main > section section.attributes div.scores ul li nb-card.score input {
     text-align: center;
     font-size: 40px;
     padding: 2px 0px 0px 0px;
-    background: white;
   }
   form.charsheet main > section section.attributes div.scores ul li div.modifier {
     margin-top: 3px;
@@ -216,6 +218,7 @@
     border: 1px solid black;
     padding: 15px;
     border-radius: 10px;
+
   }
   form.charsheet main > section section.attributes div.attr-applications div.proficiencybonus {
     display: flex;
@@ -290,7 +293,7 @@
     border-radius: 10px;
   }
   form.charsheet main > section div.otherprofs textarea {
-    height: 26em;
+    height: 22em;
   }
   form.charsheet main section.combat {
     background-color: #6a6a94;
@@ -398,7 +401,7 @@
     flex: 1 50%;
     height: 100px;
   }
-  form.charsheet main section.combat > div.hitdice > div, form.charsheet main section.combat > div.deathsaves > div {
+  form.charsheet main section.combat > div.hitdice > div, form.charsheet main section.combat > div.deathsaves > div{
     height: 80px;
   }
   form.charsheet main section.combat > div.hitdice > div {
@@ -494,30 +497,31 @@
     border-radius: 10px;
     margin-top: 10px;
   }
-  form.charsheet main section.attacksandspellcasting > div {
+  form.charsheet main section.attacksandspellcasting > nb-card {
     margin: 10px;
     display: flex;
     flex-direction: column;
+   
   }
-  form.charsheet main section.attacksandspellcasting > div > label {
+  form.charsheet main section.attacksandspellcasting > nb-card > label {
     order: 3;
     text-align: center;
   }
-  form.charsheet main section.attacksandspellcasting > div > table {
+  form.charsheet main section.attacksandspellcasting > nb-card > table {
     width: 100%;
   }
-  form.charsheet main section.attacksandspellcasting > div > table th {
+  form.charsheet main section.attacksandspellcasting > nb-card > table th {
     font-size: 10px;
     color: #ddd;
   }
-  form.charsheet main section.attacksandspellcasting > div > table input {
+  form.charsheet main section.attacksandspellcasting > nb-card > table input {
     width: calc(100% - 4px);
     border: 0;
-    background-color: #eee;
+    
     font-size: 10px;
     padding: 3px;
   }
-  form.charsheet main section.attacksandspellcasting > div textarea {
+  form.charsheet main section.attacksandspellcasting > nb-card textarea {
     border: 0;
   }
   form.charsheet main section.equipment {
