@@ -11,13 +11,12 @@ import { HttpClientModule } from "@angular/common/http";
 
 
 //Nebular Imports
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule, NbMenuModule } from '@nebular/theme';
+import { NbCheckboxModule, NbButtonModule, NbIconModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbThemeModule, NbChatModule} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbUserModule } from '@nebular/theme';
 import { NbInputModule } from '@nebular/theme';
 import { NbCardModule } from '@nebular/theme';
 import { NbWindowModule } from '@nebular/theme';
-import { NbCheckboxModule } from '@nebular/theme';
 import { NbToastrModule } from '@nebular/theme';
 import { NbDialogModule } from '@nebular/theme';
 
@@ -69,7 +68,8 @@ import { SpellbookComponent } from './components/open5e/spells/spellbook/spellbo
     NbMenuModule.forRoot(),
     NbWindowModule.forRoot(),
     NbUserModule,
-    NbInputModule,
+    NbChatModule,
+    NbCheckboxModule,
     NbCardModule,
     NbWindowModule,
     NbCheckboxModule,
