@@ -14,6 +14,7 @@ export class Registration {
       public primaryPhone:string=null,
       public memberName:string=null,
       public dungeonMaster:boolean=false,
+      public isRegisteredMember: boolean = false,
       public uid:string= null,
       public email:string=null){
   

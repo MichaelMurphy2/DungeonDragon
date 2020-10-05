@@ -16,7 +16,7 @@ export class AppComponent {
 
   user: User;
 
-  userID: boolean;
+ public isDungeonMaster: boolean = true;
   
 constructor(private sidebarService: NbSidebarService, public auth: AuthService,private windowService: NbWindowService){
 }
@@ -26,7 +26,7 @@ constructor(private sidebarService: NbSidebarService, public auth: AuthService,p
   this.auth.user$.subscribe((user) => {
     this.user = user;
     /* user.uid => user id */
-    this.userID = this.user.isDungeonMaster;
+   // this.userID = this.user.isDungeonMaster;
   })
  }
 

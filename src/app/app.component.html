@@ -15,7 +15,7 @@
 
     
   </nb-layout-header>
-
+<!--end of top section-->
   <nb-sidebar tag="left">
    
       <nb-menu [items]="items" autoCollapse="true">
@@ -29,7 +29,7 @@
     
 
   </nb-sidebar>
-
+<!--End of left Menu-->
   <nb-sidebar right tag="right" class="chatpanel">
     
     <div *ngIf="auth.user$ | async as user;">
@@ -42,12 +42,13 @@
     </ng-template>
 
   </nb-sidebar>
+<!--End or right Menu-->
 
   <nb-layout-column class="colored-column-warning">
 
 
-    <div *ngIf="userID" style="color:green"><h1>Hey I'm true.....The dungeon master has arrived!</h1><div style="width:100%;height:0;padding-bottom:55%;position:relative;"><iframe src="https://giphy.com/embed/5IMcyqKbkg0O4" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/party-cheers-jay-gatsby-5IMcyqKbkg0O4">via GIPHY</a></p></div>
-    <div *ngIf="!userID" style="color:red"><h1>The dungeon master is nowhere to be found!</h1></div>
+    <div *ngIf="isDungeonMaster" style="color:green"><h1>The dungeon master hath arrived!</h1><div style="width:100%;height:0;padding-bottom:55%;position:relative;"><iframe src="https://giphy.com/embed/5IMcyqKbkg0O4" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/party-cheers-jay-gatsby-5IMcyqKbkg0O4">via GIPHY</a></p></div>
+    <div *ngIf="!isDungeonMaster" style="color:red"><h1>The dungeon master is nowhere to be found!</h1></div>
 
 <router-outlet></router-outlet>
 
@@ -61,14 +62,12 @@
 
   </nb-layout-column>
 
+  
+<!--End main Body Section-->
   <nb-layout-footer fixed>
-
-   
-
-
     <p>Copyright:<i class="fas fa-copyright"></i>Just some educational learning</p>
   </nb-layout-footer>
-
+<!--End Layout Container-->
 </nb-layout>
 
 

@@ -20,8 +20,10 @@ export class AuthService {
 
   user$: Observable<User>;
 
+  register$: Observable<Registration>;
 
-dungeonMaster: object;
+  isDungeonMaster = true;
+  isRegistered = false;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -38,8 +40,14 @@ dungeonMaster: object;
       }
     }));
 
-   
-
+  this.register$ = this.afAuth.authState.pipe(
+      switchMap(user => {
+      if (user) {
+        return this.afs.doc<User>(`registration/${user.uid}`).valueChanges();
+      }else {
+        return of(null);
+      }
+    }));
   }
 
   
@@ -54,15 +62,14 @@ dungeonMaster: object;
    await this.afAuth.signOut();
    return this.router.navigate(['/']);
  }
- private updateUserData({uid, email, displayName, isDungeonMaster, isRegistered}: User ) {
+ private updateUserData({uid, email, displayName}: User ) {
    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${uid}`);
 
    const data = {
      uid,
      email,
      displayName,
-     isDungeonMaster,
-     isRegistered,
+   
    };
    return userRef.set(data, { merge: true});
  }

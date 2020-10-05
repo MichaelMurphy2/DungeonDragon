@@ -3,8 +3,6 @@ export class User{
     email: string;
     photoURL?: string;
     displayName?: string;
-    isDungeonMaster?: boolean;
-    isRegistered?: boolean;
    
     
     constructor(userObj){
@@ -12,7 +10,5 @@ export class User{
         this.email = userObj.email;
         this.photoURL = userObj.photoURL;
         this.displayName = userObj.displayName;
-        this.isDungeonMaster = userObj.isDungeonMaster;
-        this.isRegistered = userObj.isRegistered;
     }
 }

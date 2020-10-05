@@ -43,6 +43,10 @@ checked3 = false;
       this.user = user;
       this.userID = user.uid;
     })
+    this.auth.user$.subscribe((user) => {
+      this.user = user;
+      this.userID = user.uid;
+    })
   }
 
  private updateUserData() {
@@ -62,7 +66,7 @@ checked3 = false;
     }else{
     regform.timestamp = `${new Date()}`;
     const res = this.afs.collection('registration').doc(this.userID).set(regform);
-    this.updateUserData();
+   // this.updateUserData();
     this.router.navigate(['home']);
     }
   }

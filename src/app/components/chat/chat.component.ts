@@ -22,6 +22,9 @@ export class ChatComponent {
   author = "your name here";
   user: User;
   
+ userID:boolean;
+
+isDungeonMaster: boolean = true;
 
 
 
@@ -41,9 +44,10 @@ export class ChatComponent {
   }
 
   ngOnInit() {
-    this.posts = this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(3)).valueChanges();
+    this.posts = this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(5)).valueChanges();
     this.auth.user$.subscribe((user) => {
       this.user = user;
+     // this.userID = this.user.isDungeonMaster;
       this.title = user.displayName;
     })
   }

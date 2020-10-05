@@ -10,7 +10,7 @@
     filter: drop-shadow(10px 5px 2px black);
     
   }
-
+ 
   .login {
     top: 20px; /* your required value */
     right: 0;
@@ -53,6 +53,8 @@
 button{
   filter: drop-shadow(5px 5px 2px black);
 }
+
+
 @media (max-width: 1700px) {
   img.dragon {
    display:none;

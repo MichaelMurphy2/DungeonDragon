@@ -1,8 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Piazzolla:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bentham&family=Cinzel+Decorative&display=swap');
+
 card-title {
     font-size: 1.5rem;
     text-shadow: 2px 2px 4px black(255, 0, 0);
     
+}
+.charimg{
+    height:250px;
+    width:150px;
+    filter: drop-shadow( 5px 5px 8px black);
+}
+.iam{
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 10px;
+  
+    filter: drop-shadow( 5px 5px 8px black);
+}
+
+.iamName {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 15px;
+    font-weight:700;
+    filter: drop-shadow( 5px 5px 8px black);
 }
 
 li {
@@ -39,3 +59,4 @@ p {
     font-size: 1.2em;
     filter: drop-shadow( 5px 5px 8px black);
 }
+
