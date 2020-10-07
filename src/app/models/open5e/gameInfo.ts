@@ -21,7 +21,7 @@ export class gameInfo {
         this.spells = userObj.spells;
         this.monsters = userObj.email;
         this.documents = userObj.photoURL;
-        this.backgrounds = userObj.displayName;
+        this.backgrounds = userObj.backgrounds;
     }
 
 

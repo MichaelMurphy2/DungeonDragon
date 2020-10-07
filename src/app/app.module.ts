@@ -38,6 +38,8 @@ import { GamepanelComponent } from './components/gamepanel/gamepanel.component';
 import { CharsheetComponent } from './components/charsheet/charsheet.component';
 import { DiceRollerComponent } from './components/dice-roller/dice-roller.component';
 import { SpellbookComponent } from './components/open5e/spells/spellbook/spellbook.component';
+import { MonstersComponent } from './components/open5e/monsters/monsters.component';
+import { BackgroundsComponent } from './components/open5e/backgrounds/backgrounds.component';
 
 
 
@@ -52,7 +54,9 @@ import { SpellbookComponent } from './components/open5e/spells/spellbook/spellbo
     GamepanelComponent,
     DiceRollerComponent,
     CharsheetComponent,
-    SpellbookComponent
+    SpellbookComponent,
+    MonstersComponent,
+    BackgroundsComponent
   ],
   imports: [
     BrowserModule,

@@ -98,6 +98,11 @@ items: NbMenuItem[] = [
           title:'spells',
           icon: 'book-open-outline',
           link: 'spellbook',
+          },
+          {
+            title: 'backgrounds',
+            icon: 'book-open-outline',
+            link: 'backgrounds',
           }
         ]
       },
