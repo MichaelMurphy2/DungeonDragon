@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { Spell } from "../../../models/open5e/spell";
 import { Background } from "../../../models/open5e/background";
+import { Conditions } from "../../../models/open5e/conditions";
+import { Feats } from "../../../models/open5e/feats";
+import { Sections } from "../../../models/open5e/sections";
 import { DungeonRest } from "../../../models/open5e/dungeonRest";
 import { map } from "rxjs/operators/";
 
@@ -43,7 +46,42 @@ export class DataService {
       })
     );
   }
+
+  getConditions(): Observable<Conditions[]> {
+    return this.getDataFromAPI("https://api.open5e.com/conditions/?limit=1000").pipe(
+      map(res => {
+        return res.results.map(item => {
+          return new Conditions(
+            item
+          )
+        });
+      })
+    );
+  }
   
+  getFeats(): Observable<Feats[]> {
+    return this.getDataFromAPI("https://api.open5e.com/feats/?limit=1000").pipe(
+      map(res => {
+        return res.results.map(item => {
+          return new Feats(
+            item
+          )
+        });
+      })
+    );
+  }
+
+  getSections(): Observable<Sections[]> {
+    return this.getDataFromAPI("https://api.open5e.com/sections/?limit=1000").pipe(
+      map(res => {
+        return res.results.map(item => {
+          return new Sections(
+            item
+          )
+        });
+      })
+    );
+  }
   
  
 

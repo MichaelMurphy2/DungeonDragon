@@ -103,6 +103,21 @@ items: NbMenuItem[] = [
             title: 'backgrounds',
             icon: 'book-open-outline',
             link: 'backgrounds',
+          },
+          {
+            title: 'sections',
+            icon: 'book-open-outline',
+            link: 'sections'
+          },
+          {
+            title: 'feats',
+            icon: 'book-open-outline',
+            link: 'feats'
+          },
+          {
+            title: 'conditions',
+            icon: 'book-open-outline',
+            link: 'conditions'
           }
         ]
       },

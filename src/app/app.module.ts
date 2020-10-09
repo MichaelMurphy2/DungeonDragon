@@ -40,6 +40,9 @@ import { DiceRollerComponent } from './components/dice-roller/dice-roller.compon
 import { SpellbookComponent } from './components/open5e/spells/spellbook/spellbook.component';
 import { MonstersComponent } from './components/open5e/monsters/monsters.component';
 import { BackgroundsComponent } from './components/open5e/backgrounds/backgrounds.component';
+import { SectionsComponent } from './components/open5e/sections/sections.component';
+import { FeatsComponent } from './components/open5e/feats/feats.component';
+import { ConditionsComponent } from './components/open5e/conditions/conditions.component';
 
 
 
@@ -56,7 +59,10 @@ import { BackgroundsComponent } from './components/open5e/backgrounds/background
     CharsheetComponent,
     SpellbookComponent,
     MonstersComponent,
-    BackgroundsComponent
+    BackgroundsComponent,
+    SectionsComponent,
+    FeatsComponent,
+    ConditionsComponent
   ],
   imports: [
     BrowserModule,
