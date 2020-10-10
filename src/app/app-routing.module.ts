@@ -9,6 +9,7 @@ import { SectionsComponent } from './components/open5e/sections/sections.compone
 import { FeatsComponent } from './components/open5e/feats/feats.component';
 import { ConditionsComponent } from './components/open5e/conditions/conditions.component';
 import { WeaponsComponent } from './components/open5e/weapons/weapons.component';
+import { MagicitemsComponent } from './components/open5e/magicitems/magicitems.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'sections', component:SectionsComponent},
   {path: 'feats', component:FeatsComponent},
   {path: 'weapons', component: WeaponsComponent},
+  {path: 'magicitems', component: MagicitemsComponent},
   {path: 'conditions', component:ConditionsComponent},
 
   {path: '**', redirectTo: 'home'}

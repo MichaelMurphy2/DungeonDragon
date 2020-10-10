@@ -123,6 +123,11 @@ items: NbMenuItem[] = [
             title: 'weapons',
             icon: 'book-open-outline',
             link: 'weapons'
+          },
+          {
+            title: 'magic items',
+            icon: 'book-open-outline',
+            link: 'magicitems'
           }
         ]
       },

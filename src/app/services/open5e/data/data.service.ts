@@ -7,6 +7,7 @@ import { Conditions } from "../../../models/open5e/conditions";
 import { Feats } from "../../../models/open5e/feats";
 import { Weapons } from "../../../models/open5e/weapons";
 import { Sections } from "../../../models/open5e/sections";
+import { Magicitems } from "../../../models/open5e/magicitems";
 import { DungeonRest } from "../../../models/open5e/dungeonRest";
 import { map } from "rxjs/operators/";
 
@@ -89,6 +90,18 @@ export class DataService {
       map(res => {
         return res.results.map(item => {
           return new Weapons(
+            item
+          )
+        });
+      })
+    );
+  }
+
+  getMagicItems(): Observable<Magicitems[]> {
+    return this.getDataFromAPI("https://api.open5e.com/magicitems/?limit=1000").pipe(
+      map(res => {
+        return res.results.map(item => {
+          return new Magicitems(
             item
           )
         });
