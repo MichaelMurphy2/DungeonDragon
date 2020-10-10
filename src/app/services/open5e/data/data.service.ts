@@ -5,6 +5,7 @@ import { Spell } from "../../../models/open5e/spell";
 import { Background } from "../../../models/open5e/background";
 import { Conditions } from "../../../models/open5e/conditions";
 import { Feats } from "../../../models/open5e/feats";
+import { Weapons } from "../../../models/open5e/weapons";
 import { Sections } from "../../../models/open5e/sections";
 import { DungeonRest } from "../../../models/open5e/dungeonRest";
 import { map } from "rxjs/operators/";
@@ -76,6 +77,18 @@ export class DataService {
       map(res => {
         return res.results.map(item => {
           return new Sections(
+            item
+          )
+        });
+      })
+    );
+  }
+
+  getWeapons(): Observable<Weapons[]> {
+    return this.getDataFromAPI("https://api.open5e.com/weapons/?limit=1000").pipe(
+      map(res => {
+        return res.results.map(item => {
+          return new Weapons(
             item
           )
         });

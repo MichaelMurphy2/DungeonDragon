@@ -43,6 +43,7 @@ import { BackgroundsComponent } from './components/open5e/backgrounds/background
 import { SectionsComponent } from './components/open5e/sections/sections.component';
 import { FeatsComponent } from './components/open5e/feats/feats.component';
 import { ConditionsComponent } from './components/open5e/conditions/conditions.component';
+import { WeaponsComponent } from './components/open5e/weapons/weapons.component';
 
 
 
@@ -62,7 +63,8 @@ import { ConditionsComponent } from './components/open5e/conditions/conditions.c
     BackgroundsComponent,
     SectionsComponent,
     FeatsComponent,
-    ConditionsComponent
+    ConditionsComponent,
+    WeaponsComponent
   ],
   imports: [
     BrowserModule,

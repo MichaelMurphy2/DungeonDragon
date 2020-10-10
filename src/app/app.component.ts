@@ -118,6 +118,11 @@ items: NbMenuItem[] = [
             title: 'conditions',
             icon: 'book-open-outline',
             link: 'conditions'
+          },
+          {
+            title: 'weapons',
+            icon: 'book-open-outline',
+            link: 'weapons'
           }
         ]
       },

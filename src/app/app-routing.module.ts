@@ -8,6 +8,8 @@ import { BackgroundsComponent } from './components/open5e/backgrounds/background
 import { SectionsComponent } from './components/open5e/sections/sections.component';
 import { FeatsComponent } from './components/open5e/feats/feats.component';
 import { ConditionsComponent } from './components/open5e/conditions/conditions.component';
+import { WeaponsComponent } from './components/open5e/weapons/weapons.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
@@ -18,6 +20,7 @@ const routes: Routes = [
   {path: 'backgrounds', component:BackgroundsComponent},
   {path: 'sections', component:SectionsComponent},
   {path: 'feats', component:FeatsComponent},
+  {path: 'weapons', component: WeaponsComponent},
   {path: 'conditions', component:ConditionsComponent},
 
   {path: '**', redirectTo: 'home'}
