@@ -128,6 +128,11 @@ items: NbMenuItem[] = [
             title: 'magic items',
             icon: 'book-open-outline',
             link: 'magicitems'
+          },
+          {
+            title: 'classes',
+            icon: 'book-open-outline',
+            link: 'classes'
           }
         ]
       },
