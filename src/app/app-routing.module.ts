@@ -11,6 +11,7 @@ import { ConditionsComponent } from './components/open5e/conditions/conditions.c
 import { WeaponsComponent } from './components/open5e/weapons/weapons.component';
 import { MagicitemsComponent } from './components/open5e/magicitems/magicitems.component';
 import { ClassesComponent} from './components/open5e/classes/classes.component';
+import { RacesComponent} from './components/open5e/races/races.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'magicitems', component: MagicitemsComponent},
   {path: 'conditions', component:ConditionsComponent},
   {path: 'classes', component:ClassesComponent},
+  {path: 'races', component: RacesComponent},
 
   {path: '**', redirectTo: 'home'}
  

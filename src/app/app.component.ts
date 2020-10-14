@@ -133,6 +133,11 @@ items: NbMenuItem[] = [
             title: 'classes',
             icon: 'book-open-outline',
             link: 'classes'
+          },
+          {
+            title: 'races',
+            icon: 'book-open-outline',
+            link: 'races'
           }
         ]
       },

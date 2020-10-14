@@ -46,6 +46,7 @@ import { ConditionsComponent } from './components/open5e/conditions/conditions.c
 import { WeaponsComponent } from './components/open5e/weapons/weapons.component';
 import { MagicitemsComponent } from './components/open5e/magicitems/magicitems.component';
 import { ClassesComponent } from './components/open5e/classes/classes.component';
+import { RacesComponent } from './components/open5e/races/races.component';
 
 
 
@@ -68,7 +69,8 @@ import { ClassesComponent } from './components/open5e/classes/classes.component'
     ConditionsComponent,
     WeaponsComponent,
     MagicitemsComponent,
-    ClassesComponent
+    ClassesComponent,
+    RacesComponent
   ],
   imports: [
     BrowserModule,
