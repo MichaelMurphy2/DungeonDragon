@@ -1,10 +1,14 @@
-
 <h1>Monsters</h1>
 
 
 
 <div class="mything">
 
-
+<ul *ngFor="let data of data">
+    <li>{{data.name}} </li>
+    <li>{{data.size}}</li>
+    <li>{{data.type}}</li>
+    <li>{{data.alignment}}</li>
+</ul>
 
 </div>

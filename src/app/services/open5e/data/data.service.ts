@@ -10,6 +10,8 @@ import { Sections } from "../../../models/open5e/sections";
 import { Magicitems } from "../../../models/open5e/magicitems";
 import { Classes } from "../../../models/open5e/classes";
 import { Races } from "../../../models/open5e/races";
+import { Planes } from "../../../models/open5e/planes";
+import { Monsters } from "../../../models/open5e/monsters";
 import { DungeonRest } from "../../../models/open5e/dungeonRest";
 import { map } from "rxjs/operators/";
 
@@ -128,6 +130,30 @@ export class DataService {
       map(res => {
         return res.results.map(item => {
           return new Races(
+            item
+          )
+        });
+      })
+    );
+  }
+
+  getPlanes(): Observable<Planes[]> {
+    return this.getDataFromAPI("https://api.open5e.com/planes/?limit=1000").pipe(
+      map(res => {
+        return res.results.map(item => {
+          return new Planes(
+            item
+          )
+        });
+      })
+    );
+  }
+
+  getMonsters(): Observable<Monsters[]> {
+    return this.getDataFromAPI("https://api.open5e.com/monsters/?limit=1000").pipe(
+      map(res => {
+        return res.results.map(item => {
+          return new Monsters(
             item
           )
         });

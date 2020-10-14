@@ -95,39 +95,9 @@ items: NbMenuItem[] = [
         expanded: true,
         children:[
           {
-          title:'spells',
-          icon: 'book-open-outline',
-          link: 'spellbook',
-          },
-          {
             title: 'backgrounds',
             icon: 'book-open-outline',
             link: 'backgrounds',
-          },
-          {
-            title: 'sections',
-            icon: 'book-open-outline',
-            link: 'sections'
-          },
-          {
-            title: 'feats',
-            icon: 'book-open-outline',
-            link: 'feats'
-          },
-          {
-            title: 'conditions',
-            icon: 'book-open-outline',
-            link: 'conditions'
-          },
-          {
-            title: 'weapons',
-            icon: 'book-open-outline',
-            link: 'weapons'
-          },
-          {
-            title: 'magic items',
-            icon: 'book-open-outline',
-            link: 'magicitems'
           },
           {
             title: 'classes',
@@ -135,9 +105,49 @@ items: NbMenuItem[] = [
             link: 'classes'
           },
           {
+            title: 'conditions',
+            icon: 'book-open-outline',
+            link: 'conditions'
+          },
+          {
+            title: 'feats',
+            icon: 'book-open-outline',
+            link: 'feats'
+          },
+          {
+            title: 'magic items',
+            icon: 'book-open-outline',
+            link: 'magicitems'
+          },
+          {
+            title: 'monsters',
+            icon: 'book-open-outline',
+            link: 'monsters'
+          },
+          {
+            title: 'planes',
+            icon: 'book-open-outline',
+            link: 'planes'
+          },
+          {
             title: 'races',
             icon: 'book-open-outline',
             link: 'races'
+          },
+          {
+            title: 'sections',
+            icon: 'book-open-outline',
+            link: 'sections'
+          },
+          {
+          title:'spells',
+          icon: 'book-open-outline',
+          link: 'spellbook',
+          },
+          {
+            title: 'weapons',
+            icon: 'book-open-outline',
+            link: 'weapons'
           }
         ]
       },
