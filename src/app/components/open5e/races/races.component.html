@@ -6,7 +6,8 @@
 
 <ul *ngFor="let data of data">
     <li>{{data.name}} </li>
-    <li>{{data.asi}}</li>
+    <li>{{data.asi | json}}</li>
+    <li>{{data.subraces | json}}</li>
 </ul>
 
 </div>
