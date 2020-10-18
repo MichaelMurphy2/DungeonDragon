@@ -18,7 +18,10 @@ export class AppComponent {
 
  public isDungeonMaster: boolean = true;
   
-constructor(private sidebarService: NbSidebarService, public auth: AuthService,private windowService: NbWindowService){
+constructor(
+  private sidebarService: NbSidebarService, 
+  public auth: AuthService,
+  private windowService: NbWindowService){
 }
 
 
@@ -67,15 +70,17 @@ items: NbMenuItem[] = [
       {
         title: 'My Profile',
         icon: 'person-outline',
-        link:'home',
+        link:'profile',
       },
       {
         title: 'Files',
         icon: 'folder-outline',
+        link: 'viewuploads'
       },
       {
-        title: 'Created Characters',
+        title: 'File Uploads',
         icon: 'folder-outline',
+        link: 'uploader'
       },
     ],
   },
@@ -88,6 +93,7 @@ items: NbMenuItem[] = [
       {
         title: 'Game Rooms',
         icon: 'person-outline',
+        link: 'game-main'
       },
       {
         title: 'Rule Book',

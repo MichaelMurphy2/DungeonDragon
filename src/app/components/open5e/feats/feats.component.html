@@ -1,13 +1,15 @@
 
-<h1>Feats</h1>
-
-
-
 <div class="mything">
 
-<ul *ngFor="let data of data">
-    <li>{{data.name}} </li>
-    <li>{{data.desc}}</li>
-</ul>
-
-</div>
+    <div *ngFor="let data of data">
+        <nb-card accent="info">
+           
+    <nb-card-header><h3>{{data.name}}</h3></nb-card-header>
+            <nb-card-body>
+              <p> {{data.desc}}</p> 
+            </nb-card-body>
+    
+            <nb-card-footer><a href="https://open5e.com/"><p>api data provided by open5e</p></a></nb-card-footer>
+        </nb-card>
+    </div>
+    </div>

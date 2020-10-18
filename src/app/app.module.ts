@@ -8,25 +8,25 @@ import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 
 
-
-
 //Nebular Imports
-import { NbCheckboxModule, NbButtonModule, NbIconModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbThemeModule, NbChatModule} from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule, NbMenuModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbUserModule } from '@nebular/theme';
 import { NbInputModule } from '@nebular/theme';
 import { NbCardModule } from '@nebular/theme';
 import { NbWindowModule } from '@nebular/theme';
+import { NbCheckboxModule } from '@nebular/theme';
 import { NbToastrModule } from '@nebular/theme';
 import { NbDialogModule } from '@nebular/theme';
-
+import { NbAlertModule} from '@nebular/theme';
+import { NbProgressBarModule } from '@nebular/theme';
 //Firebase
 import { environment } from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 //components
 import { RegisterComponent } from './components/register/register.component';
@@ -39,15 +39,12 @@ import { CharsheetComponent } from './components/charsheet/charsheet.component';
 import { DiceRollerComponent } from './components/dice-roller/dice-roller.component';
 import { SpellbookComponent } from './components/open5e/spells/spellbook/spellbook.component';
 import { MonstersComponent } from './components/open5e/monsters/monsters.component';
-import { BackgroundsComponent } from './components/open5e/backgrounds/backgrounds.component';
-import { SectionsComponent } from './components/open5e/sections/sections.component';
-import { FeatsComponent } from './components/open5e/feats/feats.component';
-import { ConditionsComponent } from './components/open5e/conditions/conditions.component';
-import { WeaponsComponent } from './components/open5e/weapons/weapons.component';
-import { MagicitemsComponent } from './components/open5e/magicitems/magicitems.component';
-import { ClassesComponent } from './components/open5e/classes/classes.component';
-import { RacesComponent } from './components/open5e/races/races.component';
-import { PlanesComponent } from './components/open5e/planes/planes.component';
+import { GameMainComponent } from './components/game-main/game-main.component';
+import { DropzoneDirective } from './components/directives/dropzone.directive';
+import { UploaderComponent } from './components/uploader/uploader.component';
+import { UploadTaskComponent } from './components/upload-task/upload-task.component';
+import { ViewUploadsComponent } from './components/view-uploads/view-uploads.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -64,18 +61,17 @@ import { PlanesComponent } from './components/open5e/planes/planes.component';
     CharsheetComponent,
     SpellbookComponent,
     MonstersComponent,
-    BackgroundsComponent,
-    SectionsComponent,
-    FeatsComponent,
-    ConditionsComponent,
-    WeaponsComponent,
-    MagicitemsComponent,
-    ClassesComponent,
-    RacesComponent,
-    PlanesComponent
+    GameMainComponent,
+    DropzoneDirective,
+    UploaderComponent,
+    UploadTaskComponent,
+    ViewUploadsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
+    NbProgressBarModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -87,9 +83,9 @@ import { PlanesComponent } from './components/open5e/planes/planes.component';
     NbThemeModule.forRoot({ name: 'cosmic' }),
     NbMenuModule.forRoot(),
     NbWindowModule.forRoot(),
+    NbAlertModule,
     NbUserModule,
-    NbChatModule,
-    NbCheckboxModule,
+    NbInputModule,
     NbCardModule,
     NbWindowModule,
     NbCheckboxModule,

@@ -1,29 +1,30 @@
 .carousel-container{
     position: relative;
-    max-height: 605px;
+   
     filter: drop-shadow(10px 10px 12px black);
-    border: solid 5px silver;
+   
 }
 
 
 .carousel-item  img {
-    
-    max-height: 700px;
+    max-width: auto;
+    max-height: auto;
     position: relative;
-    background:cover;
+    background: cover;
     top: 0;
-    transform: translateY(-15%);
     width: 100%;
 }
 
-
-
+.carousel-inner > .carousel-item {
+    height:70vh;
+   
+}
 @media (max-width: 768px) {
     .carousel-container{
         border:none;
     }
     .carousel-inner > .carousel-item {
-        height:20vh;
+        height:70vh;
     }
     
     .carousel-item  img {

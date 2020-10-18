@@ -1,403 +1,398 @@
 
 <div class="format"><!--Changed to angular from original, when You click the submit button it works-->
-    <form #form="ngForm" (ngSubmit)="onSubmit(form.value); form.reset();" class="charsheet">
-        <header>
-          <section class="charname">
-          
-          
-          
-             <!--Original HTML-->
-            <!--label for="charname">Character Name</label><input name="charname" placeholder="Thoradin Fireforge" / -->
-            <!-- Angular Form Version-->
-            <label for="charname">Character Name
-              <input required placeholder="IronGut the bloated" minlength='3' maxlength="30" 
-                ngModel 
-                #firstName="ngModel"
-                name="charname"  
-                id=charname 
-                type="text" 
-                class="form-control">
-              </label>
-    
-          </section>
-          <section class="misc">
-            <ul>
-              <li>
-                <label for="classlevel">Class & Level<input 
-                required
-                minlength='3'  
-                maxlength="30" 
-                name="classlevel" 
-                placeholder="Paladin 2"
-                ngModel 
-                #firstName="ngModel"
-                name="classlevel"  
-                id= classlevel 
-                type="text" 
-                class="form-control">
-              </label>
-              
-              
-              
-              
-              
-              </li>
-              <li>
-                <label for="background">Background</label><input name="background" placeholder="Acolyte" />
-              </li>
-              <li>
-                <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface">
-              </li>
-              <li>
-                <label for="race">Race</label><input name="race" placeholder="Half-elf" />
-              </li>
-              <li>
-                <label for="alignment">Alignment</label><input name="alignment" placeholder="Lawful Good" />
-              </li>
-              <li>
-                <label for="experiencepoints">Experience Points</label><input name="experiencepoints" placeholder="3240" />
-              </li>
-            </ul>
-          </section>
-        </header>
-        <main>
-          <section>
-            <section class="attributes">
-              <div class="scores">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form.value); form.reset();" class="charsheet">
+      <header>
+        <section class="charname">
+        
+        
+        
+           <!--Original HTML-->
+          <!--label for="charname">Character Name</label><input name="charname" placeholder="Thoradin Fireforge" / -->
+          <!-- Angular Form Version-->
+          <label for="charname">Character Name
+            <input nbInput required placeholder="IronGut the bloated" minlength='3' maxlength="30" 
+              ngModel 
+              [(ngModel)]="model.charname"
+              name="charname"  
+              id=charname 
+              type="text" 
+              class="form-control">
+            </label>
+  
+        </section>
+        <section class="misc">
+          <ul>
+            <li>
+              <label for="classlevel">Class & Level</label><input 
+              nbInput
+              required
+              minlength='3'  
+              maxlength="30" 
+              name="classlevel" 
+              placeholder="Paladin 2"
+              ngModel 
+              [(ngModel)]="model.classlevel"
+              name="classlevel"  
+              id= classlevel 
+              type="text" 
+              >
+            </li>
+            <li>  
+              <label for="background">Background</label><input nbInput placeholder="Acolyte" ngModel [(ngModel)]="model.background" name="background"/>
+            </li>
+            <li>
+              <label for="playername">Player Name</label><input nbInput placeholder="Player McPlayerface" ngModel [(ngModel)]="model.playername" name="playername">
+            </li>
+            <li>
+              <label for="race">Race</label><input nbInput placeholder="Half-elf" ngModel [(ngModel)]="model.race" name="race"/>
+            </li>
+            <li>
+              <label for="alignment">Alignment</label><input nbInput placeholder="Lawful Good" ngModel [(ngModel)]="model.alignment" name="alignment" />
+            </li>
+            <li>
+              <label for="experiencepoints">Experience Points</label><input nbInput placeholder="3240" ngModel [(ngModel)]="model.experiencepoints" name="experiencepoints"/>
+            </li>
+          </ul>
+        </section>
+      </header>
+      <main>
+        <section>
+          <section class="attributes">
+            <div class="scores">
+              <ul>
+                <li>
+                  <nb-card class="score">
+                    <label for="Strengthscore">Strength</label><input nbInput placeholder="10" class="stat" ngModel [(ngModel)]="model.Strengthscore" name="Strengthscore"/>
+                  </nb-card>
+                  <div class="modifier">
+                    <input nbInput placeholder="+0" class="statmod" ngModel [(ngModel)]="model.Strengthmod" name="Strengthmod"/>
+                  </div>
+                </li>
+                <li>
+                  <nb-card class="score">
+                    <label for="Dexterityscore">Dexterity</label><input nbInput placeholder="10" class="stat" ngModel [(ngModel)]="model.DexterityScore" name="Dexterityscore"/>
+                  </nb-card>
+                  <div class="modifier">
+                    <input nbInput placeholder="+0" class=statmod [(ngModel)]="model.Dexteritymod" name="Dexteritymod"/> 
+                  </div>
+                </li>
+                <li>
+                  <nb-card class="score">
+                    <label for="Constitutionscore">Constitution</label><input nbInput placeholder="10" class="stat" ngModel [(ngModel)]="model.Constitutionscore" name="Constitutionscore"/>
+                  </nb-card>
+                  <div class="modifier">
+                    <input nbInput placeholder="+0" class="statmod" ngModel [(ngModel)]="model.Constitutionmod" name="Constitutionmod"/>
+                  </div>
+                </li>
+                <li>
+                  <nb-card class="score">
+                    <label for="Wisdomscore">Wisdom</label><input nbInput  placeholder="10" class="stat" ngModel [(ngModel)]="model.Wisdomscore" name="Wisdomscore"/>
+                  </nb-card>
+                  <div class="modifier">
+                    <input nbInput placeholder="+0" ngModel [(ngModel)]="model.Wisdommod" name="Wisdommod" />
+                  </div>
+                </li>
+                <li>
+                  <nb-card class="score">
+                    <label for="Intelligencescore">Intelligence</label><input nbInput placeholder="10" class="stat"ngModel [(ngModel)]="model.Intelligencescore" name="Intelligencescore"/>
+                  </nb-card>
+                  <div class="modifier">
+                    <input nbInput placeholder="+0" class="statmod" ngModel [(ngModel)]="model.Intelligencemod" name="Intelligencemod"/>
+                  </div>
+                </li>
+                <li>
+                  <nb-card class="score">
+                    <label for="Charismascore">Charisma</label><input nbInput placeholder="10" class="stat" ngModel [(ngModel)]="model.Charismascore" name="Charismascore"/>
+                  </nb-card>
+                  <div class="modifier">
+                    <input nbInput placeholder="+0" class="statmod" ngModel [(ngModel)]="model.Charismamod" name="Charismamod"/>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="attr-applications">
+              <div class="inspiration box">
+                <div class="label-container">
+                  <label for="inspiration">Inspiration</label>
+                </div>
+                <nb-checkbox status="primary" name="inspiration" type="checkbox"></nb-checkbox>
+              </div>
+              <div class="proficiencybonus box">
+                <div class="label-container">
+                  <label for="proficiencybonus">Proficiency Bonus</label>
+                </div>
+                <input nbInput placeholder="+2" ngModel [(ngModel)]="model.proficiencybonus" name="proficiencybonus" />
+              </div>
+              <div class="saves list-section box">
                 <ul>
                   <li>
-                    <div class="score">
-                      <label for="Strengthscore">Strength</label><input name="Strengthscore" placeholder="10" class="stat"/>
-                    </div>
-                    <div class="modifier">
-                      <input name="Strengthmod" placeholder="+0" class="statmod"/>
-                    </div>
+                    <label for="Strength-save">Strength</label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Strengthsave" name="Strength-save" /><nb-checkbox name="Strength-save-prof" status="primary" type="checkbox" ></nb-checkbox>
                   </li>
                   <li>
-                    <div class="score">
-                      <label for="Dexterityscore">Dexterity</label><input name="Dexterityscore" placeholder="10" class="stat"/>
-                    </div>
-                    <div class="modifier">
-                      <input name="Dexteritymod" placeholder="+0" class=statmod/>
-                    </div>
+                    <label for="Dexterity-save">Dexterity</label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Dexteritysave" name="Dexterity-save" /><nb-checkbox name="Dexterity-save-prof" status="primary" type="checkbox" > </nb-checkbox>
                   </li>
                   <li>
-                    <div class="score">
-                      <label for="Constitutionscore">Constitution</label><input name="Constitutionscore" placeholder="10" class="stat"/>
-                    </div>
-                    <div class="modifier">
-                      <input name="Constitutionmod" placeholder="+0" class="statmod"/>
-                    </div>
+                    <label for="Constitution-save">Constitution</label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Constitutionsave" name="Constitution-save" /><nb-checkbox name="Constitution-save-prof" status="primary" type="checkbox" > </nb-checkbox>
                   </li>
                   <li>
-                    <div class="score">
-                      <label for="Wisdomscore">Wisdom</label><input name="Wisdomscore" placeholder="10" class="stat"/>
-                    </div>
-                    <div class="modifier">
-                      <input name="Wisdommod" placeholder="+0" />
-                    </div>
+                    <label for="Wisdom-save">Wisdom</label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Wisdomsave" name="Wisdom-save" /><nb-checkbox name="Wisdom-save-prof" status="primary" type="checkbox" > </nb-checkbox>
                   </li>
                   <li>
-                    <div class="score">
-                      <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore" placeholder="10" class="stat"/>
-                    </div>
-                    <div class="modifier">
-                      <input name="Intelligencemod" placeholder="+0" class="statmod"/>
-                    </div>
+                    <label for="Intelligence-save">Intelligence</label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Intelligencesave" name="Intelligence-save"/><nb-checkbox name="Intelligence-save-prof" status="primary" type="checkbox" ></nb-checkbox>
                   </li>
                   <li>
-                    <div class="score">
-                      <label for="Charismascore">Charisma</label><input name="Charismascore" placeholder="10" class="stat"/>
+                    <label for="Charisma-save">Charisma</label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Charismasave" name="Charisma-save"/><nb-checkbox name="Charisma-save-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                </ul>
+                <div class="label">
+                  Saving Throws
+                </div>
+              </div>
+              <div class="skills list-section box">
+                <ul>
+                  <li>
+                    <label for="Acrobatics">Acrobatics <span class="skill">(Dex)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Acrobatics" name="Acrobatics"/><nb-checkbox name="Acrobatics-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Animal Handling">Animal Handling <span class="skill">(Wis)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Animalhandling" name="Animal Handling" /><nb-checkbox name="Animal Handling-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Arcana">Arcana <span class="skill">(Int)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Arcana" name="Arcana" /><nb-checkbox name="Arcana-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Athletics">Athletics <span class="skill">(Str)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Athletics" name="Athletics" /><nb-checkbox name="Athletics-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Deception">Deception <span class="skill">(Cha)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Deception" name="Deception" /><nb-checkbox name="Deception-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="History">History <span class="skill">(Int)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.History" name="History" /><nb-checkbox name="History-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Insight">Insight <span class="skill">(Wis)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Insight" name="Insight" /><nb-checkbox name="Insight-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Intimidation">Intimidation <span class="skill">(Cha)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Intimidation" name="Intimidation" /><nb-checkbox name="Intimidation-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Investigation">Investigation <span class="skill">(Int)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Investigation" name="Investigation" /><nb-checkbox name="Investigation-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Medicine">Medicine <span class="skill">(Wis)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Medicine" name="Medicine" /><nb-checkbox name="Medicine-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Nature">Nature <span class="skill">(Int)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Nature" name="Nature" /><nb-checkbox name="Nature-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Perception">Perception <span class="skill">(Wis)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Perception" name="Perception"/><nb-checkbox name="Perception-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Performance">Performance <span class="skill">(Cha)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Performance" name="Performance"/><nb-checkbox name="Performance-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Persuasion">Persuasion <span class="skill">(Cha)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Persuasion" name="Persuasion" /><nb-checkbox name="Persuasion-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Religion">Religion <span class="skill">(Int)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Religion" name="Religion" /><nb-checkbox name="Religion-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Sleight of Hand">Sleight of Hand <span class="skill">(Dex)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Sleightofhand" name="Sleight of Hand"/><nb-checkbox name="Sleight of Hand-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Stealth">Stealth <span class="skill">(Dex)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Stealth" name="Stealth" /><nb-checkbox name="Stealth-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                  <li>
+                    <label for="Survival">Survival <span class="skill">(Wis)</span></label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Survival" name="Survival" /><nb-checkbox name="Survival-prof" status="primary" type="checkbox" ></nb-checkbox>
+                  </li>
+                </ul>
+                <div class="label">
+                  Skills
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="passive-perception box">
+            <div class="label-container">
+              <label for="passiveperception">Passive Wisdom (Perception)</label>
+            </div>
+            <input nbInput placeholder="10" ngModel [(ngModel)]="model.PassivePerception" name="passiveperception" />
+          </div>
+          <div class="otherprofs box textblock">
+            <label for="otherprofs">Other Proficiencies and Languages</label><textarea nbInput ngModel [(ngModel)]="model.otherprofs" name="otherprofs"></textarea>
+          </div>
+        </section>
+        <section>
+          <section class="combat">
+            <div class="armorclass">
+              <div>
+                <label for="ac">Armor Class</label><input nbInput placeholder="10" type="text" ngModel [(ngModel)]="model.ac" name="ac" />
+              </div>
+            </div>
+            <div class="initiative">
+              <div>
+                <label for="initiative">Initiative</label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Initiative" name="initiative" />
+              </div>
+            </div>
+            <div class="speed">
+              <div>
+                <label for="speed">Speed</label><input nbInput placeholder="30" type="text" ngModel [(ngModel)]="model.speed" name="speed" />
+              </div>
+            </div>
+            <div class="hp">
+              <div class="regular">
+                <div class="max">
+                  <label for="maxhp">Hit Point Maximum</label><input nbInput placeholder="10" type="text" ngModel [(ngModel)]="model.maxHP" name="maxhp" />
+                </div>
+                <div class="current">
+                  <label for="currenthp">Current Hit Points</label><input nbInput type="text" ngModel [(ngModel)]="model.currentHP" name="currenthp" />
+                </div>
+              </div>
+              <div class="temporary">
+                <label for="temphp">Temporary Hit Points</label><input nbInput type="text" ngModel [(ngModel)]="model.tempHP" name="temphp" />
+              </div>
+            </div>
+            <div class="hitdice">
+              <div>
+                <div class="total">
+                  <label onclick="totalhd_clicked()" for="totalhd">Total</label><input nbInput placeholder="2d10" type="text" ngModel [(ngModel)]="model.totalHD" name="totalhd"/>
+                </div>
+                <div class="remaining">
+                  <label for="remaininghd">Hit Dice</label><input nbInput type="text" ngModel [(ngModel)]="model.remainingHD" name="remaininghd" />
+                </div>
+              </div>
+            </div>
+            <nb-card class="deathsaves">
+              <div>
+                <div class="label">
+                  <label>Death Saves</label>
+                </div>
+                <div class="marks">
+                  <div class="deathsuccesses">
+                    <label>Successes</label>
+                    <div class="bubbles">
+                      <nb-checkbox name="deathsuccess1" status="primary" type="checkbox" ></nb-checkbox>
+                      <nb-checkbox name="deathsuccess2" status="primary" type="checkbox" ></nb-checkbox>
+                      <nb-checkbox name="deathsuccess3" status="primary" type="checkbox" ></nb-checkbox>
                     </div>
-                    <div class="modifier">
-                      <input name="Charismamod" placeholder="+0" class="statmod"/>
+                  </div>
+                  <div class="deathfails">
+                    <label>Failures</label>
+                    <div class="bubbles">
+                      <nb-checkbox name="deathfail1" status="primary" type="checkbox" ></nb-checkbox>
+                      <nb-checkbox name="deathfail2" status="primary" type="checkbox" ></nb-checkbox>
+                      <nb-checkbox name="deathfail3" status="primary" type="checkbox" ></nb-checkbox>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </nb-card>
+          </section>
+          <section class="attacksandspellcasting">
+            <nb-card>
+              <label>Attacks & Spellcasting</label>
+              <table>
+                <thead>
+                  <tr>
+                    <th>
+                      Name
+                    </th>
+                    <th>
+                      Atk Bonus
+                    </th>
+                    <th>
+                      Damage/Type
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input nbInput type="text" ngModel [(ngModel)]="model.atkname1" name="atkname1" />
+                    </td>
+                    <td>
+                      <input nbInput type="text" ngModel [(ngModel)]="model.atkbonus1" name="atkbonus1" />
+                    </td>
+                    <td>
+                      <input nbInput type="text" ngModel [(ngModel)]="model.atkdamage1" name="atkdamage1" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input nbInput type="text" ngModel [(ngModel)]="model.atkname2" name="atkname2"/>
+                    </td>
+                    <td>
+                      <input nbInput type="text" ngModel [(ngModel)]="model.atkbonus2" name="atkbonus2" />
+                    </td>
+                    <td>
+                      <input nbInput type="text" ngModel [(ngModel)]="model.atkdamage2" name="atkdamage2" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input nbInput type="text" ngModel [(ngModel)]="model.atkname3" name="atkname3" />
+                    </td>
+                    <td>
+                      <input nbInput type="text" ngModel [(ngModel)]="model.atkbonus3" name="atkbonus3" />
+                    </td>
+                    <td>
+                      <input nbInput type="text" ngModel [(ngModel)]="model.atkdamage3" name="atkdamage3" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <textarea nbInput></textarea> 
+            </nb-card>
+          </section>
+          <section class="equipment">
+            <div>
+              <label>Equipment</label>
+              <div class="money">
+                <ul>
+                  <li>
+                    <label for="cp">cp</label><input nbInput ngModel [(ngModel)]="model.cp" name="cp" />
+                  </li>
+                  <li>
+                    <label for="sp">sp</label><input nbInput ngModel [(ngModel)]="model.sp" name="sp" />
+                  </li>
+                  <li>
+                    <label for="ep">ep</label><input nbInput ngModel [(ngModel)]="model.ep" name="ep" />
+                  </li>
+                  <li>
+                    <label for="gp">gp</label><input nbInput ngModel [(ngModel)]="model.gp" name="gp" />
+                  </li>
+                  <li>
+                    <label for="pp">pp</label><input nbInput ngModel [(ngModel)]="model.pp" name="pp" />
                   </li>
                 </ul>
               </div>
-              <div class="attr-applications">
-                <div class="inspiration box">
-                  <div class="label-container">
-                    <label for="inspiration">Inspiration</label>
-                  </div>
-                  <input name="inspiration" type="checkbox" />
-                </div>
-                <div class="proficiencybonus box">
-                  <div class="label-container">
-                    <label for="proficiencybonus">Proficiency Bonus</label>
-                  </div>
-                  <input name="proficiencybonus" placeholder="+2" />
-                </div>
-                <div class="saves list-section box">
-                  <ul>
-                    <li>
-                      <label for="Strength-save">Strength</label><input name="Strength-save" placeholder="+0" type="text" /><input name="Strength-save-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Dexterity-save">Dexterity</label><input name="Dexterity-save" placeholder="+0" type="text" /><input name="Dexterity-save-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Constitution-save">Constitution</label><input name="Constitution-save" placeholder="+0" type="text" /><input name="Constitution-save-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Wisdom-save">Wisdom</label><input name="Wisdom-save" placeholder="+0" type="text" /><input name="Wisdom-save-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Intelligence-save">Intelligence</label><input name="Intelligence-save" placeholder="+0" type="text" /><input name="Intelligence-save-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Charisma-save">Charisma</label><input name="Charisma-save" placeholder="+0" type="text" /><input name="Charisma-save-prof" type="checkbox" />
-                    </li>
-                  </ul>
-                  <div class="label">
-                    Saving Throws
-                  </div>
-                </div>
-                <div class="skills list-section box">
-                  <ul>
-                    <li>
-                      <label for="Acrobatics">Acrobatics <span class="skill">(Dex)</span></label><input name="Acrobatics" placeholder="+0" type="text" /><input name="Acrobatics-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Animal Handling">Animal Handling <span class="skill">(Wis)</span></label><input name="Animal Handling" placeholder="+0" type="text" /><input name="Animal Handling-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Arcana">Arcana <span class="skill">(Int)</span></label><input name="Arcana" placeholder="+0" type="text" /><input name="Arcana-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Athletics">Athletics <span class="skill">(Str)</span></label><input name="Athletics" placeholder="+0" type="text" /><input name="Athletics-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Deception">Deception <span class="skill">(Cha)</span></label><input name="Deception" placeholder="+0" type="text" /><input name="Deception-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="History">History <span class="skill">(Int)</span></label><input name="History" placeholder="+0" type="text" /><input name="History-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Insight">Insight <span class="skill">(Wis)</span></label><input name="Insight" placeholder="+0" type="text" /><input name="Insight-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Intimidation">Intimidation <span class="skill">(Cha)</span></label><input name="Intimidation" placeholder="+0" type="text" /><input name="Intimidation-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Investigation">Investigation <span class="skill">(Int)</span></label><input name="Investigation" placeholder="+0" type="text" /><input name="Investigation-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Medicine">Medicine <span class="skill">(Wis)</span></label><input name="Medicine" placeholder="+0" type="text" /><input name="Medicine-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Nature">Nature <span class="skill">(Int)</span></label><input name="Nature" placeholder="+0" type="text" /><input name="Nature-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Perception">Perception <span class="skill">(Wis)</span></label><input name="Perception" placeholder="+0" type="text" /><input name="Perception-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Performance">Performance <span class="skill">(Cha)</span></label><input name="Performance" placeholder="+0" type="text" /><input name="Performance-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Persuasion">Persuasion <span class="skill">(Cha)</span></label><input name="Persuasion" placeholder="+0" type="text" /><input name="Persuasion-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Religion">Religion <span class="skill">(Int)</span></label><input name="Religion" placeholder="+0" type="text" /><input name="Religion-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Sleight of Hand">Sleight of Hand <span class="skill">(Dex)</span></label><input name="Sleight of Hand" placeholder="+0" type="text" /><input name="Sleight of Hand-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Stealth">Stealth <span class="skill">(Dex)</span></label><input name="Stealth" placeholder="+0" type="text" /><input name="Stealth-prof" type="checkbox" />
-                    </li>
-                    <li>
-                      <label for="Survival">Survival <span class="skill">(Wis)</span></label><input name="Survival" placeholder="+0" type="text" /><input name="Survival-prof" type="checkbox" />
-                    </li>
-                  </ul>
-                  <div class="label">
-                    Skills
-                  </div>
-                </div>
-              </div>
-            </section>
-            <div class="passive-perception box">
-              <div class="label-container">
-                <label for="passiveperception">Passive Wisdom (Perception)</label>
-              </div>
-              <input name="passiveperception" placeholder="10" />
-            </div>
-            <div class="otherprofs box textblock">
-              <label for="otherprofs">Other Proficiencies and Languages</label><textarea name="otherprofs"></textarea>
+              <textarea nbInput ngModel [(ngModel)]="model.equipment" name="equipment" placeholder="Equipment list here"></textarea>
             </div>
           </section>
-          <section>
-            <section class="combat">
-              <div class="armorclass">
-                <div>
-                  <label for="ac">Armor Class</label><input name="ac" placeholder="10" type="text" />
-                </div>
-              </div>
-              <div class="initiative">
-                <div>
-                  <label for="initiative">Initiative</label><input name="initiative" placeholder="+0" type="text" />
-                </div>
-              </div>
-              <div class="speed">
-                <div>
-                  <label for="speed">Speed</label><input name="speed" placeholder="30" type="text" />
-                </div>
-              </div>
-              <div class="hp">
-                <div class="regular">
-                  <div class="max">
-                    <label for="maxhp">Hit Point Maximum</label><input name="maxhp" placeholder="10" type="text" />
-                  </div>
-                  <div class="current">
-                    <label for="currenthp">Current Hit Points</label><input name="currenthp" type="text" />
-                  </div>
-                </div>
-                <div class="temporary">
-                  <label for="temphp">Temporary Hit Points</label><input name="temphp" type="text" />
-                </div>
-              </div>
-              <div class="hitdice">
-                <div>
-                  <div class="total">
-                    <label onclick="totalhd_clicked()" for="totalhd">Total</label><input name="totalhd" placeholder="2d10" type="text" />
-                  </div>
-                  <div class="remaining">
-                    <label for="remaininghd">Hit Dice</label><input name="remaininghd" type="text" />
-                  </div>
-                </div>
-              </div>
-              <div class="deathsaves">
-                <div>
-                  <div class="label">
-                    <label>Death Saves</label>
-                  </div>
-                  <div class="marks">
-                    <div class="deathsuccesses">
-                      <label>Successes</label>
-                      <div class="bubbles">
-                        <input name="deathsuccess1" type="checkbox" />
-                        <input name="deathsuccess2" type="checkbox" />
-                        <input name="deathsuccess3" type="checkbox" />
-                      </div>
-                    </div>
-                    <div class="deathfails">
-                      <label>Failures</label>
-                      <div class="bubbles">
-                        <input name="deathfail1" type="checkbox" />
-                        <input name="deathfail2" type="checkbox" />
-                        <input name="deathfail3" type="checkbox" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="attacksandspellcasting">
-              <div>
-                <label>Attacks & Spellcasting</label>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                        Atk Bonus
-                      </th>
-                      <th>
-                        Damage/Type
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input name="atkname1" type="text" />
-                      </td>
-                      <td>
-                        <input name="atkbonus1" type="text" />
-                      </td>
-                      <td>
-                        <input name="atkdamage1" type="text" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input name="atkname2" type="text" />
-                      </td>
-                      <td>
-                        <input name="atkbonus2" type="text" />
-                      </td>
-                      <td>
-                        <input name="atkdamage2" type="text" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input name="atkname3" type="text" />
-                      </td>
-                      <td>
-                        <input name="atkbonus3" type="text" />
-                      </td>
-                      <td>
-                        <input name="atkdamage3" type="text" />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <textarea></textarea>
-              </div>
-            </section>
-            <section class="equipment">
-              <div>
-                <label>Equipment</label>
-                <div class="money">
-                  <ul>
-                    <li>
-                      <label for="cp">cp</label><input name="cp" />
-                    </li>
-                    <li>
-                      <label for="sp">sp</label><input name="sp" />
-                    </li>
-                    <li>
-                      <label for="ep">ep</label><input name="ep" />
-                    </li>
-                    <li>
-                      <label for="gp">gp</label><input name="gp" />
-                    </li>
-                    <li>
-                      <label for="pp">pp</label><input name="pp" />
-                    </li>
-                  </ul>
-                </div>
-                <textarea placeholder="Equipment list here"></textarea>
-              </div>
-            </section>
+        </section>
+        <section>
+          <section class="flavor">
+            <div class="personality">
+              <label for="personality">Personality</label><textarea nbInput ngModel [(ngModel)]="model.personality" name="personality"></textarea>
+            </div>
+            <div class="ideals">
+              <label for="ideals">Ideals</label><textarea nbInput ngModel [(ngModel)]="model.ideals" name="ideals"></textarea>
+            </div>
+            <div class="bonds">
+              <label for="bonds">Bonds</label><textarea nbInput ngModel [(ngModel)]="model.bonds" name="bonds"></textarea>
+            </div>
+            <div class="flaws">
+              <label for="flaws">Flaws</label><textarea nbInput ngModel [(ngModel)]="model.flaws"  name="flaws"></textarea>
+            </div>
           </section>
-          <section>
-            <section class="flavor">
-              <div class="personality">
-                <label for="personality">Personality</label><textarea name="personality"></textarea>
-              </div>
-              <div class="ideals">
-                <label for="ideals">Ideals</label><textarea name="ideals"></textarea>
-              </div>
-              <div class="bonds">
-                <label for="bonds">Bonds</label><textarea name="bonds"></textarea>
-              </div>
-              <div class="flaws">
-                <label for="flaws">Flaws</label><textarea name="flaws"></textarea>
-              </div>
-            </section>
-            <section class="features">
-              <div>
-                <label for="features">Features & Traits</label><textarea name="features"></textarea>
-              </div>
-            </section>
+          <section class="features">
+            <div>
+              <label for="features">Features & Traits</label><textarea nbInput ngModel [(ngModel)]="model.features" name="features"></textarea>
+            </div>
           </section>
-        </main>
-        <div class="btn-align">
-        <button ngButton class="btn btn-primary" [disabled]="form.invalid">Submit</button>
-      </div>
-      </form>
+        </section>
+      </main>
+      <div class="btn-align">
+      <button ngButton class="btn btn-primary" [disabled]="form.invalid">Submit</button>
     </div>
+    </form>
+  </div>

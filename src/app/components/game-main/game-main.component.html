@@ -1,0 +1,24 @@
+
+<div class="card-row">
+    <div class="card-col">
+      <nb-card size="tiny">
+        <nb-card-header>Game Controls</nb-card-header>
+        <app-gamepanel></app-gamepanel>
+      </nb-card>
+      <nb-card size="medium">
+        <nb-card-header>Player Info</nb-card-header>
+       
+        <p>Name: {{user.displayName}}</p>
+        <p>User UID: {{user.uid}}</p>
+        <p>User Email: {{user.email}}</p>
+        <p>Subscriber: {{user.roles.subscriber}}</p>
+      </nb-card>
+    </div>
+    <div class="card-col">
+      <nb-card size="giant">
+        <nb-card-header>Game Board</nb-card-header>
+        <img src="assets\images\ddmap.jpg">
+      </nb-card>
+    </div>
+  </div>
+

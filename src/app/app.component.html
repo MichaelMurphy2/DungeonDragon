@@ -22,7 +22,7 @@
       </nb-menu>
     
       
-       
+     
      
     
   
@@ -37,18 +37,15 @@
    </div>
 
 
-    <button nbButton outline status="control" (click)="openWindow()"><i class="fab fa-d-and-d"></i>Roll The Dice</button>
-    <ng-template #contentTemplate let-data>
-    </ng-template>
-
   </nb-sidebar>
 <!--End or right Menu-->
 
   <nb-layout-column class="colored-column-warning">
 
 
-    <div *ngIf="isDungeonMaster" style="color:green"><h1>The dungeon master hath arrived!</h1></div>
-    <div *ngIf="!isDungeonMaster" style="color:red"><h1>The dungeon master is nowhere to be found!</h1></div>
+
+
+    
 
 <router-outlet></router-outlet>
 
@@ -58,7 +55,7 @@
 
 
 
-
+ 
 
   </nb-layout-column>
 
@@ -78,7 +75,7 @@
 </ng-template>
 
 <ng-template #login>
-  <a class="nav-item nav-link" id="nav-login-link" (click)="auth.googleSignin()">
+  <a class="nav-item nav-link" id="nav-login-link" (click)="auth.googleLogin()">
     <i class="fas fa-lock"></i><p class="saysme" style="display: inline;">Login</p>
   </a>
 </ng-template>

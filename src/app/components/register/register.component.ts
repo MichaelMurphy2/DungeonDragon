@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { NbToastrService } from '@nebular/theme';
-import { DialogComponent } from '../dialog/dialog.component';
-import { NbDialogService } from '@nebular/theme';
+import { NbToastrService, NbToastRef } from '@nebular/theme';
 import { AuthService } from '../../services/auth/auth.service';
 import { User } from 'src/app/models/user';
-import { Registration } from 'src/app/models/registration/register'; 
-
-
+import { Registration } from '../../models/registration/register';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-register',
@@ -16,14 +13,21 @@ import { Registration } from 'src/app/models/registration/register';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-model: Registration = new Registration();
+model: Registration = new Registration;
 
 user: User;
 
 userID: string;
 
+  position = 'top-right';
+  status = 'danger';
+  status1 = 'primary';
+  message ="Sucessfully Registered";
+  message1 ='Registration Failed';
+  title ="Registration";
+
 private index: number = 0;
-private message: string ="Sucessfully Registered";
+
 private message2: string ="Registration Failed"; 
 checked = false;
 checked1 = false;
@@ -31,55 +35,61 @@ checked2 = false;
 checked3 = false;
 
   constructor(
-    private dialogService: NbDialogService,
     private toastrService: NbToastrService,
     private auth: AuthService,
     private afs: AngularFirestore,
-    private router: Router
-  ) { }
+    private db: AngularFireDatabase,
+    private router: Router,
+  ) { 
+  
+  
+  }
 
   ngOnInit() {
     this.auth.user$.subscribe((user) => {
       this.user = user;
-      this.userID = user.uid;
-    })
-    this.auth.user$.subscribe((user) => {
-      this.user = user;
-      this.userID = user.uid;
+      this.userID = this.user.uid; 
+      console.log('ng init value: ' + this.user.uid);
     })
   }
 
- private updateUserData() {
-  const result = this.afs.collection('users').doc(this.user.uid);
-  
-   const data = {
-    
-     isDungeonMaster: this.model.dungeonMaster,
-   };
-   return result.set(data, { merge: true});
- }
-
+ 
   onSubmit(regform) {
     if(this.model.firstName == null || this.model.firstName == ""){
         console.log("invalid name");
-        this.openDiag();
+      
     }else{
     regform.timestamp = `${new Date()}`;
-    const res = this.afs.collection('registration').doc(this.userID).set(regform);
-   // this.updateUserData();
+    
+   // regform.uid = this.userID;
+    this.saveBackend(this.userID);
+    //create firestore realtime database isAdmin/isDungeonMaster
+   // const itemRef = this.db.object(this.userID);
+    //itemRef.set(this.model.dungeonMaster);
+   
+    //save the document to cloud firestore, use id as identifier.
+     this.afs.collection('registration').doc(this.userID).set(regform);
+  
+
+
+  // this.save();
+
     this.router.navigate(['home']);
     }
   }
 
-  showToast(position, status) {
+
+  saveBackend(userID){
+    const itemRef = this.db.object(userID);
+    itemRef.update({isDungeonMaster: this.model.dungeonMaster});
+  }
+
+
+  showToast() {
      if(this.model.firstName == null || this.model.firstName == ""){
-    
+      this.toastAlert(this.status, this.position);
      }else{
-      this.index += 1;
-      this.toastrService.show(
-        status || 'Success',
-        `${this.message}`,
-        { position, status });
+      this.toastAlert1(this.status1, this.position);
      } 
   }
 
@@ -97,9 +107,13 @@ checked3 = false;
   toggle3(checked3: boolean){
     this.checked3 = checked3;
   }
- 
-   openDiag(){
-    this.dialogService.open(DialogComponent,{context:'Failure'} )
-   }
-  
+
+  toastAlert(status, position){
+    const toastRef: NbToastRef = this.toastrService.show(this.message2, this.title, {status: status, position: position});
+  }
+  toastAlert1(status, position){
+    const toastRef: NbToastRef = this.toastrService.show(this.message, this.title, {status: status, position: position});
+  }
+
+
 }

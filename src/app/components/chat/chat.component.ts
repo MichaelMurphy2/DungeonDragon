@@ -7,6 +7,8 @@ import { User } from '../../models/user';
 
 
 
+
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -21,12 +23,11 @@ export class ChatComponent {
   content: string;
   author = "your name here";
   user: User;
-  
- userID:boolean;
-
-isDungeonMaster: boolean = true;
 
 
+
+
+public onlineUser = [];
 
  base64image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAG1BMVEVEeef///+4zPaKq/ChvPPn7' +
     'vxymu3Q3flbieqI1HvuAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQUlEQVQ4jWNgGAWjgP6ASdncAEaiAhaGiACmFhCJLsMaIiDAEQEi0WXYEiMC' +
@@ -44,13 +45,11 @@ isDungeonMaster: boolean = true;
   }
 
   ngOnInit() {
-    this.posts = this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(5)).valueChanges();
-    this.auth.user$.subscribe((user) => {
-      this.user = user;
-     // this.userID = this.user.isDungeonMaster;
-      this.title = user.displayName;
-    })
+    this.posts = this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(3)).valueChanges();
+    this.auth.user$.subscribe(user => this.user = user)
   }
+     
+     // this.userID = this.user.isDungeonMaster;
 
   addPost() {
     this.afs.collection('posts').add({
@@ -73,8 +72,6 @@ isDungeonMaster: boolean = true;
       this.addPost();
     }
   }
-  
- 
   
 
 }

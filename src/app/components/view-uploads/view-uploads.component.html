@@ -1,0 +1,13 @@
+<p>view-uploads works!</p>
+
+
+<div *ngIf='user.uid | async' class='container'>
+
+    <uploader></uploader>
+  </div>
+  
+  
+  
+  <ng-template #no_images>
+    No images uploaded yet!
+  </ng-template>
