@@ -11,3 +11,21 @@
 </ul>
 
 </div>
+
+<div class="mything">
+
+    <div *ngFor="let data of data">
+        <nb-card accent="info">
+           
+    <nb-card-header><h3>{{data.name}}</h3></nb-card-header>
+            <nb-card-body>
+              <p> {{data.name}}</p>
+              <p>{{data.asi | json }}</p> 
+              <p>{{data.subraces | json</p>
+            </nb-card-body>
+    
+            <nb-card-footer><a href="https://open5e.com/"><p>api data provided by open5e</p></a></nb-card-footer>
+        </nb-card>
+    </div>
+    </div>
+    

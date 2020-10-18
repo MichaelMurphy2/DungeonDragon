@@ -14,7 +14,12 @@
               <p> Alignment: {{data.alignment}}</p>
               <p> {{data.skills | json}}</p>
               <p> {{data.actions | json}}</p>
-           
+              <div *ngFor="let data of data.actions">
+              <p>Attack Bonus: {{data.attack_bonus}}</p>
+              <p>Damage Dice: {{data.damage_dice}}</p>
+              <p>Description: {{data.desc}}</p>
+              <p>Name: {{data.name}}</p>
+            </div>
             </nb-card-body>
     
             <nb-card-footer><a href="https://open5e.com/"><p>api data provided by open5e</p></a></nb-card-footer>

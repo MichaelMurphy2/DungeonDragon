@@ -150,7 +150,7 @@ export class DataService {
   }
 
   getMonsters(): Observable<Monsters[]> {
-    return this.getDataFromAPI("https://api.open5e.com/monsters/?limit=1000").pipe(
+    return this.getDataFromAPI("https://api.open5e.com/monsters/?limit=10").pipe(
       map(res => {
         return res.results.map(item => {
           return new Monsters(
