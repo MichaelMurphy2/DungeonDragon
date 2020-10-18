@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { DataService } from "../../../services/open5e/data/data.service";
 import { Background } from "../../../models/open5e/background";
 
@@ -8,7 +9,11 @@ import { Background } from "../../../models/open5e/background";
   styleUrls: ['./backgrounds.component.scss']
 })
 export class BackgroundsComponent implements OnInit {
+
+
   data: Background[];
+
+
   constructor(private DataService: DataService) { }
 
   ngOnInit(){

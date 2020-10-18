@@ -14,23 +14,11 @@ import { ClassesComponent} from './components/open5e/classes/classes.component';
 import { RacesComponent} from './components/open5e/races/races.component';
 import { PlanesComponent} from './components/open5e/planes/planes.component';
 import { MonstersComponent} from './components/open5e/monsters/monsters.component';
-
-
-
-
-
-
 import { AuthGuardService } from './services/guards/authGuard/auth-guard.service';
-
 import { GameMainComponent} from '../app/components/game-main/game-main.component'
 import { UploaderComponent } from './components/uploader/uploader.component';
 import { ViewUploadsComponent } from './components/view-uploads/view-uploads.component';
 import { ProfileComponent } from './components/profile/profile.component';
-
-
-
-
-
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
