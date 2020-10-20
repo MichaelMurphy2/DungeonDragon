@@ -1,27 +1,27 @@
-<h1>Races</h1>
-
-
-
 <div class="mything">
-
-<ul *ngFor="let data of data">
-    <li>{{data.name}} </li>
-    <li>{{data.asi | json}}</li>
-    <li>{{data.subraces | json}}</li>
-</ul>
-
-</div>
-
-<div class="mything">
-
     <div *ngFor="let data of data">
         <nb-card accent="info">
-           
-    <nb-card-header><h3>{{data.name}}</h3></nb-card-header>
-            <nb-card-body>
-              <p> {{data.name}}</p>
-              <p>{{data.asi | json }}</p> 
-              <p>{{data.subraces | json</p>
+            <nb-card-header><h3>{{data.name}}</h3></nb-card-header>
+                <nb-card-body>
+                    <p>{{data.desc}}</p>
+                    <p>{{data.asi_desc}}</p>
+                    <p>{{data.age}}</p>
+                    <p>{{data.alignment}}</p>
+                    <p>{{data.size}}</p>
+                    <p>Walk {{data.speed.walk}}</p>
+              <div *ngFor="let data of data.asi">
+                    <p>{{data.attributes}} {{data.value}}</p>
+
+              </div>
+              <div *ngFor="let data of data.subraces">
+                <p>{{data.name}}</p>
+                <p>{{data.desc}}</p>
+                <p>{{data.traits}}</p>
+                
+              </div>
+
+
+
             </nb-card-body>
     
             <nb-card-footer><a href="https://open5e.com/"><p>api data provided by open5e</p></a></nb-card-footer>
