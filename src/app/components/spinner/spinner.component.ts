@@ -41,7 +41,7 @@ import { Component} from '@angular/core';
         width: 100%;
         height: 100%;
         z-index: 1003;
-        background: #000000;
+        background: 	#13132b;
         overflow: hidden
       }
 
@@ -54,7 +54,7 @@ import { Component} from '@angular/core';
         height: 150px;
         margin: -75px 0 0 -75px;
         border-radius: 50%;
-        box-shadow: 0 3px 3px 0 rgb(25, 136, 2);
+        box-shadow: 0 5px 5px 0 rgb(0, 255, 217);
         transform: translate3d(0, 0, 0);
         animation: spin 2s linear infinite
       }
@@ -71,7 +71,7 @@ import { Component} from '@angular/core';
         left: 5px;
         right: 5px;
         bottom: 5px;
-        box-shadow: 0 3px 3px 0 rgb(85, 255, 6);
+        box-shadow: 0 5px 5px 0 rgb(0, 64,255);
         -webkit-animation: spin 3s linear infinite;
         animation: spin 3s linear infinite
       }
@@ -81,7 +81,7 @@ import { Component} from '@angular/core';
         left: 15px;
         right: 15px;
         bottom: 15px;
-        box-shadow: 0 3px 3px 0 rgb(15, 109, 2);
+        box-shadow: 0 5px 5px 0 rgb(255, 0, 98);
         animation: spin 1.5s linear infinite
       }
 
