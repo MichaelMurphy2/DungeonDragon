@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from "../../../../services/open5e/data/data.service";
 import { Spell } from "../../../../models/open5e/spell";
-import { NbSpinnerModule } from '@nebular/theme';
+
 
 @Component({
   selector: 'app-spellbook',
@@ -11,6 +11,8 @@ import { NbSpinnerModule } from '@nebular/theme';
 export class SpellbookComponent implements OnInit {
 
   data: Spell[];
+
+
 
   constructor(private DataService: DataService) {
    

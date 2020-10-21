@@ -31,8 +31,7 @@ export class DataService {
   }
   
   getSpells(): Observable<Spell[]> {
- 
-    return this.getDataFromAPI("https://api.open5e.com/spells/?limit=1000").pipe(
+    return this.getDataFromAPI("https://api.open5e.com/spells/?limit=25").pipe(
       map(res => { 
         return res.results.map(item => {
           return new Spell(

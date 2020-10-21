@@ -1,8 +1,8 @@
 <p>view-uploads works!</p>
 
 
-<div *ngIf='user.uid | async' class='container'>
-
+<div *ngIf='user.uid ; else no_images' class='container'>
+     <p>Hello</p>
     <uploader></uploader>
   </div>
   
