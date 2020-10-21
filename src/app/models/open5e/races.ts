@@ -1,14 +1,9 @@
-export interface type{
-    attributes:String[];
-    values: number;
-}
-
 export class Races {
     name: string;
     slug: string;
     desc: string;
     asi_desc: string;
-    asi: type[];
+    asi: object[];
     age: string;
     alignment: string;
     size: string;
