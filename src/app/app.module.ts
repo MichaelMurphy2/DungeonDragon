@@ -20,6 +20,8 @@ import { NbToastrModule } from '@nebular/theme';
 import { NbDialogModule } from '@nebular/theme';
 import { NbAlertModule} from '@nebular/theme';
 import { NbProgressBarModule } from '@nebular/theme';
+import { NbSpinnerModule } from '@nebular/theme';
+import { NbSearchModule } from '@nebular/theme';
 
 
 
@@ -58,6 +60,7 @@ import { UploaderComponent } from './components/uploader/uploader.component';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 import { ViewUploadsComponent } from './components/view-uploads/view-uploads.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 @NgModule({
@@ -87,7 +90,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     MagicitemsComponent,
     ClassesComponent,
     RacesComponent,
-    PlanesComponent
+    PlanesComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -104,7 +108,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     NbMenuModule.forRoot(),
     NbWindowModule.forRoot(),
     NbUserModule,
+    NbSearchModule,
     NbInputModule,
+    NbSpinnerModule,
     NbAlertModule,
     NbProgressBarModule,
     NbCheckboxModule,

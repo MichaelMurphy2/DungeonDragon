@@ -5,8 +5,11 @@
      <li><button nbButton status="success" size="tiny" (click)="toggle()">Toggle left menu</button></li> 
      <li><button nbButton status="info" size="tiny" (click)="toggleCompact()">Toggle chat panel</button></li>
     </ul>
-   
+    
     <img class="ddlogo" src="/assets/images/ddlogo.png" class="ddlogo">
+
+    <p class="findstuff"><nb-search type="rotate-layout"></nb-search>Click to search!</p>
+
 
     <div class="login">
       <span *ngIf="auth.user$ | async; then logout else login"></span>
@@ -17,7 +20,7 @@
   </nb-layout-header>
 <!--end of top section-->
   <nb-sidebar tag="left">
-   
+    
       <nb-menu [items]="items" autoCollapse="true">
       </nb-menu>
     
@@ -43,7 +46,12 @@
   <nb-layout-column class="colored-column-warning">
 
 
-
+    <nb-card accent="info">
+      <nb-card-header>You searched for:</nb-card-header>
+      <nb-card-body>
+        <h3>{{ value || '-' }}</h3>
+      </nb-card-body>
+    </nb-card>
 
     
 
