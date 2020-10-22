@@ -99,6 +99,7 @@ checked3 = false;
 
   toggle1(checked1: boolean){
     this.checked1 = checked1;
+    
   }
 
   toggle2(checked2: boolean){
