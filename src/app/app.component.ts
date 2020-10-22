@@ -4,7 +4,7 @@ import { AuthService } from './services/auth/auth.service';
 import { NbWindowService } from '@nebular/theme';
 import { DiceRollerComponent } from '../app/components/dice-roller/dice-roller.component';
 import { User } from '../app/models/user';
-import { NbSearchService } from '@nebular/theme';
+
 
 @Component({
   selector: 'app-root',
@@ -17,20 +17,16 @@ export class AppComponent {
 
   user: User;
 
-  value = '';
+ 
 
  public isDungeonMaster: boolean = true;
   
 constructor(
   private sidebarService: NbSidebarService, 
-  private searchService: NbSearchService,
   public auth: AuthService,
   private windowService: NbWindowService){
 
-    this.searchService.onSearchSubmit()
-    .subscribe((data: any) => {
-      this.value = data.term;
-    })
+   
 
 }
 
@@ -101,7 +97,7 @@ items: NbMenuItem[] = [
     expanded: true,
     children: [
       {
-        title: 'Game Rooms',
+        title: 'Game Board',
         icon: 'person-outline',
         link: 'game-main'
       },

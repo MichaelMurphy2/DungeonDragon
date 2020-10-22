@@ -1,0 +1,20 @@
+
+
+
+    <nb-card accent="control">
+
+    <p class="searchlabel">Search: <nb-search class="searchbar" type="rotate-layout"></nb-search></p>
+
+</nb-card>
+
+
+
+
+<div *ngIf="value">
+<nb-card accent="info">
+    <nb-card-header>You searched for:</nb-card-header>
+    <nb-card-body>
+      <h3>{{ value || '-' }}</h3>
+    </nb-card-body>
+  </nb-card>
+</div>

@@ -19,6 +19,7 @@ import { GameMainComponent} from '../app/components/game-main/game-main.componen
 import { UploaderComponent } from './components/uploader/uploader.component';
 import { ViewUploadsComponent } from './components/view-uploads/view-uploads.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SearchPageComponent } from './components/open5e/search-page/search-page.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
@@ -29,17 +30,17 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
   {path: 'home', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'spellbook', component:SpellbookComponent},
-  {path: 'backgrounds', component:BackgroundsComponent},
-  {path: 'sections', component:SectionsComponent},
-  {path: 'feats', component:FeatsComponent},
-  {path: 'weapons', component: WeaponsComponent},
-  {path: 'magicitems', component: MagicitemsComponent},
-  {path: 'conditions', component:ConditionsComponent},
-  {path: 'classes', component:ClassesComponent},
-  {path: 'planes', component: PlanesComponent},
-  {path: 'races', component: RacesComponent},
-  {path: 'monsters', component: MonstersComponent},
+  {path: 'spellbook', component:SpellbookComponent, children: [{ path: 'search', component: SearchPageComponent }]},
+  {path: 'backgrounds', component:BackgroundsComponent, children: [{ path: 'search', component: SearchPageComponent }]},
+  {path: 'sections', component:SectionsComponent,children: [{ path: 'search', component: SearchPageComponent }]},
+  {path: 'feats', component:FeatsComponent, children: [{ path: 'search', component: SearchPageComponent }]},
+  {path: 'weapons', component: WeaponsComponent, children: [{ path: 'search', component: SearchPageComponent }]},
+  {path: 'magicitems', component: MagicitemsComponent, children: [{ path: 'search', component: SearchPageComponent }]},
+  {path: 'conditions', component:ConditionsComponent, children: [{ path: 'search', component: SearchPageComponent }]},
+  {path: 'classes', component:ClassesComponent, children: [{ path: 'search', component: SearchPageComponent }]},
+  {path: 'planes', component: PlanesComponent, children: [{ path: 'search', component: SearchPageComponent }]},
+  {path: 'races', component: RacesComponent, children: [{ path: 'search', component: SearchPageComponent }]},
+  {path: 'monsters', component: MonstersComponent, children: [{ path: 'search', component: SearchPageComponent }]},
   {path: '**', redirectTo: 'home'}
  
 

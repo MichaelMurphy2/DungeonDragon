@@ -61,6 +61,7 @@ import { UploadTaskComponent } from './components/upload-task/upload-task.compon
 import { ViewUploadsComponent } from './components/view-uploads/view-uploads.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SearchPageComponent } from './components/open5e/search-page/search-page.component';
 
 
 @NgModule({
@@ -91,7 +92,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ClassesComponent,
     RacesComponent,
     PlanesComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,

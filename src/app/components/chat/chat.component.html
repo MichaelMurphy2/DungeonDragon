@@ -20,7 +20,8 @@
         
 
     <h6>Chat</h6>
-     
+   
+  
 <input #newHero nbInput fullWidth placeHolder="Message"
       (keyup.enter)="addHero(newHero.value)"
       (blur)="addHero(newHero.value); newHero.value='' " [(ngModel)]="content">
