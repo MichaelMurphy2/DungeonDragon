@@ -23,7 +23,7 @@ import { SearchPageComponent } from './components/open5e/search-page/search-page
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
-  {path: 'charsheet', component: CharsheetComponent},
+  {path: 'charsheet', component: CharsheetComponent, canActivate: [AuthGuardService]},
   {path: 'uploader', component: UploaderComponent, canActivate: [AuthGuardService]},
   {path: 'viewuploads', component: ViewUploadsComponent, canActivate: [AuthGuardService]},
   {path: 'game-main', component:GameMainComponent, canActivate: [AuthGuardService]},
