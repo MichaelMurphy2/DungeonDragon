@@ -20,20 +20,15 @@
         
 
     <h6>Chat</h6>
+    <nb-card size="tiny">
+      <nb-card-body>
     <div *ngFor="let online of online | async" class="online">
-      
-       
-   
         <div *ngIf="online.status == 'online' ">
-           <p>{{online.name}} {{online.status}}</p>
-          </div>
-
-
-
-        
-     
+           <p class="iamName">{{online.name}} {{online.status}}</p>
+          </div>     
       </div>
-
+    </nb-card-body>
+    </nb-card>
     <!--app-user-status [uid]="user.uid"></app-user-status-->
     <p></p>
   
