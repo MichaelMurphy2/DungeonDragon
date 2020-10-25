@@ -24,7 +24,7 @@
       <nb-card-body>
     <div *ngFor="let online of online | async" class="online">
         <div *ngIf="online.status == 'online' ">
-           <p class="iamName">{{online.name}} {{online.status}}</p>
+           <p class="logged">{{online.name}} {{online.status}}<img class="stats" src="assets/images/ani-dice.gif"></p>
           </div>     
       </div>
     </nb-card-body>

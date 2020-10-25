@@ -13,9 +13,9 @@ card-title {
 }
 .dragHead {
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     filter: drop-shadow( 5px 5px 8px black);
 }
 
@@ -36,7 +36,6 @@ card-title {
 li {
     color: black;
     font-size: 1rem;
-    
 }
 
 input {
@@ -51,8 +50,8 @@ h6{
     letter-spacing: 3px;
     font-weight:700;
     margin: auto;
-  width: 50%;
-  padding: 10px;
+    width: 50%;
+    padding: 10px;
     filter: drop-shadow( 5px 5px 8px black); 
 }
 nb-card {
@@ -76,3 +75,16 @@ p {
     filter: drop-shadow( 5px 5px 8px black);
 }
 
+.stats {
+    display:inline;
+    height: 15px;
+    width:15px;
+    margin: 5px;
+    filter: drop-shadow( 5px 5px 8px black);
+}
+.logged{
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 10px;
+   
+    filter: drop-shadow( 5px 5px 8px black);
+}
