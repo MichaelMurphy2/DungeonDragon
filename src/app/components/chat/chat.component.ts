@@ -1,9 +1,10 @@
 import { Component} from '@angular/core';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import {auth, database, firestore } from 'firebase';
+import { firestore } from 'firebase';
 import { AuthService } from '../../services/auth/auth.service';
 import { User } from '../../models/user';
+
 
 
 
@@ -23,11 +24,7 @@ export class ChatComponent {
   content: string;
   author = "your name here";
   user: User;
-
-
-
-
-public onlineUser = [];
+  
 
  base64image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAG1BMVEVEeef///+4zPaKq/ChvPPn7' +
     'vxymu3Q3flbieqI1HvuAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQUlEQVQ4jWNgGAWjgP6ASdncAEaiAhaGiACmFhCJLsMaIiDAEQEi0WXYEiMC' +
@@ -36,7 +33,7 @@ public onlineUser = [];
     heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
    
 
-
+  online:Observable<any[]>
  // postsCol: AngularFirestoreCollection<Post>;
   posts: Observable<any[]>;
   
@@ -45,6 +42,7 @@ public onlineUser = [];
   }
 
   ngOnInit() {
+    this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
     this.posts = this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(3)).valueChanges();
     this.auth.user$.subscribe(user => this.user = user)
   }
