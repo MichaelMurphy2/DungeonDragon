@@ -77,6 +77,7 @@ export class AuthService {
 
  async signOut() {
     const user = await this.getUser();
+    this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'status': status});
     this.setPresence('offline');
     this.afAuth.signOut();
    
@@ -108,6 +109,7 @@ export class AuthService {
 
  async setPresence(status: string) {
     const user = await this.getUser();
+    
     if (user) {
       this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'status': status});
       return this.db.object(`status/${user.uid}`).update({ status, timestamp: this.timestamp });
