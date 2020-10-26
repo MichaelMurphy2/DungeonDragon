@@ -33,8 +33,24 @@ div.box {
   margin-top: 10px;
 }
 
+.container {
+  height: 200px;
+  position: relative;
+
+}
+
+.btn-align {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
 form.charsheet {
-  width: 800px;
+  width: 1200px;
   right: 0;
   left: 0;
   margin-right: auto;
@@ -300,7 +316,7 @@ form.charsheet main > section div.passive-perception {
   justify-content: flex-end;
 }
 form.charsheet main > section div.passive-perception input {
-  width: 30px;
+  width: 60px;
   height: 28px;
   text-align: center;
   border: 1px solid 	#b18aff;

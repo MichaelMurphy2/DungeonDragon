@@ -1,4 +1,4 @@
-<nb-card >
+
 <div class="format"><!--Changed to angular from original, when You click the submit button it works-->
   <form #form="ngForm" (ngSubmit)="onSubmit(form.value); form.reset();" class="charsheet">
       <header>
@@ -54,8 +54,8 @@
             </li>
           </ul>
         </section>
-      </header>
-      <main>
+      </header> 
+      <main> 
         <section>
           <section class="attributes">
             <div class="scores">
@@ -392,9 +392,11 @@
           </section>
         </section>
       </main>
+<div class="container">
       <div class="btn-align">
-      <button ngButton class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+      <button nbButton status="primary" [disabled]="form.invalid">Submit</button>
     </div>
+  </div>
+
     </form>
   </div>
-</nb-card>
