@@ -1,4 +1,4 @@
-
+<div *ngIf="user">
 <div class="card-row">
     <div class="card-col">
       <nb-card size="tiny">
@@ -6,12 +6,13 @@
         <app-gamepanel></app-gamepanel>
       </nb-card>
       <nb-card size="medium">
-        <nb-card-header>Player Info</nb-card-header>
-       
+        <nb-card-header>Player Info</nb-card-header> 
         <p>Name: {{user.displayName}}</p>
         <p>User UID: {{user.uid}}</p>
         <p>User Email: {{user.email}}</p>
         <p>Subscriber: {{user.roles.subscriber}}</p>
+        <p>Admin: {{user.roles.admin}}</p>
+        <p>DungeonMaster: {{user.roles.isDungeonMaster}}</p>
       </nb-card>
     </div>
     <div class="card-col">
@@ -21,4 +22,27 @@
       </nb-card>
     </div>
   </div>
+</div>
+
+<nb-card>
+
+  <div *ngIf="user">
+    <h2>{{user.displayName}}</h2>
+   </div>
+
+  <div *ngIf="diceRolls">
+    <h4>Dice Rolls</h4>
+
+  
+
+    <p>D2:    {{diceRolls.d2}}</p>
+    <p>D4:    {{diceRolls.d4}}</p>
+    <p>D6:    {{diceRolls.d6}}</p>
+    <p>D8:    {{diceRolls.d8}}</p>
+    <p>D10:   {{diceRolls.d10}}</p>
+    <p>D20:   {{diceRolls.d20}}</p>
+    <p>D100:  {{diceRolls.d100}}</p>
+  </div>
+
+</nb-card>
 

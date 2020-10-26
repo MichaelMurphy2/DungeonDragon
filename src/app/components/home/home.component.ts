@@ -9,11 +9,23 @@ import { Photo } from '../../models/photo.model';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  
   flipped: boolean = false;
+
+
+
   constructor() { }
+
+
   public images: Photo[] = images;
+
+
+
   ngOnInit() {
   }
+
+
   toggleView() {
     this.flipped = !this.flipped;
     }

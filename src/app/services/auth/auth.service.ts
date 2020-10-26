@@ -42,6 +42,17 @@ export class AuthService {
     })
   );
 
+  diceRolls = this.uid.pipe(
+    switchMap(uid =>{
+      if (!uid){
+        return observableOf(false);
+      }else{
+        return this.db.object(`dicerolls/` + uid).valueChanges();
+      }
+    })
+  )
+
+
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -91,7 +102,8 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       roles: {
-        subscriber: true
+        subscriber: true,
+        admin: false
       }
     }
     return userRef.set(data, { merge: true })
