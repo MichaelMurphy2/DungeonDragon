@@ -1,3 +1,7 @@
+nb-card{
+  align-items: stretch;
+}
+
 .red {
   background: red;
 }
@@ -61,12 +65,15 @@ form.charsheet ul {
   margin: 0;
   padding: 0;
 }
+
+//saving throws area
 form.charsheet ul li {
   list-style-image: none;
   display: block;
 }
+//placeholder text color
 form.charsheet ::placeholder {
-  color: 	black;
+  color: 	white;
 }
 form.charsheet label {
   text-transform: uppercase;
@@ -74,7 +81,7 @@ form.charsheet label {
 }
 form.charsheet header {
   display: flex;
-  align-contents: stretch;
+  align-content: stretch;
   align-items: stretch;
 }
 form.charsheet header section.charname {
@@ -142,7 +149,7 @@ form.charsheet main div.label-container {
 form.charsheet main div.label-container > label {
   position: absolute;
   left: 0;
-  top: 1px;
+  top: -12px;   //inspiration and prof label position
   transform: translate(0%, 50%);
   width: 100%;
   font-size: 8px;
@@ -217,7 +224,6 @@ form.charsheet main > section section.attributes div.attr-applications div.inspi
   border: 1px solid black;
   padding: 15px;
   border-radius: 10px;
-
 }
 form.charsheet main > section section.attributes div.attr-applications div.proficiencybonus {
   display: flex;
@@ -231,6 +237,8 @@ form.charsheet main > section section.attributes div.attr-applications div.profi
   text-align: center;
   border-radius: 10px;
 }
+
+//border area around saving throws
 form.charsheet main > section section.attributes div.attr-applications div.list-section {
   border: 1px solid black;
   border-radius: 10px;
@@ -248,8 +256,11 @@ form.charsheet main > section section.attributes div.attr-applications div.list-
   display: flex;
   align-items: center;
 }
+
+//background colors behind strength de
 form.charsheet main > section section.attributes div.attr-applications div.list-section ul li > * {
   margin-left: 5px;
+  
 }
 form.charsheet main > section section.attributes div.attr-applications div.list-section ul li label {
   text-transform: none;
@@ -260,12 +271,16 @@ form.charsheet main > section section.attributes div.attr-applications div.list-
 form.charsheet main > section section.attributes div.attr-applications div.list-section ul li label span.skill {
   color: #6a6a94;
 }
+
+
+//!!!!!!!!!!RIGHT HERE FOR THE TINY BOXES STRENGTH DEXTERITY ECT>>>
 form.charsheet main > section section.attributes div.attr-applications div.list-section ul li input[type=text] {
-  width: 30px;
+  width: 60px;
   font-size: 12px;
   text-align: center;
-  border: 0;
+  border: 1px solid black;
   border-bottom: 1px solid black;
+  padding: 5px;
   order: 2;
 }
 form.charsheet main > section section.attributes div.attr-applications div.list-section ul li input[type=checkbox] {
@@ -496,6 +511,11 @@ form.charsheet main section.attacksandspellcasting {
   border-radius: 10px;
   margin-top: 10px;
 }
+
+
+
+
+
 form.charsheet main section.attacksandspellcasting > nb-card {
   margin: 10px;
   display: flex;
@@ -619,3 +639,4 @@ form.charsheet main section.features div textarea {
   padding: 5px;
   height: 43em;
 }
+

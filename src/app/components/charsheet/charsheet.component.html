@@ -1,4 +1,4 @@
-
+<nb-card >
 <div class="format"><!--Changed to angular from original, when You click the submit button it works-->
   <form #form="ngForm" (ngSubmit)="onSubmit(form.value); form.reset();" class="charsheet">
       <header>
@@ -62,7 +62,7 @@
               <ul>
                 <li>
                   <nb-card class="score">
-                    <label for="Strengthscore">Strength</label><input nbInput placeholder="10" class="stat" ngModel [(ngModel)]="model.Strengthscore" name="Strengthscore"/>
+                    <label for="Strengthscore">Strength</label><input nbInput fullWidth fieldSize="small" placeholder="10" class="stat" ngModel [(ngModel)]="model.Strengthscore" name="Strengthscore"/>
                   </nb-card>
                   <div class="modifier">
                     <input nbInput placeholder="+0" class="statmod" ngModel [(ngModel)]="model.Strengthmod" name="Strengthmod"/>
@@ -126,7 +126,8 @@
               <div class="saves list-section box">
                 <ul>
                   <li>
-                    <label for="Strength-save">Strength</label><input nbInput type="text" ngModel [(ngModel)]="model.Strengthsave" name="Strength-save" /><nb-checkbox (checkedChange)="toggle1($event)"  [(ngModel)]="model.strengthsaveprof" name="Strength-save-prof" status="primary" type="checkbox" ></nb-checkbox>
+
+                    <label for="Strength-save" >Strength</label><input placeholder ="22" nbInput fieldSize="small" type="text" ngModel [(ngModel)]="model.Strengthsave" name="Strength-save" /><nb-checkbox (checkedChange)="toggle1($event)"  [(ngModel)]="model.strengthsaveprof" name="Strength-save-prof" status="primary" type="checkbox" ></nb-checkbox>
                   </li>
                   <li>
                     <label for="Dexterity-save">Dexterity</label><input nbInput placeholder="+0" type="text" ngModel [(ngModel)]="model.Dexteritysave" name="Dexterity-save" /><nb-checkbox (checkedChange)="toggle2($event)"  [(ngModel)]="model.dexteritysaveprof" name="Dexterity-save-prof" status="primary" type="checkbox" > </nb-checkbox>
@@ -396,3 +397,4 @@
     </div>
     </form>
   </div>
+</nb-card>
