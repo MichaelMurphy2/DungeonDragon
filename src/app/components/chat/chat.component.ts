@@ -68,8 +68,17 @@ export class ChatComponent {
     if (newHero) {
       this.heroes.push(newHero);
       this.addPost();
+      this.playAudio();
     }
   }
+
+  playAudio(){
+    let audio = new Audio();
+    audio.src = "../../../assets/audio/notify.mp3";
+    audio.load();
+    audio.play();
+  }
+
   
 
 }
