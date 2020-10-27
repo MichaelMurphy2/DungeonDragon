@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-
+import { NbToastrService, NbToastRef } from '@nebular/theme';
 
 class characterSheet{
   constructor(
@@ -156,7 +156,21 @@ export class CharsheetComponent implements OnInit {
   checked28 = false;
   checked29 = false;
   checked30 = false;
+
+
+
+  position = 'top-right';
+  status = 'danger';
+  status1 = 'primary';
+  message ="Sucessfully Created Character";
+  private message2: string ="Submission Failed"; 
+  title ="Character Creation";
+  
+private index: number = 0;
+
+  
   constructor(
+    private toastrService: NbToastrService,
     private storage: AngularFireStorage,
     private afs: AngularFirestore,
     private router: Router
@@ -291,11 +305,22 @@ export class CharsheetComponent implements OnInit {
 
   onSubmit(form) {
     form.timestamp = `${new Date()}`;
-    this.afs.collection('Character').add( form );
+    this.afs.collection('character').add( form );
 
-    window.alert('Character Submitted!');
+ 
+      this.toastAlert1(this.status1, this.position);
+    
 
     this.router.navigate(['home']);
+  }
+
+
+
+  toastAlert(status, position){
+    const toastRef: NbToastRef = this.toastrService.show(this.message2, this.title, {status: status, position: position});
+  }
+  toastAlert1(status, position){
+    const toastRef: NbToastRef = this.toastrService.show(this.message, this.title, {status: status, position: position});
   }
 
 }
