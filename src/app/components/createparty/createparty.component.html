@@ -3,14 +3,14 @@
     <h2>Name: {{user.displayName}}</h2>
     <p>User UID: {{user.uid}}</p>
    </div>
+   
 
-
-   <nb-card size="tiny">
-    <nb-card-body>
-  <div *ngFor="let online of online | async" class="online">
-      <div *ngIf="online.status == 'online' ">
-         <p class="logged">Name: {{online.name}} Status: {{online.status}} UID: {{online.uid}}</p>
-        </div>     
-    </div>
-  </nb-card-body>
+  <nb-card>
+    <nb-card-body class="example-items-rows">
+      <div *ngFor="let online of online | async" class="online">
+        <div *ngIf="online.status == 'online' ">
+          <nb-checkbox status="primary"><p class="logged" style="display:inline">Name: {{online.name}} Status: {{online.status}} UID: {{online.uid}}</p></nb-checkbox>
+          </div>     
+      </div>
+    </nb-card-body>
   </nb-card>

@@ -22,6 +22,7 @@ import { NbAlertModule} from '@nebular/theme';
 import { NbProgressBarModule } from '@nebular/theme';
 import { NbSpinnerModule } from '@nebular/theme';
 import { NbSearchModule } from '@nebular/theme';
+import { NbListModule } from '@nebular/theme';
 
 
 
@@ -123,6 +124,7 @@ import { CreatepartyComponent } from './components/createparty/createparty.compo
     NbSpinnerModule,
     NbAlertModule,
     NbProgressBarModule,
+    NbListModule,
     NbCheckboxModule,
     NbCardModule,
     NbWindowModule,

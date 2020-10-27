@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { firestore } from 'firebase';
 import { AuthService } from '../../services/auth/auth.service';
 import { User } from '../../models/user';
+import {NbListModule } from '@nebular/theme';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class CreatepartyComponent implements OnInit {
 
   user: User;
 
-
+  checked = false;
 
   constructor(private afs: AngularFirestore, public auth: AuthService) { }
 
@@ -26,4 +27,14 @@ export class CreatepartyComponent implements OnInit {
     this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
   }
   
+  
+
+  toggle(checked: boolean) {
+    this.checked = checked;
+  }
+
+
+
+
+
 }
