@@ -25,6 +25,7 @@ export class ChatComponent {
   author = "your name here";
   user: User;
   
+  
 
  base64image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAG1BMVEVEeef///+4zPaKq/ChvPPn7' +
     'vxymu3Q3flbieqI1HvuAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQUlEQVQ4jWNgGAWjgP6ASdncAEaiAhaGiACmFhCJLsMaIiDAEQEi0WXYEiMC' +
@@ -36,6 +37,8 @@ export class ChatComponent {
   online:Observable<any[]>
  // postsCol: AngularFirestoreCollection<Post>;
   posts: Observable<any[]>;
+
+   audioinc;
   
   constructor(private afs: AngularFirestore, public auth: AuthService) {
    
@@ -44,10 +47,17 @@ export class ChatComponent {
   ngOnInit() {
     this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
     this.posts = this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(3)).valueChanges();
-    this.auth.user$.subscribe(user => this.user = user)
+    this.auth.user$.subscribe(user => this.user = user);
+    this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(25)).valueChanges().subscribe(data => {
+      this.playAudio(data);
+    });
+    
   }
      
      // this.userID = this.user.isDungeonMaster;
+
+   
+
 
   addPost() {
     this.afs.collection('posts').add({
@@ -68,15 +78,16 @@ export class ChatComponent {
     if (newHero) {
       this.heroes.push(newHero);
       this.addPost();
-      this.playAudio();
     }
   }
 
-  playAudio(){
+  playAudio(audioinc){
+    if(audioinc){
     let audio = new Audio();
     audio.src = "../../../assets/audio/notify.mp3";
     audio.load();
     audio.play();
+  }
   }
 
   

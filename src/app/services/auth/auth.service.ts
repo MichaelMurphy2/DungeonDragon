@@ -147,6 +147,7 @@ export class AuthService {
     return this.afAuth.authState.pipe(
       tap(user => {
         if (user) {
+          this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'status': status});
           this.db.object(`status/${user.uid}`).query.ref.onDisconnect()
             .update({
               status: 'offline',
@@ -168,6 +169,12 @@ updateOnAway() {
     }
   };
 }
+
+
+updateCollection(user){
+  this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'status': status});
+}
+
 
 
 
