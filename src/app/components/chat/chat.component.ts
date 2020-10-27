@@ -26,7 +26,7 @@ export class ChatComponent {
   user: User;
   
   position = 'top-right';
-  status = 'primary';
+  status = 'control';
   message ="new chat message";
  
  
@@ -61,9 +61,7 @@ export class ChatComponent {
      
      // this.userID = this.user.isDungeonMaster;
 
-   
-
-
+  
   addPost() {
     this.afs.collection('posts').add({
     'timeStamp': firestore.Timestamp.now(),
@@ -102,7 +100,7 @@ export class ChatComponent {
  }
  
 toastAlert1(status, position){
-  const toastRef: NbToastRef = this.toastrService.show(this.message, this.title, {status: status, position: position});
+  const toastRef: NbToastRef = this.toastrService.show(this.title, this.message, {status: status, position: position});
 }
 
 }
