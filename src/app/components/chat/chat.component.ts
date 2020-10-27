@@ -42,7 +42,7 @@ export class ChatComponent {
  // postsCol: AngularFirestoreCollection<Post>;
   posts: Observable<any[]>;
 
-   audioinc;
+  
   
   constructor(private afs: AngularFirestore, public auth: AuthService, private toastrService: NbToastrService,) {
    
