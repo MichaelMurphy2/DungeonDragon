@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { firestore } from 'firebase';
 import { AuthService } from '../../services/auth/auth.service';
 import { User } from '../../models/user';
-
+import { NbToastrService, NbToastRef } from '@nebular/theme';
 
 
 
@@ -20,12 +20,16 @@ import { User } from '../../models/user';
 
 
 export class ChatComponent {
-  title: string = "";
+  title: string = "Chat";
   content: string;
   author = "your name here";
   user: User;
   
-  
+  position = 'top-right';
+  status = 'primary';
+  message ="new chat message";
+ 
+ 
 
  base64image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAG1BMVEVEeef///+4zPaKq/ChvPPn7' +
     'vxymu3Q3flbieqI1HvuAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAQUlEQVQ4jWNgGAWjgP6ASdncAEaiAhaGiACmFhCJLsMaIiDAEQEi0WXYEiMC' +
@@ -40,7 +44,7 @@ export class ChatComponent {
 
    audioinc;
   
-  constructor(private afs: AngularFirestore, public auth: AuthService) {
+  constructor(private afs: AngularFirestore, public auth: AuthService, private toastrService: NbToastrService,) {
    
   }
 
@@ -50,6 +54,7 @@ export class ChatComponent {
     this.auth.user$.subscribe(user => this.user = user);
     this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(25)).valueChanges().subscribe(data => {
       this.playAudio(data);
+      this.showToast(data);
     });
     
   }
@@ -90,6 +95,14 @@ export class ChatComponent {
   }
   }
 
-  
+  showToast(data) {
+    if(data){
+     this.toastAlert1(this.status, this.position);
+    }
+ }
+ 
+toastAlert1(status, position){
+  const toastRef: NbToastRef = this.toastrService.show(this.message, this.title, {status: status, position: position});
+}
 
 }
