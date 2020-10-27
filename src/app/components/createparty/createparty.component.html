@@ -1,0 +1,16 @@
+<p>createparty works!</p>
+<div *ngIf="user">
+    <h2>Name: {{user.displayName}}</h2>
+    <p>User UID: {{user.uid}}</p>
+   </div>
+
+
+   <nb-card size="tiny">
+    <nb-card-body>
+  <div *ngFor="let online of online | async" class="online">
+      <div *ngIf="online.status == 'online' ">
+         <p class="logged">Name: {{online.name}} Status: {{online.status}} UID: {{online.uid}}</p>
+        </div>     
+    </div>
+  </nb-card-body>
+  </nb-card>

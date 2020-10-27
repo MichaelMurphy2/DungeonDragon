@@ -88,6 +88,13 @@ items: NbMenuItem[] = [
         icon: 'folder-outline',
         link: 'uploader'
       },
+      {
+        title: 'My Character Sheets',
+        icon: 'folder-outline',
+        link: 'viewchar'
+      },
+
+
     ],
   },
   
@@ -101,6 +108,12 @@ items: NbMenuItem[] = [
         icon: 'person-outline',
         link: 'game-main'
       },
+      {
+        title: 'Create Party',
+        icon: 'person-outline',
+        link: 'create-party'
+      },
+
       {
         title: 'Rule Book',
         icon: 'book-outline',

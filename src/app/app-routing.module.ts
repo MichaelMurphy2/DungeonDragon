@@ -20,13 +20,18 @@ import { UploaderComponent } from './components/uploader/uploader.component';
 import { ViewUploadsComponent } from './components/view-uploads/view-uploads.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SearchPageComponent } from './components/open5e/search-page/search-page.component';
+import { ViewCharactersComponent } from './components/view-characters/view-characters.component';
+import { CreatepartyComponent } from './components/createparty/createparty.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
   {path: 'charsheet', component: CharsheetComponent, canActivate: [AuthGuardService]},
   {path: 'uploader', component: UploaderComponent, canActivate: [AuthGuardService]},
   {path: 'viewuploads', component: ViewUploadsComponent, canActivate: [AuthGuardService]},
+  {path: 'viewchar', component: ViewCharactersComponent, canActivate: [AuthGuardService]},
   {path: 'game-main', component:GameMainComponent, canActivate: [AuthGuardService]},
+  {path: 'create-party', component:CreatepartyComponent, canActivate: [AuthGuardService]},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
   {path: 'home', component: HomeComponent},
   {path: 'register', component: RegisterComponent, canActivate: [AuthGuardService]},

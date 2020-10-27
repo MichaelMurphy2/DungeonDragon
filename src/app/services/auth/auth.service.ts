@@ -123,7 +123,7 @@ export class AuthService {
     const user = await this.getUser();
     
     if (user) {
-      this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'status': status});
+      this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'uid': user.uid,'status': status});
       return this.db.object(`status/${user.uid}`).update({ status, timestamp: this.timestamp });
     }
   }

@@ -63,6 +63,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SearchPageComponent } from './components/open5e/search-page/search-page.component';
 import { UserStatusComponent } from './components/user-status/user-status.component';
+import { ViewCharactersComponent } from './components/view-characters/view-characters.component';
+import { CharlistComponent } from './components/charlist/charlist.component';
+import { CreatepartyComponent } from './components/createparty/createparty.component';
 
 
 @NgModule({
@@ -95,7 +98,10 @@ import { UserStatusComponent } from './components/user-status/user-status.compon
     PlanesComponent,
     SpinnerComponent,
     SearchPageComponent,
-    UserStatusComponent
+    UserStatusComponent,
+    ViewCharactersComponent,
+    CharlistComponent,
+    CreatepartyComponent
   ],
   imports: [
     BrowserModule,
