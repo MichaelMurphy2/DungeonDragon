@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 
 
@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
+   public value: string;
+  
+  constructor( private route: ActivatedRoute ) {}
 
-  constructor( ) { }
-
-  ngOnInit(): void {
+  ngOnInit()  {
+    this.value = this.route.snapshot.paramMap.get('value');
   }
 
 

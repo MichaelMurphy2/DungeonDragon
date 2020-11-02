@@ -14,7 +14,9 @@ export class SearchPageComponent implements OnInit {
     this.searchService.onSearchSubmit()
     .subscribe((data: any) => {
       this.value = data.term;
-    })
+      this.getSearchResults();
+    });
+   
 
   }
 
@@ -24,7 +26,7 @@ export class SearchPageComponent implements OnInit {
 
 
  getSearchResults(){
-  this.router.navigate(['search-results']);
+  this.router.navigate(['search-results/' + this.value]);
  }
    
 
