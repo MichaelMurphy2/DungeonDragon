@@ -54,7 +54,8 @@
       <h6>Select Character</h6>
       <div *ngFor="let playerSheet of playerSheet | async">
         <nb-checkbox (change)="toggle2($event,playerSheet.charname)" name="{{playerSheet.charname}}" [ng-checked]="playerSheet.charname" status="primary"><p class="logged" style="display:inline">Name: {{playerSheet.charname}} </p></nb-checkbox>
-
+     
+        
       </div>
 
 

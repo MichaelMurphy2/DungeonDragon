@@ -57,9 +57,7 @@ selectedCharacters: string[];
   ngOnInit() {
     this.auth.user$.subscribe(user => this.user = user)
     this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
-    
     this.playerSheet = this.afs.collection('character', ref => ref.orderBy('charname', 'desc').limit(25)).valueChanges();
-
     this.selectedMembers = new Array<string>();
     this.gameSessions = new Array<string>();
     this.selectedCharacters = new Array<string>();
@@ -91,24 +89,12 @@ selectedCharacters: string[];
     console.log(this.selectedMembers);
  }
 
-
-
-
-
-
-
-
-  async getMarker() {
-    const characterSheet = await firestore().collection('character').get()
-    return characterSheet.docs.map(doc => doc.data());
-}
-
   toggle3(checked3: boolean){
     this.checked3 = checked3;
-    if(this.checked3 == true){
+   
       const itemRef = this.db.object(this.user.uid);
      itemRef.update({isDungeonMaster: this.model.isDungeonMaster});
-    }
+   
     
   }
 
