@@ -90,7 +90,12 @@ items: NbMenuItem[] = [
         link: 'uploader'
       },
       {
-        title: 'My Character Sheets',
+        title: 'Create Character Sheet',
+        icon: 'file-add-outline',
+        link: 'charsheet',
+      },
+      {
+        title: 'View Character Sheets',
         icon: 'folder-outline',
         link: 'viewchar'
       },
@@ -176,11 +181,6 @@ items: NbMenuItem[] = [
             link: 'weapons'
           }
         ]
-      },
-      {
-        title: 'Create Character Sheet',
-        icon: 'file-add-outline',
-        link: 'charsheet',
       },
     ],
   },
