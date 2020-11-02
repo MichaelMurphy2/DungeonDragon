@@ -90,6 +90,7 @@ model: gameSession = new gameSession;
     this.afs.collection('groupsession').doc(this.user.uid).set(gamesession);
     this.afs.collection('groupsession').doc(this.user.uid).update({"partyLeader": this.user.uid, "selectedMembers": this.selectedMembers})
     this.showToast();
+    this.router.navigate(['game-session']);
   }
 
 
