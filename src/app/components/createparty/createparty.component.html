@@ -31,7 +31,7 @@
       <h6>Select Party Members!</h6>
       <div *ngFor="let online of online | async" class="online">
         <div *ngIf="online.status == 'online'">
-          <nb-checkbox (change)="toggle($event,online.uid)" name="{{online.uid}}" [value]="online.uid" status="primary"><p class="logged" style="display:inline">Name: {{online.name}} UserUID: {{online.uid}}</p></nb-checkbox>
+          <nb-checkbox (change)="toggle($event,online.uid)" name="{{online.uid}}" [ng-checked]="online.uid" status="primary"><p class="logged" style="display:inline">Name: {{online.name}} UserUID: {{online.uid}}</p></nb-checkbox>
           </div>     
       </div>
 
@@ -52,9 +52,12 @@
   <nb-card>
     <nb-card-body>
       <h6>Select Character</h6>
+      <div *ngFor="let playerSheet of playerSheet | async">
+        <nb-checkbox (change)="toggle2($event,playerSheet.charname)" name="{{playerSheet.charname}}" [ng-checked]="playerSheet.charname" status="primary"><p class="logged" style="display:inline">Name: {{playerSheet.charname}} </p></nb-checkbox>
+
+      </div>
 
 
-      
     </nb-card-body>
 
   </nb-card>

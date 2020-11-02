@@ -19,21 +19,18 @@ import { CharacterSheet } from '../../models/character/characterSheet'
 })
 export class CreatepartyComponent implements OnInit {
 model: gameSession = new gameSession;
+selectedMembers: string[];
+gameSessions: string[];
+selectedCharacters: string[];
 
 
- selectedMembers: string[];
-
- gameSessions: string[];
-
+ 
  checked3 = false;
-
-
   online:Observable<any[]>;
-
   user: User;
 
  
- aTest: Observable<any[]>;
+  playerSheet:Observable<any[]>;
 
   checked = false;
 
@@ -47,6 +44,7 @@ model: gameSession = new gameSession;
 
   createdGame;
 
+  
 
   constructor(
       private afs: AngularFirestore,
@@ -59,8 +57,12 @@ model: gameSession = new gameSession;
   ngOnInit() {
     this.auth.user$.subscribe(user => this.user = user)
     this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
+    
+    this.playerSheet = this.afs.collection('character', ref => ref.orderBy('charname', 'desc').limit(25)).valueChanges();
+
     this.selectedMembers = new Array<string>();
     this.gameSessions = new Array<string>();
+    this.selectedCharacters = new Array<string>();
   }
   
   
@@ -77,7 +79,29 @@ model: gameSession = new gameSession;
      console.log(this.selectedMembers);
   }
 
- 
+  toggle2(e:any, charname:string) {
+    if(e.target.checked){
+           console.log(charname + "checked");
+           this.selectedCharacters.push(charname);
+    }else {
+       console.log(charname + 'unchecked');
+       //filter to uncheck what is not checked yet keep what is
+       this.selectedCharacters = this.selectedCharacters.filter(m => m != charname);
+    }
+    console.log(this.selectedMembers);
+ }
+
+
+
+
+
+
+
+
+  async getMarker() {
+    const characterSheet = await firestore().collection('character').get()
+    return characterSheet.docs.map(doc => doc.data());
+}
 
   toggle3(checked3: boolean){
     this.checked3 = checked3;
@@ -92,7 +116,7 @@ model: gameSession = new gameSession;
     gamesession.timestamp = `${new Date()}`;
     this.saveDungeonMaster(this.user.uid);
     this.afs.collection('groupsession').doc(this.user.uid).set(gamesession);
-    this.afs.collection('groupsession').doc(this.user.uid).update({"partyLeader": this.user.uid, "selectedMembers": this.selectedMembers})
+    this.afs.collection('groupsession').doc(this.user.uid).update({"partyLeader": this.user.uid, "selectedMembers": this.selectedMembers, "selectedCharacters": this.selectedCharacters})
     this.showToast();
     this.router.navigate(['game-session']);
   }
