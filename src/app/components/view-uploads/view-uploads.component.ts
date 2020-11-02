@@ -21,6 +21,7 @@ export class ViewUploadsComponent implements OnInit {
   constructor(private auth: AuthService, private afs: AngularFirestore) { }
 
   ngOnInit() {
+    this.auth.user$.subscribe(user => this.user = user);
     this.auth.user$.subscribe(user => {
       if (user) {
         this.isLoggedIn = true;

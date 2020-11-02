@@ -70,6 +70,8 @@ import { CreatepartyComponent } from './components/createparty/createparty.compo
 import { JoinPartyComponent } from './components/join-party/join-party.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { GameSessionComponent } from './components/game-session/game-session.component';
+import { GameSessionDmviewComponent } from './components/game-session-dmview/game-session-dmview.component';
+import { ViewFilesComponent } from './components/view-files/view-files.component';
 
 
 @NgModule({
@@ -108,7 +110,9 @@ import { GameSessionComponent } from './components/game-session/game-session.com
     CreatepartyComponent,
     JoinPartyComponent,
     SearchResultsComponent,
-    GameSessionComponent
+    GameSessionComponent,
+    GameSessionDmviewComponent,
+    ViewFilesComponent
   ],
   imports: [
     BrowserModule,

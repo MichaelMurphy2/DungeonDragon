@@ -30,7 +30,7 @@ export class JoinPartyComponent implements OnInit {
   user: User;
   groupsession:Observable<any[]>;
 
-  roomSelect: string;
+  roomSelect: string[];
 
 
   constructor(
@@ -45,17 +45,18 @@ export class JoinPartyComponent implements OnInit {
     this.auth.user$.subscribe(user => this.user = user)
     this.groupsession = this.afs.collection('groupsession', ref => ref.orderBy('partyLeader', 'desc').limit(25)).valueChanges();
     console.log(this.groupsession);
+    this.roomSelect = new Array<string>();
   }
 
   
   toggle2(e:any, partyLeader:string) {
     if(e.target.checked){
            console.log(partyLeader + "checked");
-           this.roomSelect = partyLeader;
+           this.roomSelect.push(partyLeader);
     }else {
        console.log(partyLeader + 'unchecked');
        //filter to uncheck what is not checked yet keep what is
-       this.roomSelect = "no Leader selected";
+       this.roomSelect = this.roomSelect.filter(m => m != partyLeader);
     }
     console.log(this.roomSelect);
  }

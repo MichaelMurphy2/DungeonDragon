@@ -25,6 +25,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { CreatepartyComponent } from './components/createparty/createparty.component';
 import { GameSessionComponent } from './components/game-session/game-session.component';
 import { JoinPartyComponent } from './components/join-party/join-party.component';
+import { ViewFilesComponent } from './components/view-files/view-files.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'game-session', component: GameSessionComponent, canActivate: [AuthGuardService]},
   {path: 'uploader', component: UploaderComponent, canActivate: [AuthGuardService]},
   {path: 'viewuploads', component: ViewUploadsComponent, canActivate: [AuthGuardService]},
+  {path: 'view-files', component: ViewFilesComponent, canActivate: [AuthGuardService]},
   {path: 'viewchar', component: ViewCharactersComponent, canActivate: [AuthGuardService]},
   {path: 'game-main', component:GameMainComponent, canActivate: [AuthGuardService]},
   {path: 'create-party', component:CreatepartyComponent, canActivate: [AuthGuardService]},

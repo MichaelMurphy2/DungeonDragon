@@ -2,12 +2,23 @@
 
 
 <div *ngIf='user; else no_images' class='container'>
-     <p>Hello</p>
-    <uploader></uploader>
+   
+
+
+   
   </div>
   
+  <div *ngFor="let image of images">
+  
+    <img [src]="image.downloadUrl" class="d-block" [alt]="image.alt">
+   </div>
   
   
   <ng-template #no_images>
     No images uploaded yet!
   </ng-template>
+
+  <div *ngIf="user">
+<p>list</p>
+
+  </div>
