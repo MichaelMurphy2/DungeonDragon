@@ -9,8 +9,12 @@
   </div>
   
   <div *ngFor="let image of images">
-  
-    <img [src]="image.downloadUrl" class="d-block" [alt]="image.alt">
+  <nb-card>
+    <nb-card-body>
+      <img [src]="image.downloadUrl" class="game-maps" [alt]="image.alt">
+    </nb-card-body>
+  </nb-card>
+    
    </div>
   
   
