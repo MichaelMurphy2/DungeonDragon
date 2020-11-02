@@ -24,6 +24,7 @@ import { ViewCharactersComponent } from './components/view-characters/view-chara
 import { SearchResultsComponent } from './components/search-results/search-results.component'
 import { CreatepartyComponent } from './components/createparty/createparty.component';
 import { GameSessionComponent } from './components/game-session/game-session.component';
+import { JoinPartyComponent } from './components/join-party/join-party.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'viewchar', component: ViewCharactersComponent, canActivate: [AuthGuardService]},
   {path: 'game-main', component:GameMainComponent, canActivate: [AuthGuardService]},
   {path: 'create-party', component:CreatepartyComponent, canActivate: [AuthGuardService]},
+  {path: 'join-party', component:JoinPartyComponent, canActivate: [AuthGuardService]},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
   {path: 'home', component: HomeComponent},
   {path: 'spellbook', component:SpellbookComponent, children: [{ path: 'search', component: SearchPageComponent }], canActivate: [AuthGuardService]},

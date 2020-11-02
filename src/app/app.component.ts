@@ -118,7 +118,7 @@ items: NbMenuItem[] = [
       {
         title: 'Join Party',
         icon: 'person-outline',
-        link: 'game-main'
+        link: 'join-party'
       },
       {
         title: 'Rule Book',
