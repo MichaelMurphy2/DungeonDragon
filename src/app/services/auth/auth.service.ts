@@ -198,7 +198,8 @@ updateOnAway() {
 
 
 updateCollection(user, status){
-  this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'status': status});
+  
+  this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'uid': user.uid ,'status': status});
 }
 
 testUpdate(status){

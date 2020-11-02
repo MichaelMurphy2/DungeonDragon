@@ -1,16 +1,60 @@
-<h1>Current Online Members</h1>
+<h1>Create Dungeon Party</h1>
 
-   
+<form gamesession #gamesession="ngForm" (ngSubmit)="onSubmit(gamesession.value); gamesession.reset()">
+
 
   <nb-card>
-    <nb-card-body class="example-items-rows">
-      <p>Select users to form a group!</p>
-      <div *ngFor="let online of online | async" class="online">
-        <div *ngIf="online.status == 'online'">
-          <nb-checkbox status="primary"><p class="logged" style="display:inline">Name: {{online.name}} </p></nb-checkbox>
-          </div>     
-      </div>
+    <nb-card-body>
+      <h6>Will you be the Dungeon Master for your Party?.</h6>
+      <nb-checkbox (checkedChange)="toggle3($event)" [(ngModel)]="model.dungeonMaster" name = "dungeonMaster" status="primary">Dungeon Master   <p style="display:inline" *ngIf="checked3"> - The universe now bows to your will.</p> </nb-checkbox> 
+    
     </nb-card-body>
   </nb-card>
 
   
+
+<nb-card>
+  <nb-card-body>
+    <h6>Dungeon Name</h6>
+    <input class="form-control" type="text" nbInput fullWidth placeholder="Party Name" #partyName="ngModel" [(ngModel)]="model.partyName" name="partyName" required minlength="3">
+  
+    <div [hidden]="partyName.valid || partyName.untouched"
+          class="alert alert-danger">
+           If no selction made, party is required.
+        </div>
+  </nb-card-body>
+</nb-card>
+
+
+  <nb-card>
+    <nb-card-body class="example-items-rows">
+      <h6>Select Party Members!</h6>
+      <div *ngFor="let online of online | async" class="online">
+        <div *ngIf="online.status == 'online'">
+          <nb-checkbox (checkedChange)="toggle($event)"  status="primary"><p class="logged" style="display:inline">Name: {{online.name}} UserUID: {{online.uid}}</p></nb-checkbox>
+          </div>     
+      </div>
+
+
+
+
+     
+
+    </nb-card-body>
+  </nb-card>
+
+<nb-card>
+  <nb-card-body>
+    <button nbButton (click)="showToast()">Submit</button>
+  </nb-card-body>
+
+</nb-card>
+
+
+    
+
+
+
+
+
+</form>

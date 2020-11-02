@@ -67,6 +67,8 @@ import { UserStatusComponent } from './components/user-status/user-status.compon
 import { ViewCharactersComponent } from './components/view-characters/view-characters.component';
 import { CharlistComponent } from './components/charlist/charlist.component';
 import { CreatepartyComponent } from './components/createparty/createparty.component';
+import { JoinPartyComponent } from './components/join-party/join-party.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 
 @NgModule({
@@ -102,7 +104,9 @@ import { CreatepartyComponent } from './components/createparty/createparty.compo
     UserStatusComponent,
     ViewCharactersComponent,
     CharlistComponent,
-    CreatepartyComponent
+    CreatepartyComponent,
+    JoinPartyComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
