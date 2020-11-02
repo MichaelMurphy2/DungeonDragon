@@ -17,10 +17,14 @@ import * as firebase from 'firebase/app';
 
 
 export class AuthService {
+
   online: Observable<any[]>;
+
   user$: Observable<User>;
 
   
+
+
   
   uid = this.afAuth.authState.pipe(
     map(authState => {
@@ -52,7 +56,6 @@ export class AuthService {
     })
   )
 
-
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -74,22 +77,29 @@ export class AuthService {
       }));
   }
 
+ 
+
   googleLogin() {
     const provider = new auth.GoogleAuthProvider()
+    
     return this.oAuthLogin(provider);
   }
 
   private oAuthLogin(provider) {
+   
+
     return this.afAuth.signInWithPopup(provider)
       .then((credential) => {
         this.updateUserData(credential.user)
       })
+     
   }
 
  async signOut() {
     const user = await this.getUser();
-    this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'status': status});
+    
     this.setPresence('offline');
+    this.updateCollection(user,status);
     this.afAuth.signOut();
    
     return this.router.navigate(['/']);
@@ -105,14 +115,20 @@ export class AuthService {
         subscriber: true,
         admin: false
       }
+     
     }
+    location.reload();
     return userRef.set(data, { merge: true })
   };
+  
 
+  //wraping  db observable so we can listen to status based on uid
   getPresence(uid: string) {
+    this.updateCollection(uid,status);
     return this.db.object(`status/${uid}`).valueChanges();
   }
-
+  
+  //return as as promise so you can use async await 
   getUser() {
    
     return this.afAuth.authState.pipe(first()).toPromise();
@@ -123,7 +139,7 @@ export class AuthService {
     const user = await this.getUser();
     
     if (user) {
-      this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'uid': user.uid,'status': status});
+      this.updateCollection(user,status);
       return this.db.object(`status/${user.uid}`).update({ status, timestamp: this.timestamp });
     }
   }
@@ -132,27 +148,36 @@ export class AuthService {
     return firebase.database.ServerValue.TIMESTAMP;
   }
 
+  //return boolean if device is connected
   updateOnUser() {
       const connection = this.db.object('.info/connected').valueChanges().pipe(
       map(connected => connected ? 'online' : 'offline')
     );
-
+ //if logged in reaturn the observable or say they are offline
+ 
     return this.afAuth.authState.pipe(
+      
       switchMap(user =>  user ? connection : of('offline')),
+      //updateit in the db
       tap(status => this.setPresence(status))
     );
+
+    
   }
+
 
   updateOnDisconnect() {
     return this.afAuth.authState.pipe(
       tap(user => {
         if (user) {
-          this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'status': status});
+          this.updateCollection(user, status);
           this.db.object(`status/${user.uid}`).query.ref.onDisconnect()
             .update({
               status: 'offline',
               timestamp: this.timestamp
           });
+
+          
         }
       })
     );
@@ -164,6 +189,7 @@ updateOnAway() {
 
     if (document.visibilityState === 'hidden') {
       this.setPresence('away');
+
     } else {
       this.setPresence('online');
     }
@@ -171,11 +197,16 @@ updateOnAway() {
 }
 
 
-updateCollection(user){
+updateCollection(user, status){
   this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'status': status});
 }
 
+testUpdate(status){
+  const user = this.getUser();
+   if(user){
 
+   }
+}
 
 
 }

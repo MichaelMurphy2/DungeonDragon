@@ -8,15 +8,10 @@
     
     <img class="ddlogo" src="/assets/images/ddlogo.png" class="ddlogo">
 
-   
-
-
     <div class="login">
       <span *ngIf="auth.user$ | async; then logout else login"></span>
     </div>
 
-
-    
   </nb-layout-header>
 <!--end of top section-->
   <nb-sidebar tag="left">
@@ -24,13 +19,6 @@
       <nb-menu [items]="items" autoCollapse="true">
       </nb-menu>
     
-      
-     
-     
-    
-  
-    
-
   </nb-sidebar>
 <!--End of left Menu-->
   <nb-sidebar right tag="right" class="chatpanel">
@@ -46,19 +34,8 @@
   <nb-layout-column class="colored-column-warning">
 
 
-    
-
-    
-
 <router-outlet></router-outlet>
 
-
-
-
-
-
-
- 
 
   </nb-layout-column>
 

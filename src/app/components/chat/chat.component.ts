@@ -23,6 +23,7 @@ export class ChatComponent {
   title: string = "Chat";
   content: string;
   author = "your name here";
+
   user: User;
   
   position = 'top-right';
@@ -42,8 +43,9 @@ export class ChatComponent {
  // postsCol: AngularFirestoreCollection<Post>;
   posts: Observable<any[]>;
 
+  arrived;
   
-  
+  index = 0;
   constructor(private afs: AngularFirestore, public auth: AuthService, private toastrService: NbToastrService,) {
    
   }
@@ -52,6 +54,7 @@ export class ChatComponent {
     this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
     this.posts = this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(3)).valueChanges();
     this.auth.user$.subscribe(user => this.user = user);
+    this.arrived = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges().subscribe(data => this.playAudio2(data));
     this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(25)).valueChanges().subscribe(data => {
       this.playAudio(data);
       this.showToast(data);
@@ -85,13 +88,30 @@ export class ChatComponent {
   }
 
   playAudio(audioinc){
-    if(audioinc){
+    console.log(this.index + " this is index");
+    this.index++;
+    if(audioinc && this.index >= 1){
     let audio = new Audio();
-    audio.src = "../../../assets/audio/notify.mp3";
+    audio.src = "../../../assets/audio/mssgIn4.mp3";
     audio.load();
     audio.play();
   }
   }
+  
+  playAudio2(audioinc){
+    this.index++;
+    if(audioinc && this.index >= 1){
+    let audio = new Audio();
+    audio.src = "../../../assets/audio/welcomeuser.mp3";
+    audio.load();
+    audio.play();
+  }
+  }
+
+
+
+
+
 
   showToast(data) {
     if(data){

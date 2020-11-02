@@ -20,6 +20,9 @@ export class GameMainComponent implements OnInit {
 
   diceRolls;
 
+  rolls;
+  
+
   constructor(private auth: AuthService, private db: AngularFireDatabase) { }
 
 
@@ -27,7 +30,9 @@ export class GameMainComponent implements OnInit {
   ngOnInit() {
     this.auth.user$.subscribe(user => this.user = user);
     this.auth.diceRolls.subscribe(data => this.diceRolls = data);
+    this.rolls = this.db.object('dicerolls').valueChanges().subscribe(data => this.rolls = data);
   }
-  
+
+ 
 
 }

@@ -5,9 +5,6 @@ export interface Roles{
     subscriber?: boolean;
 }
 
-
-
-
 export interface User{
     uid: string;
     email: string;

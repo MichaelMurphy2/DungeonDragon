@@ -26,7 +26,7 @@ constructor(
   public auth: AuthService,
   private windowService: NbWindowService){
 
-   
+  
 
 }
 
@@ -37,6 +37,7 @@ constructor(
     /* user.uid => user id */
    // this.userID = this.user.isDungeonMaster;
   })
+  
  }
 
 

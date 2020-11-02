@@ -8,6 +8,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { gameSession } from '../../models/game-sessions/session';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-createparty',
   templateUrl: './createparty.component.html',
@@ -24,7 +26,7 @@ export class CreatepartyComponent implements OnInit {
   user: User;
 
 
-  uid;
+ aTest: Observable<any[]>;
 
   checked = false;
 
@@ -33,7 +35,6 @@ export class CreatepartyComponent implements OnInit {
   ngOnInit() {
     this.auth.user$.subscribe(user => this.user = user)
     this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
-    this.uid = this.user.uid;
   }
   
   

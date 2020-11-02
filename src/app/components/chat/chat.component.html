@@ -1,3 +1,4 @@
+
 <nb-card class="card-style">
   <nb-card-body>
     <p class="iamName" *ngIf="auth.user$ | async as user;">{{user.displayName}}</p>
@@ -22,9 +23,11 @@
     <h6>Chat</h6>
     <nb-card size="tiny">
       <nb-card-body>
+        <p class="iam">Members Online</p>
+        <hr>
     <div *ngFor="let online of online | async" class="online">
         <div *ngIf="online.status == 'online' ">
-           <p class="logged">{{online.name}} {{online.status}}<img class="stats" src="assets/images/ani-dice.gif"></p>
+           <p class="logged">{{online.name}} {{online.status}}<img class="stats" style="display:inline" src ="/assets/images/ani-dice.gif"></p>
           </div>     
       </div>
     </nb-card-body>

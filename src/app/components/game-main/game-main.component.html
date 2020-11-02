@@ -28,6 +28,7 @@
 
   <div *ngIf="user">
     <h2>{{user.displayName}}</h2>
+        <p>{{user.uid}}</p>
    </div>
 
   <div *ngIf="diceRolls">
@@ -45,4 +46,15 @@
   </div>
 
 </nb-card>
+
+<div *ngIf="rolls">
+  <h4>Dice Rolls for user ID: DeZYFNPOc5N0HR2ArVuRHUoepWF2</h4>
+  <p>D2:    {{rolls.DeZYFNPOc5N0HR2ArVuRHUoepWF2.d2}}</p>
+  <p>D4:    {{rolls.DeZYFNPOc5N0HR2ArVuRHUoepWF2.d4}}</p>
+  <p>D6:    {{rolls.DeZYFNPOc5N0HR2ArVuRHUoepWF2.d6}}</p>
+  <p>D8:    {{rolls.DeZYFNPOc5N0HR2ArVuRHUoepWF2.d8}}</p>
+  <p>D10:   {{rolls.DeZYFNPOc5N0HR2ArVuRHUoepWF2.d10}}</p>
+  <p>D20:   {{rolls.DeZYFNPOc5N0HR2ArVuRHUoepWF2.d20}}</p>
+  <p>D100:  {{rolls.DeZYFNPOc5N0HR2ArVuRHUoepWF2.d100}}</p>
+</div>
 
