@@ -104,17 +104,17 @@ items: NbMenuItem[] = [
     icon: 'activity-outline',
     expanded: true,
     children: [
-      {
-        title: 'Game Board',
-        icon: 'person-outline',
-        link: 'game-main'
-      },
+    
       {
         title: 'Create Party',
         icon: 'person-outline',
         link: 'create-party'
       },
-
+      {
+        title: 'Join Party',
+        icon: 'person-outline',
+        link: 'game-main'
+      },
       {
         title: 'Rule Book',
         icon: 'book-outline',

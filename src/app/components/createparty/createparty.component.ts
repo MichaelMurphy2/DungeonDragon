@@ -9,6 +9,7 @@ import { gameSession } from '../../models/gameSession/gameSession';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NbToastrService, NbToastRef } from '@nebular/theme';
 import { Router } from '@angular/router';
+import { CharacterSheet } from '../../models/character/characterSheet'
 
 
 @Component({
@@ -22,6 +23,8 @@ model: gameSession = new gameSession;
 
  selectedMembers: string[];
 
+ gameSessions: string[];
+
  checked3 = false;
 
 
@@ -29,7 +32,7 @@ model: gameSession = new gameSession;
 
   user: User;
 
-
+ 
  aTest: Observable<any[]>;
 
   checked = false;
@@ -57,6 +60,7 @@ model: gameSession = new gameSession;
     this.auth.user$.subscribe(user => this.user = user)
     this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
     this.selectedMembers = new Array<string>();
+    this.gameSessions = new Array<string>();
   }
   
   
