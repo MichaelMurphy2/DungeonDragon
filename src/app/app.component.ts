@@ -184,11 +184,6 @@ items: NbMenuItem[] = [
       },
     ],
   },
-  {
-    title: 'Register',
-    icon: 'person-outline',
-    link: 'register',
- },
 ];
 
 

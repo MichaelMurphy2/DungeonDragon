@@ -36,7 +36,6 @@ const routes: Routes = [
   {path: 'create-party', component:CreatepartyComponent, canActivate: [AuthGuardService]},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
   {path: 'home', component: HomeComponent},
-  {path: 'register', component: RegisterComponent, canActivate: [AuthGuardService]},
   {path: 'spellbook', component:SpellbookComponent, children: [{ path: 'search', component: SearchPageComponent }], canActivate: [AuthGuardService]},
   {path: 'backgrounds', component:BackgroundsComponent, children: [{ path: 'search', component: SearchPageComponent }], canActivate: [AuthGuardService]},
   {path: 'sections', component:SectionsComponent,children: [{ path: 'search', component: SearchPageComponent }], canActivate: [AuthGuardService]},
