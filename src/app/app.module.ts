@@ -69,6 +69,7 @@ import { CharlistComponent } from './components/charlist/charlist.component';
 import { CreatepartyComponent } from './components/createparty/createparty.component';
 import { JoinPartyComponent } from './components/join-party/join-party.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { GameSessionComponent } from './components/game-session/game-session.component';
 
 
 @NgModule({
@@ -106,7 +107,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     CharlistComponent,
     CreatepartyComponent,
     JoinPartyComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    GameSessionComponent
   ],
   imports: [
     BrowserModule,

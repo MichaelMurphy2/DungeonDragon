@@ -19,7 +19,10 @@ import { Router } from '@angular/router';
 export class CreatepartyComponent implements OnInit {
 model: gameSession = new gameSession;
 
-checked3 = false;
+
+ selectedMembers: string[];
+
+ checked3 = false;
 
 
   online:Observable<any[]>;
@@ -32,14 +35,14 @@ checked3 = false;
   checked = false;
 
   position = 'top-right';
-  status = 'danger';
-  status1 = 'primary';
-  message ="Sucessfully Registered";
-  message1 ='Registration Failed';
-  title ="Registration";
+  status = 'primary';
+  status1 = 'danger';
+  message ="Game Created";
+  message1 ='Game Creation Failed';
+  title ="Create Party";
 
 
-
+  createdGame;
 
 
   constructor(
@@ -53,18 +56,21 @@ checked3 = false;
   ngOnInit() {
     this.auth.user$.subscribe(user => this.user = user)
     this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
+    this.selectedMembers = new Array<string>();
   }
   
   
 
-  toggle(checked: boolean) {
-    this.checked = checked;
-    if(this.checked == true){
-      console.log(this.user.uid + "  " + checked);
-    }
-    if(this.checked == false){
-      this.afs.collection('groupsession').doc(this.user.uid).update({"partyMember": this.user.uid});
-    }
+  toggle(e:any, uid:string) {
+     if(e.target.checked){
+            console.log(uid + "checked");
+            this.selectedMembers.push(uid);
+     }else {
+        console.log(uid + 'unchecked');
+        //filter to uncheck what is not checked yet keep what is
+        this.selectedMembers = this.selectedMembers.filter(m => m != uid);
+     }
+     console.log(this.selectedMembers);
   }
 
  
@@ -73,19 +79,17 @@ checked3 = false;
     this.checked3 = checked3;
     if(this.checked3 == true){
       const itemRef = this.db.object(this.user.uid);
-      itemRef.update({isDungeonMaster: this.model.isDungeonMaster});
+     itemRef.update({isDungeonMaster: this.model.isDungeonMaster});
     }
-    if(this.checked3 == false){
-      const itemRef = this.db.object(this.user.uid);
-      itemRef.update({isDungeonMaster: this.model.isDungeonMaster});
-    }
+    
   }
 
   onSubmit(gamesession){
     gamesession.timestamp = `${new Date()}`;
     this.saveDungeonMaster(this.user.uid);
     this.afs.collection('groupsession').doc(this.user.uid).set(gamesession);
-    this.afs.collection('groupsession').doc(this.user.uid).update({"partyLeader": this.user.uid})
+    this.afs.collection('groupsession').doc(this.user.uid).update({"partyLeader": this.user.uid, "selectedMembers": this.selectedMembers})
+    this.showToast();
   }
 
 
@@ -95,15 +99,22 @@ checked3 = false;
   }
 
   showToast() {
-  
-     this.toastAlert(this.status, this.position);
-    
- }
+ // if(createdGame == true){
+  //    this.toastAlert(this.status, this.position);
+ //   }
+ // if(createdGame == false){
+ //     this.toastAlert1(this.status, this.position);
+ //   }  
+  }
+
+
  toastAlert(status, position){
-  const toastRef: NbToastRef = this.toastrService.show(this.message1, this.title, {status: status, position: position});
-}
-toastAlert1(status, position){
   const toastRef: NbToastRef = this.toastrService.show(this.message, this.title, {status: status, position: position});
 }
+toastAlert1(status, position){
+  const toastRef: NbToastRef = this.toastrService.show(this.message1, this.title, {status: status, position: position});
+}
+
+
 
 }

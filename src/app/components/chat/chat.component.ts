@@ -54,7 +54,8 @@ export class ChatComponent {
     this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
     this.posts = this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(3)).valueChanges();
     this.auth.user$.subscribe(user => this.user = user);
-    this.arrived = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges().subscribe(data => this.playAudio2(data));
+    //play audio on away
+   //  this.arrived = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges().subscribe(data => this.playAudio2(data));
     this.afs.collection('posts', ref => ref.orderBy('timeStamp', 'desc').limit(25)).valueChanges().subscribe(data => {
       this.playAudio(data);
       this.showToast(data);

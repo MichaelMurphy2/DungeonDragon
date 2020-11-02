@@ -22,7 +22,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SearchPageComponent } from './components/open5e/search-page/search-page.component';
 import { ViewCharactersComponent } from './components/view-characters/view-characters.component';
 import{SearchResultsComponent} from './components/search-results/search-results.component'
-//import { CreatepartyComponent } from './components/createparty/createparty.component';
+import { CreatepartyComponent } from './components/createparty/createparty.component';
 
 
 const routes: Routes = [
@@ -32,7 +32,7 @@ const routes: Routes = [
   {path: 'viewuploads', component: ViewUploadsComponent, canActivate: [AuthGuardService]},
   {path: 'viewchar', component: ViewCharactersComponent, canActivate: [AuthGuardService]},
   {path: 'game-main', component:GameMainComponent, canActivate: [AuthGuardService]},
-  //{path: 'create-party', component:CreatepartyComponent, canActivate: [AuthGuardService]},
+  {path: 'create-party', component:CreatepartyComponent, canActivate: [AuthGuardService]},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
   {path: 'home', component: HomeComponent},
   {path: 'register', component: RegisterComponent, canActivate: [AuthGuardService]},

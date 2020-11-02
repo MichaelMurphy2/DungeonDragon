@@ -16,8 +16,6 @@ export class SearchPageComponent implements OnInit {
       this.value = data.term;
       this.getSearchResults();
     });
-   
-
   }
 
   ngOnInit(): void {
