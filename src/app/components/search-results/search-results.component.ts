@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "../../services/open5e/data/data.service";
+import { SearchResults } from "../../models/open5e/search-results";
 import { Router, ActivatedRoute, Params } from '@angular/router';
+
 
 
 
@@ -9,12 +12,17 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
-   public value: string;
+  data: SearchResults[];
+  value = '';
   
-  constructor( private route: ActivatedRoute ) {}
+  constructor( private route: ActivatedRoute, private DataService: DataService ) {}
 
   ngOnInit()  {
     this.value = this.route.snapshot.paramMap.get('value');
+    this.DataService.getSearchResults(this.value).subscribe((data)=>{
+      this.data = data;
+      console.log(this.data);
+    })
   }
 
 

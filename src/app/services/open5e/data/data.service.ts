@@ -12,6 +12,7 @@ import { Classes } from "../../../models/open5e/classes";
 import { Races } from "../../../models/open5e/races";
 import { Planes } from "../../../models/open5e/planes";
 import { Monsters } from "../../../models/open5e/monsters";
+import { SearchResults } from "../../../models/open5e/search-results";
 import { DungeonRest } from "../../../models/open5e/dungeonRest";
 import { map } from "rxjs/operators/";
 
@@ -160,6 +161,20 @@ export class DataService {
       })
     );
   }
+
+  getSearchResults(value: string): Observable<SearchResults[]> {
+    return this.getDataFromAPI("https://api.open5e.com/search/?"+ value).pipe(
+      map(res => {
+        return res.results.map(item => {
+          return new SearchResults(
+            item
+          )
+        });
+      })
+    );
+  }
+
+  
  
 
 

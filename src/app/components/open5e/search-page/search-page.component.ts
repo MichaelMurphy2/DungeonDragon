@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-page.component.scss']
 })
 export class SearchPageComponent implements OnInit {
-  value = 'asdf';
+  value = '';
   constructor( private searchService: NbSearchService, private router: Router) { 
 
     this.searchService.onSearchSubmit()

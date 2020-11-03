@@ -4,3 +4,21 @@
       <h3>{{ value || '-' }}</h3>
     </nb-card-body>
   </nb-card>
+  <div *ngIf="!!data; else spinner">
+  <div *ngFor="let data of data">
+    <nb-card accent="info">
+       
+<nb-card-header><h3>{{data.name}}</h3></nb-card-header>
+
+      <p>{{data.desc}}</p>
+      <p>{{data.text}}</p>
+    </nb-card>
+</div>
+</div>
+<ng-template #spinner>
+  <nb-card size="giant">
+      <app-spinner></app-spinner>
+  </nb-card>
+</ng-template>
+
+
