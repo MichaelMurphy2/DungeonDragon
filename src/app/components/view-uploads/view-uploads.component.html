@@ -1,28 +1,27 @@
-<p>view-uploads works!</p>
 
-
-<div *ngIf='user; else no_images' class='container'>
-   
+<h1>Game Maps</h1>
 
 
    
-  </div>
+
+
+ 
   
   <div *ngFor="let image of images">
   <nb-card>
     <nb-card-body>
       <img [src]="image.downloadUrl" class="game-maps" [alt]="image.alt">
+<nb-card>
+  <nb-card-body>
+      <nb-checkbox (change)="toggle($event,image.downloadUrl)" name="{{image.downloadUrl}}" [ng-checked]="image.downloadUrl" status="primary"><p class="logged" style="display:inline">File Link: {{image.downloadUrl}}</p></nb-checkbox>
+    </nb-card-body>
+    </nb-card>
     </nb-card-body>
   </nb-card>
     
    </div>
   
   
-  <ng-template #no_images>
-    No images uploaded yet!
-  </ng-template>
+  
 
-  <div *ngIf="user">
-<p>list</p>
-
-  </div>
+ 

@@ -17,7 +17,7 @@ export class ViewUploadsComponent implements OnInit {
 
   user: User;
 
-
+  selectedFile:string[];
   constructor(private auth: AuthService, private afs: AngularFirestore) { }
 
   ngOnInit() {
@@ -39,6 +39,27 @@ export class ViewUploadsComponent implements OnInit {
         ).subscribe(res => this.images = res);
       }
     });
+    this.selectedFile = new Array<string>();
   }
+
+
+
+  toggle(e:any, downloadUrl:string) {
+    if(e.target.checked){
+           console.log(downloadUrl + "checked");
+           this.selectedFile.push(downloadUrl);
+    }else {
+       console.log(downloadUrl + 'unchecked');
+       //filter to uncheck what is not checked yet keep what is
+       this.selectedFile = this.selectedFile.filter(m => m != downloadUrl);
+    }
+    console.log(this.selectedFile);
+ }
+
+
+
+
+
+
 
 }
