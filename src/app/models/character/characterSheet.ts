@@ -1,5 +1,6 @@
 export class CharacterSheet {
     constructor(
+        public uid: string ='',
         public charname:string='',
         public classlevel:string='',
         public background:string='',

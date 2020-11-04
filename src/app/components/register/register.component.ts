@@ -110,7 +110,7 @@ checked3 = false;
   }
 
   toastAlert(status, position){
-    const toastRef: NbToastRef = this.toastrService.show(this.message2, this.title, {status: status, position: position});
+    const toastRef: NbToastRef = this.toastrService.show(this.message1, this.title, {status: status, position: position});
   }
   toastAlert1(status, position){
     const toastRef: NbToastRef = this.toastrService.show(this.message, this.title, {status: status, position: position});

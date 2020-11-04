@@ -6,7 +6,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { NbToastrService, NbToastRef } from '@nebular/theme';
 import { CharacterSheet } from '../../models/character/characterSheet'
-
+import { AuthService } from '../../services/auth/auth.service';
+import { User } from '../../models/user';
 
 
 @Component({
@@ -15,6 +16,9 @@ import { CharacterSheet } from '../../models/character/characterSheet'
   styleUrls: ['./charsheet.component.scss']
 })
 export class CharsheetComponent implements OnInit {
+
+  user: User;
+  
   model: CharacterSheet = new CharacterSheet();
   checked = false;
   checked1 = false;
@@ -64,10 +68,12 @@ private index: number = 0;
     private toastrService: NbToastrService,
     private storage: AngularFireStorage,
     private afs: AngularFirestore,
+    private auth: AuthService,
     private router: Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+     this.auth.user$.subscribe(user => this.user = user);
   }
 
   toggle(checked: boolean){
@@ -196,13 +202,14 @@ private index: number = 0;
 
   onSubmit(form) {
     form.timestamp = `${new Date()}`;
-    this.afs.collection('character').add( form );
+    
+    this.afs.collection('character').add(form);
 
  
       this.toastAlert1(this.status1, this.position);
     
 
-    this.router.navigate(['home']);
+    this.router.navigate(['viewchar']);
   }
 
 

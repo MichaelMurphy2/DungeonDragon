@@ -5,15 +5,17 @@
    
 
 
- 
   
   <div *ngFor="let image of images">
   <nb-card>
     <nb-card-body>
       <img [src]="image.downloadUrl" class="game-maps" [alt]="image.alt">
 <nb-card>
+
+  <!--Yes I should use radio buttons here, that is what they are designed for.. and I could just style the css to have boxes if the look is what I wanted..NbRadio is a component but I could not get it working-->
   <nb-card-body>
       <nb-checkbox (change)="toggle($event,image.downloadUrl)" name="{{image.downloadUrl}}" [ng-checked]="image.downloadUrl" status="primary"><p class="logged" style="display:inline">File Link: {{image.downloadUrl}}</p></nb-checkbox>
+      <button nbButton style="text-align: center;" (click)="showToast(image.downloadUrl)">Submit</button>
     </nb-card-body>
     </nb-card>
     </nb-card-body>
@@ -21,7 +23,7 @@
     
    </div>
   
-  
-  
 
- 
+  
+   
+  

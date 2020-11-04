@@ -5,4 +5,11 @@
   }
 
 
-  
+  .game-maps {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    width: 100px;
+    filter: drop-shadow( 5px 5px 8px black);
+}

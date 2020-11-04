@@ -4,13 +4,14 @@ import { Observable } from 'rxjs';
 import { firestore } from 'firebase';
 import { AuthService } from '../../services/auth/auth.service';
 import { User } from '../../models/user';
+import { Photo } from '../../models/photo.model';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { gameSession } from '../../models/gameSession/gameSession';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NbToastrService, NbToastRef } from '@nebular/theme';
 import { Router } from '@angular/router';
 
-
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -19,6 +20,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./game-session.component.scss']
 })
 export class GameSessionComponent implements OnInit {
+  user: User;
+  public images: Photo[];
+  private isLoggedIn: boolean = false;
+
+  public game: gameSession[];
+
 
   constructor(
     private afs: AngularFirestore,
@@ -29,6 +36,32 @@ export class GameSessionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    this.auth.user$.subscribe(user => this.user = user);
+
+   
+
+
+
+    this.auth.user$.subscribe(user => {
+      if (user) {
+        this.isLoggedIn = true;
+
+        this.afs.collection('groupsession', ref => ref.where('gamesessionID', '==', 'Lords of Bacon'))
+        .valueChanges().pipe(
+          map(res => res.map( data => new gameSession(data) ))
+        ).subscribe(res => this.game = res)
+      } else {
+        this.isLoggedIn = false;
+
+        this.afs.collection('groupsession', ref => ref.where('selectedMembers', '==',user.uid))
+        .valueChanges().pipe(
+          map(res => res.map( imgResult => new Photo(imgResult) ))
+        ).subscribe(res => this.images = res);
+      }
+    });
+    
+
   }
 
 }

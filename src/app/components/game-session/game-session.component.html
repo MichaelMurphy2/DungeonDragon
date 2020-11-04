@@ -1,1 +1,41 @@
 <p>game-session works!</p>
+
+  
+<div *ngFor="let game of game">
+    <nb-card>
+      <nb-card-body>
+        <img [src]="game.downloadUrl" class="game-maps" >
+       <p>{{game.downloadUrl}} Hello</p>
+    </nb-card-body>
+      </nb-card>
+      </div>
+  
+    <!--Yes I should use radio buttons here, that is what they are designed for.. and I could just style the css to have boxes if the look is what I wanted..NbRadio is a component but I could not get it working-->
+   
+<nb-layout>
+    
+    <nb-layout-column class="colored-column-info">
+        <h1>dice rolls</h1>
+
+    </nb-layout-column>
+    <nb-layout-column class="colored-column-info">
+        <h1>Stuff</h1>
+
+         
+
+
+
+    </nb-layout-column>
+    
+    <nb-layout-column left *ngIf="user">
+        
+        
+        <h1>Game Members</h1>
+        {{user.displayName}}
+        <p>Hello</p>
+
+
+
+
+    </nb-layout-column>
+  </nb-layout>

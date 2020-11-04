@@ -23,7 +23,7 @@ import { NbProgressBarModule } from '@nebular/theme';
 import { NbSpinnerModule } from '@nebular/theme';
 import { NbSearchModule } from '@nebular/theme';
 import { NbListModule } from '@nebular/theme';
-
+import { NbRadioModule} from '@nebular/theme';
 
 
 //Firebase
@@ -72,6 +72,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { GameSessionComponent } from './components/game-session/game-session.component';
 import { GameSessionDmviewComponent } from './components/game-session-dmview/game-session-dmview.component';
 import { ViewFilesComponent } from './components/view-files/view-files.component';
+
 
 
 @NgModule({
@@ -135,6 +136,7 @@ import { ViewFilesComponent } from './components/view-files/view-files.component
     NbAlertModule,
     NbProgressBarModule,
     NbListModule,
+    NbRadioModule,
     NbCheckboxModule,
     NbCardModule,
     NbWindowModule,

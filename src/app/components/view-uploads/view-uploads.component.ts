@@ -5,6 +5,12 @@ import { Photo } from '../../models/photo.model';
 import { AuthService } from '../../services/auth/auth.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { User } from '../../models/user';
+import { NbToastrService, NbToastRef } from '@nebular/theme';
+import { selectPhoto } from '../../models/selectPhoto/selectPhoto';
+import { Registration } from '../../models/registration/register';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-view-uploads',
@@ -16,9 +22,19 @@ export class ViewUploadsComponent implements OnInit {
   private isLoggedIn: boolean = false;
 
   user: User;
+  position = 'top-right';
+  status = 'danger';
+  status1 = 'primary';
+  message ="Sucessfully Selected Photo";
+  message1 ='Registration Failed';
+  title ="File Selected";
 
+  model: selectPhoto = new selectPhoto;
+
+
+  
   selectedFile:string[];
-  constructor(private auth: AuthService, private afs: AngularFirestore) { }
+  constructor(private auth: AuthService, private afs: AngularFirestore, private toastrService: NbToastrService, private router: Router) { }
 
   ngOnInit() {
     this.auth.user$.subscribe(user => this.user = user);
@@ -42,7 +58,11 @@ export class ViewUploadsComponent implements OnInit {
     this.selectedFile = new Array<string>();
   }
 
-
+  showToast(downloadUrl:string) {
+    this.afs.collection('mapselect').doc(this.user.uid).set({"uid":this.user.uid, "downloadUrl": downloadUrl});
+   
+    this.router.navigate(['game-session']);
+ }
 
   toggle(e:any, downloadUrl:string) {
     if(e.target.checked){
@@ -58,8 +78,8 @@ export class ViewUploadsComponent implements OnInit {
 
 
 
-
-
-
+ toastAlert(status, position){
+  const toastRef: NbToastRef = this.toastrService.show(this.message, this.title, {status: status, position: position});
+}
 
 }

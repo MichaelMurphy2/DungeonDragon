@@ -1,11 +1,22 @@
 export class gameSession {
-    constructor(
-        public isDungeonMaster = null,
-        public gamesessionID = null,
-        public uid = null,
-        public displayName = null
-    ){
+downloadUrl: string;
+user?: object;
+partyLeader: string;
+isDungeonMaster: boolean;
+selectedCharacters: Array<string>;
+selectedMembers: Array<string>;
 
-        
-    }
+constructor(gamesession){
+this.user = gamesession.user;
+this.isDungeonMaster = gamesession.isDungeonMaster;
+this.downloadUrl = gamesession.downloadUrl;
+this.partyLeader = gamesession.partyLeader;
+this.selectedCharacters = gamesession.selectedCharacters;
+this.selectedMembers = gamesession.selectedMembers;
+
+}
+
+
+
+
 } 
