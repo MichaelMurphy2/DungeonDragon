@@ -163,7 +163,7 @@ export class DataService {
   }
 
   getSearchResults(value: string): Observable<SearchResults[]> {
-    return this.getDataFromAPI("https://api.open5e.com/search/?"+ value).pipe(
+    return this.getDataFromAPI("https://api.open5e.com/search?text="+value).pipe(
       map(res => {
         return res.results.map(item => {
           return new SearchResults(
