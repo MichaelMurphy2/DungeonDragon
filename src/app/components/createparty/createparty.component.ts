@@ -19,12 +19,10 @@ import { Photo } from '../../models/photo.model';
 export class CreatepartyComponent implements OnInit {
 model: gameSessionC = new gameSessionC;
 selectedMembers: string[];
-gameSessions: string[];
 selectedCharacters: string[];
 selectedFile:string[];
 public images: Photo[];
 
- 
   checked3 = false;
   online:Observable<any[]>;
   user: User;
@@ -44,8 +42,6 @@ public images: Photo[];
   private isLoggedIn: boolean = false;
   createdGame;
 
-  
-
   constructor(
       private afs: AngularFirestore,
       public auth: AuthService,
@@ -59,10 +55,7 @@ public images: Photo[];
     this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
     this.playerSheet = this.afs.collection('character', ref => ref.orderBy('charname', 'desc').limit(25)).valueChanges();
     this.selectedMembers = new Array<string>();
-    this.gameSessions = new Array<string>();
-    this.selectedCharacters = new Array<string>();
-
-
+    this.selectedFile = new Array<string>();
 
     this.auth.user$.subscribe(user => this.user = user);
     this.auth.user$.subscribe(user => {
@@ -82,20 +75,7 @@ public images: Photo[];
         ).subscribe(res => this.images = res);
       }
     });
-    this.selectedFile = new Array<string>();
-  
-
-
-
-
-
-
-
-
-
-
-
-
+    
   }
   
   
@@ -121,7 +101,7 @@ public images: Photo[];
        //filter to uncheck what is not checked yet keep what is
        this.selectedCharacters = this.selectedCharacters.filter(m => m != charname);
     }
-    console.log(this.selectedMembers);
+    console.log(this.selectedCharacters);
  }
 
   toggle3(checked3: boolean){

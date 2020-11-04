@@ -27,6 +27,10 @@ export class GameSessionComponent implements OnInit {
   public game: gameSession[];
 
 
+  diceRolls;
+
+  rolls;
+
   constructor(
     private afs: AngularFirestore,
     public auth: AuthService,
@@ -61,7 +65,8 @@ export class GameSessionComponent implements OnInit {
       }
     });
     
-
+    this.auth.diceRolls.subscribe(data => this.diceRolls = data);
+    this.rolls = this.db.object('dicerolls').valueChanges().subscribe(data => this.rolls = data);
   }
 
 }

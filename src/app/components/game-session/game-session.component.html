@@ -1,11 +1,8 @@
-<p>game-session works!</p>
 
-  
 <div *ngFor="let game of game">
     <nb-card>
       <nb-card-body>
         <img [src]="game.downloadUrl" class="game-maps" >
-       <p>{{game.downloadUrl}} Hello</p>
     </nb-card-body>
       </nb-card>
       </div>
@@ -16,6 +13,20 @@
     
     <nb-layout-column class="colored-column-info">
         <h1>dice rolls</h1>
+
+   <div *ngIf="diceRolls">
+    <p>D2:{{diceRolls.d2}}  D4:{{diceRolls.d4}} D6:{{diceRolls.d6}} D8:{{diceRolls.d8}} D10:{{diceRolls.d10}} D20:{{diceRolls.d20}} D100:  {{diceRolls.d100}}</p>
+   </div>
+
+  <div *ngFor="let game of game">
+      <div *ngFor="let doc of game.selectedMembers">
+        
+
+        {{doc}}
+      </div>
+    
+  </div>
+
 
     </nb-layout-column>
     <nb-layout-column class="colored-column-info">
@@ -32,10 +43,15 @@
         
         <h1>Game Members</h1>
         {{user.displayName}}
-        <p>Hello</p>
+
+       <div *ngFor="let game of game">
+         <p>{{game.selectedMembers}}</p>
+       </div>
 
 
 
 
     </nb-layout-column>
   </nb-layout>
+
+  
