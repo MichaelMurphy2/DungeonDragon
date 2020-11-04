@@ -12,20 +12,24 @@
 <nb-layout>
     
     <nb-layout-column class="colored-column-info">
-        <h1>dice rolls</h1>
+        <h1>Dice rolls</h1>
 
    <div *ngIf="diceRolls">
     <p>D2:{{diceRolls.d2}}  D4:{{diceRolls.d4}} D6:{{diceRolls.d6}} D8:{{diceRolls.d8}} D10:{{diceRolls.d10}} D20:{{diceRolls.d20}} D100:  {{diceRolls.d100}}</p>
    </div>
 
-  <div *ngFor="let game of game">
-      <div *ngFor="let doc of game.selectedMembers">
-        
 
-        {{doc}}
-      </div>
-    
-  </div>
+   <div *ngFor="let game of game">
+       <div *ngFor="let doc of game.selectedMembers">
+         {{doc}}
+        <div *ngIf="rolls === 'doc'">
+           {{rolls.doc}}
+        </div>
+       </div>
+
+   </div>
+   
+   
 
 
     </nb-layout-column>
@@ -43,9 +47,17 @@
         
         <h1>Game Members</h1>
         {{user.displayName}}
+        
 
+        <h1>Group Members</h1>
        <div *ngFor="let game of game">
-         <p>{{game.selectedMembers}}</p>
+         <ul *ngFor="let doc of game.selectedMembers">
+           <li>{{doc}}</li>
+         </ul>
+         
+
+         <h1>Selected Characters</h1>
+         <p>{{game.selectedCharacters}}</p>
        </div>
 
 

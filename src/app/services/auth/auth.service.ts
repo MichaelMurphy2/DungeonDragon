@@ -51,7 +51,7 @@ export class AuthService {
       if (!uid){
         return observableOf(false);
       }else{
-        return this.db.object(`dicerolls/` + uid).valueChanges();
+        return this.db.object('dicerolls').valueChanges();
       }
     })
   )

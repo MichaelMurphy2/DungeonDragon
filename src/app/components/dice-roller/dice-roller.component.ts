@@ -10,6 +10,8 @@ import { AuthService } from '../../services/auth/auth.service';
   styleUrls: ['./dice-roller.component.scss']
 })
 export class DiceRollerComponent implements OnInit {
+gameRolls: string [];
+
 user;
 
 myRoll:number = 0;
@@ -18,6 +20,9 @@ myRoll:number = 0;
 
   ngOnInit() {
     this.auth.user$.subscribe( user => this.user = user);
+    this.gameRolls = new Array<string>();
+    
+
   }
   
 
@@ -88,6 +93,10 @@ myRoll:number = 0;
     audio.src = "../../../assets/audio/reset.wav";
     audio.load();
     audio.play();
+  }
+
+  addToArr(user: string, roll: number){
+    this.gameRolls.push(this.user + this.myRoll);
   }
 
 }

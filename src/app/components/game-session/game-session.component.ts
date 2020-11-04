@@ -51,7 +51,7 @@ export class GameSessionComponent implements OnInit {
       if (user) {
         this.isLoggedIn = true;
 
-        this.afs.collection('groupsession', ref => ref.where('gamesessionID', '==', 'Lords of Bacon'))
+        this.afs.collection('groupsession', ref => ref.where('gamesessionID', '==', 'Warriors of Thunderbutt'))
         .valueChanges().pipe(
           map(res => res.map( data => new gameSession(data) ))
         ).subscribe(res => this.game = res)
@@ -67,6 +67,7 @@ export class GameSessionComponent implements OnInit {
     
     this.auth.diceRolls.subscribe(data => this.diceRolls = data);
     this.rolls = this.db.object('dicerolls').valueChanges().subscribe(data => this.rolls = data);
+
   }
 
 }
