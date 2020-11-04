@@ -8,7 +8,8 @@
       </div>
   
     <!--Yes I should use radio buttons here, that is what they are designed for.. and I could just style the css to have boxes if the look is what I wanted..NbRadio is a component but I could not get it working-->
-   
+   <nb-card>
+     <nb-card-body>
 <nb-layout>
     
     <nb-layout-column class="colored-column-info">
@@ -20,10 +21,11 @@
 
 
    <div *ngFor="let game of game">
-       <div *ngFor="let doc of game.selectedMembers">
+       <div *ngFor="let doc of game.selectedMembers; let i = index">
          {{doc}}
-        <div *ngIf="rolls === 'doc'">
-           {{rolls.doc}}
+        <div *ngIf="gamedice">
+          <p>Index: {{i}}</p>
+           {{gamedice}}
         </div>
        </div>
 
@@ -65,5 +67,6 @@
 
     </nb-layout-column>
   </nb-layout>
-
+</nb-card-body>
+</nb-card>
   

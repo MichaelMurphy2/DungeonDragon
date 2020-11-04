@@ -51,10 +51,12 @@ export class AuthService {
       if (!uid){
         return observableOf(false);
       }else{
-        return this.db.object('dicerolls').valueChanges();
+        return this.db.object(`dicerolls/` + uid).valueChanges();
       }
     })
   )
+
+  gameDice = this.db.object(`dicerolls`).valueChanges();
 
   constructor(
     private afAuth: AngularFireAuth,
