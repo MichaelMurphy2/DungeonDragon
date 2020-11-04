@@ -83,14 +83,6 @@ public images: Photo[];
       }
     });
     this.selectedFile = new Array<string>();
-  
-
-
-
-
-
-
-
 
   }
   

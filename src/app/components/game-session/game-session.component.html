@@ -1,11 +1,5 @@
 
-<div *ngFor="let game of game">
-    <nb-card>
-      <nb-card-body>
-        <img [src]="game.downloadUrl" class="game-maps" >
-    </nb-card-body>
-      </nb-card>
-      </div>
+
   
     <!--Yes I should use radio buttons here, that is what they are designed for.. and I could just style the css to have boxes if the look is what I wanted..NbRadio is a component but I could not get it working-->
    <nb-card>
@@ -22,23 +16,31 @@
 
    <div *ngFor="let game of game">
        <div *ngFor="let doc of game.selectedMembers; let i = index">
-         {{doc}}
-        <div *ngIf="gamedice">
+        <p>Doc: {{doc}} </p> 
+        <div *ngIf="rolls === 'doc'">
           <p>Index: {{i}}</p>
-           {{gamedice}}
+           <p>Dice? : {{rolls}}</p>
         </div>
        </div>
 
    </div>
    
-   
+   <div *ngIf="rolls">
+     Rolls: {{rolls | json}}
+   </div>
 
 
     </nb-layout-column>
     <nb-layout-column class="colored-column-info">
-        <h1>Stuff</h1>
+        <h1 style="text-align: center;">Game Map</h1>
 
-         
+        <div *ngFor="let game of game">
+          <nb-card>
+            <nb-card-body>
+              <img [src]="game.downloadUrl" class="game-maps" >
+          </nb-card-body>
+            </nb-card>
+            </div>
 
 
 
@@ -60,7 +62,39 @@
 
          <h1>Selected Characters</h1>
          <p>{{game.selectedCharacters}}</p>
+
+         
+
+
        </div>
+
+       <h1>Display name</h1>
+       <div *ngFor="let game of game">
+         {{game.user.displayName}}
+      </div>
+
+       <h1>Tester</h1>
+       <div *ngFor="let game of game">
+         <div *ngFor="let doc of game.selectedMembers">
+            
+            <div *ngFor="let tester of tester">
+              {{tester.displayName}}
+
+                <div *ngIf="tester ==='doc'">
+                  <p>Match?: {{tester}} </p>
+                </div>
+
+            </div>
+
+
+          
+
+         </div>
+       </div>
+
+
+
+
 
 
 

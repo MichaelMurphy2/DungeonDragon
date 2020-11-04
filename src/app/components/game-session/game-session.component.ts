@@ -33,6 +33,8 @@ export class GameSessionComponent implements OnInit {
 
   gamedice;
 
+  tester;
+
   constructor(
     private afs: AngularFirestore,
     public auth: AuthService,
@@ -45,10 +47,6 @@ export class GameSessionComponent implements OnInit {
 
     this.auth.user$.subscribe(user => this.user = user);
 
-   
-
-
-
     this.auth.user$.subscribe(user => {
       if (user) {
         this.isLoggedIn = true;
@@ -60,7 +58,7 @@ export class GameSessionComponent implements OnInit {
       } else {
         this.isLoggedIn = false;
 
-        this.afs.collection('groupsession', ref => ref.where('selectedMembers', '==',user.uid))
+        this.afs.collection('groupsession', ref => ref.where('selectedMembers', '==', user.uid))
         .valueChanges().pipe(
           map(res => res.map( imgResult => new Photo(imgResult) ))
         ).subscribe(res => this.images = res);
@@ -70,6 +68,22 @@ export class GameSessionComponent implements OnInit {
     this.auth.diceRolls.subscribe(data => this.diceRolls = data);
     this.rolls = this.db.object('dicerolls').valueChanges().subscribe(data => this.rolls = data);
     this.gamedice = this.auth.gameDice;
+
+    this.tester = this.afs.collection('users').valueChanges().subscribe(data => this.tester = data);
+
+    this.tester.console.log(JSON.parse(this.tester))
+
+
+
+
   }
+
+  
+
+
+
+
+
+
 
 }

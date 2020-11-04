@@ -101,13 +101,14 @@ form.charsheet header {
   align-content: stretch;
   align-items: stretch;
 }
+
 form.charsheet header section.charname {
   border: 1px solid black;
   border-right: 0;
   border-radius: 10px 0 0 10px;
   padding: 5px 0;
   background-color:#6a6a94;
-  width: 25%;
+  width: 35%;
   display: flex;
   flex-direction: column-reverse;
   bottom: 0;
@@ -216,8 +217,8 @@ form.charsheet main > section section.attributes div.scores ul li input {
 }
 form.charsheet main > section section.attributes div.scores ul li nb-card.score input {
   text-align: center;
-  font-size: 40px;
-  padding: 2px 0px 0px 0px;
+  font-size: 30px;
+
 }
 form.charsheet main > section section.attributes div.scores ul li div.modifier {
   margin-top: 3px;
@@ -281,7 +282,7 @@ form.charsheet main > section section.attributes div.attr-applications div.list-
 }
 form.charsheet main > section section.attributes div.attr-applications div.list-section ul li label {
   text-transform: none;
-  font-size: 8px;
+  font-size: 12px;
   text-align: left;
   order: 3;
 }
@@ -324,8 +325,8 @@ form.charsheet main > section div.passive-perception input {
   border-radius: 10px;
 }
 form.charsheet main > section div.otherprofs textarea {
-  height: 22em;
-}
+  width:30rem;
+} 
 form.charsheet main section.combat {
   background-color: #6a6a94;
   display: flex;
