@@ -36,7 +36,7 @@ const routes: Routes = [
   {path: 'uploader', component: UploaderComponent, canActivate: [AuthGuardService]},
   {path: 'viewuploads', component: ViewUploadsComponent, canActivate: [AuthGuardService]},
   {path: 'view-files', component: ViewFilesComponent, canActivate: [AuthGuardService]},
-  {path: 'viewchar', component: ViewCharactersComponent, canActivate: [AuthGuardService]},
+  {path: 'viewchar/:charname', component: ViewCharactersComponent, canActivate: [AuthGuardService]},
   {path: 'game-main', component:GameMainComponent, canActivate: [AuthGuardService]},
   {path: 'create-party', component:CreatepartyComponent, canActivate: [AuthGuardService]},
   {path: 'join-party', component:JoinPartyComponent, canActivate: [AuthGuardService]},

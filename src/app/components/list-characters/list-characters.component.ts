@@ -20,7 +20,7 @@ export class ListCharactersComponent implements OnInit {
   user: User;
   playerSheet: CharacterSheetObj[];
   selectedOption;
-
+  charname;
   constructor(
     private afs: AngularFirestore,
     public auth: AuthService,
@@ -47,7 +47,8 @@ export class ListCharactersComponent implements OnInit {
 
    toggle() {
     console.log(this.selectedOption);
-    this.router.navigate(['viewchar']);
+    this.charname = this.selectedOption;
+    this.router.navigate(['viewchar/' + this.charname]);
    }
 
 

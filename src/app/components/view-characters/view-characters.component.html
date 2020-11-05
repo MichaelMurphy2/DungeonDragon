@@ -2,9 +2,10 @@
     <nb-card-body>
 
 
-
-      <div *ngIf="playerSheet">
+       <h3>you selected {{charname || '_'}}</h3>
+       <div *ngIf="playerSheet">
         <div *ngFor="let playerSheet of playerSheet">
+          <div *ngIf="playerSheet.charname === charname">
   <div class="format"><!--Changed to angular from original, when You click the submit button it works-->
     <form #form="ngForm" (ngSubmit)="onSubmit(form.value); form.reset();" class="charsheet">
         <header>
@@ -404,6 +405,7 @@
     </div>
   
       </form>
+    </div>
     </div>
   </div>
 </div>

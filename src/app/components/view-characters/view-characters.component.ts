@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NbToastrService, NbToastRef } from '@nebular/theme';
 import { AuthService } from '../../services/auth/auth.service';
 import { User } from '../../models/user';
 import { CharacterSheetObj } from '../../models/character/characterSheetObj'
 import { CharacterSheet } from '../../models/character/characterSheet'
 import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-view-characters',
   templateUrl: './view-characters.component.html',
@@ -53,19 +54,20 @@ export class ViewCharactersComponent implements OnInit {
   user: User;
   playerSheet: CharacterSheetObj[];
 
+  charname;
+
   constructor( private toastrService: NbToastrService,
     private storage: AngularFireStorage,
     private auth: AuthService,
     private afs: AngularFirestore,
-    private router: Router) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit(){
     this.auth.user$.subscribe(user => this.user = user);
-
+    
     this.auth.user$.subscribe(user => {
        if (user) {
-         
- 
+        this.charname = this.route.snapshot.paramMap.get('charname');
          this.afs.collection('character', ref => ref.where('uid', '==', user.uid))
          .valueChanges().pipe(
            map(res => res.map( results => new CharacterSheetObj(results) ))
