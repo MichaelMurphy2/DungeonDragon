@@ -1,5 +1,5 @@
 
-      <h6>Your Created Characters</h6>
+      
       
   
 
@@ -10,7 +10,24 @@
   <div *ngFor="let playerSheet of playerSheet">
 
     <p>Character Name: {{playerSheet.charname}}</p>
+    <p>Class Level: {{playerSheet.classlevel}}</p>
 
 
 
   </div>
+<nb-card>
+  <nb-card-body>
+    <h6>Your Created Characters</h6>
+  
+  <nb-radio-group [(value)]="selectedOption" *ngFor="let playerSheet of playerSheet; let indexofelement= index;">
+        <nb-radio [value]="index">Character Name: {{playerSheet.charname}}</nb-radio>
+  </nb-radio-group>
+  
+  
+
+</nb-card-body>
+</nb-card>
+
+<div class="btn-align">
+  <button nbButton status="basic" >Submit</button>
+</div>

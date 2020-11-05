@@ -45,5 +45,11 @@ export class ListCharactersComponent implements OnInit {
     }
    )};
 
+
+
+
+
+   
+
 }
 
