@@ -26,10 +26,12 @@ import { CreatepartyComponent } from './components/createparty/createparty.compo
 import { GameSessionComponent } from './components/game-session/game-session.component';
 import { JoinPartyComponent } from './components/join-party/join-party.component';
 import { ViewFilesComponent } from './components/view-files/view-files.component';
+import { ListCharactersComponent } from './components/list-characters/list-characters.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
   {path: 'charsheet', component: CharsheetComponent, canActivate: [AuthGuardService]},
+  {path: 'char-list', component:ListCharactersComponent, canActivate: [AuthGuardService]},
   {path: 'game-session', component: GameSessionComponent, canActivate: [AuthGuardService]},
   {path: 'uploader', component: UploaderComponent, canActivate: [AuthGuardService]},
   {path: 'viewuploads', component: ViewUploadsComponent, canActivate: [AuthGuardService]},

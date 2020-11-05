@@ -1,0 +1,16 @@
+
+      <h6>Your Created Characters</h6>
+      
+  
+
+  <div *ngIf="playerSheet">
+    <p>{{playerSheet | json}}</p>
+  </div>
+
+  <div *ngFor="let playerSheet of playerSheet">
+
+    <p>Character Name: {{playerSheet.charname}}</p>
+
+
+
+  </div>

@@ -61,10 +61,7 @@ public images: Photo[];
     this.selectedMembers = new Array<string>();
     this.gameSessions = new Array<string>();
     this.selectedCharacters = new Array<string>();
-
-
-
-    this.auth.user$.subscribe(user => this.user = user);
+    
     this.auth.user$.subscribe(user => {
       if (user) {
         this.isLoggedIn = true;

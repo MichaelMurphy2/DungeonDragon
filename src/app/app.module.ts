@@ -72,6 +72,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { GameSessionComponent } from './components/game-session/game-session.component';
 import { GameSessionDmviewComponent } from './components/game-session-dmview/game-session-dmview.component';
 import { ViewFilesComponent } from './components/view-files/view-files.component';
+import { ListCharactersComponent } from './components/list-characters/list-characters.component';
 
 
 
@@ -113,7 +114,8 @@ import { ViewFilesComponent } from './components/view-files/view-files.component
     SearchResultsComponent,
     GameSessionComponent,
     GameSessionDmviewComponent,
-    ViewFilesComponent
+    ViewFilesComponent,
+    ListCharactersComponent
   ],
   imports: [
     BrowserModule,

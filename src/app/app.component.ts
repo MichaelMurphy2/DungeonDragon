@@ -97,7 +97,7 @@ items: NbMenuItem[] = [
       {
         title: 'View Character Sheets',
         icon: 'folder-outline',
-        link: 'viewchar'
+        link: 'char-list'
       },
 
 
