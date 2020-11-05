@@ -4,7 +4,7 @@
   <form #form="ngForm" (ngSubmit)="onSubmit(form.value); form.reset();" class="charsheet">
       <header>
         <section class="charname">
-      
+           
            <!--Original HTML-->
           <!--label for="charname">Character Name</label><input name="charname" placeholder="Thoradin Fireforge" / -->
           <!-- Angular Form Version-->
@@ -36,6 +36,7 @@
               type="text" 
               >
             </li>
+              <input type="hidden"  class="form-control" ngModel [(ngModel)]="user.uid" name="uid"/>
             <li>  
               <label for="background">Background</label><input nbInput placeholder="Acolyte" ngModel [(ngModel)]="model.background" name="background"/>
             </li>

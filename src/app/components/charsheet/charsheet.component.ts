@@ -19,7 +19,7 @@ export class CharsheetComponent implements OnInit {
 
   user: User;
   
-  model: CharacterSheet = new CharacterSheet();
+  model: CharacterSheet = new CharacterSheet( );
   checked = false;
   checked1 = false;
   checked2 = false;
@@ -53,7 +53,6 @@ export class CharsheetComponent implements OnInit {
   checked30 = false;
 
 
-
   position = 'top-right';
   status = 'danger';
   status1 = 'primary';
@@ -73,7 +72,8 @@ private index: number = 0;
   ) { }
 
   ngOnInit() {
-     this.auth.user$.subscribe(user => this.user = user);
+    this.auth.user$.subscribe(data => this.user = data);
+    
   }
 
   toggle(checked: boolean){
@@ -201,15 +201,20 @@ private index: number = 0;
   }
 
   onSubmit(form) {
+    if(form){
+    
     form.timestamp = `${new Date()}`;
     
-    this.afs.collection('character').add(form);
+    
 
+    this.afs.collection('character').add(form);
+    
  
       this.toastAlert1(this.status1, this.position);
     
 
     this.router.navigate(['viewchar']);
+  }
   }
 
 
