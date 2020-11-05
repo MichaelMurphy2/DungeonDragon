@@ -65,7 +65,6 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SearchPageComponent } from './components/open5e/search-page/search-page.component';
 import { UserStatusComponent } from './components/user-status/user-status.component';
 import { ViewCharactersComponent } from './components/view-characters/view-characters.component';
-import { CharlistComponent } from './components/charlist/charlist.component';
 import { CreatepartyComponent } from './components/createparty/createparty.component';
 import { JoinPartyComponent } from './components/join-party/join-party.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
@@ -108,7 +107,6 @@ import { ListCharactersComponent } from './components/list-characters/list-chara
     SearchPageComponent,
     UserStatusComponent,
     ViewCharactersComponent,
-    CharlistComponent,
     CreatepartyComponent,
     JoinPartyComponent,
     SearchResultsComponent,

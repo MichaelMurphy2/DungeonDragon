@@ -44,7 +44,7 @@ public images: Photo[];
   private isLoggedIn: boolean = false;
   createdGame;
 
-  
+ 
 
   constructor(
       private afs: AngularFirestore,
@@ -83,7 +83,9 @@ public images: Photo[];
 
   }
   
-  
+imgChoice(){
+  console.log(this.downloadUrl);
+}
 
   toggle(e:any, uid:string) {
      if(e.target.checked){

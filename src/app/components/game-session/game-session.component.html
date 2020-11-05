@@ -8,26 +8,14 @@
     
     <nb-layout-column class="colored-column-info">
         <h1>Dice rolls</h1>
-
+       <app-dice-roller></app-dice-roller>
    <div *ngIf="diceRolls">
     <p>D2:{{diceRolls.d2}}  D4:{{diceRolls.d4}} D6:{{diceRolls.d6}} D8:{{diceRolls.d8}} D10:{{diceRolls.d10}} D20:{{diceRolls.d20}} D100:  {{diceRolls.d100}}</p>
    </div>
 
 
-   <div *ngFor="let game of game">
-       <div *ngFor="let doc of game.selectedMembers; let i = index">
-        <p>Doc: {{doc}} </p> 
-        <div *ngIf="rolls === 'doc'">
-          <p>Index: {{i}}</p>
-           <p>Dice? : {{rolls}}</p>
-        </div>
-       </div>
-
-   </div>
-   
-   <div *ngIf="rolls">
-     Rolls: {{rolls | json}}
-   </div>
+  
+  
 
 
     </nb-layout-column>
@@ -85,9 +73,6 @@
                 </div>
 
             </div>
-
-
-          
 
          </div>
        </div>
