@@ -7,7 +7,7 @@ import { AuthService } from '../../services/auth/auth.service';
 import { User } from '../../models/user';
 import { CharacterSheetObj } from '../../models/character/characterSheetObj'
 import { CharacterSheet } from '../../models/character/characterSheet'
-
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-view-characters',
   templateUrl: './view-characters.component.html',
@@ -16,8 +16,7 @@ import { CharacterSheet } from '../../models/character/characterSheet'
 
 
 export class ViewCharactersComponent implements OnInit {
-  model: CharacterSheet = new CharacterSheet( );
-  user: User;
+ 
   checked = false;
   checked1 = false;
   checked2 = false;
@@ -50,6 +49,10 @@ export class ViewCharactersComponent implements OnInit {
   checked29 = false;
   checked30 = false;
   
+  model: CharacterSheet = new CharacterSheet( );
+  user: User;
+  playerSheet: CharacterSheetObj[];
+
   constructor( private toastrService: NbToastrService,
     private storage: AngularFireStorage,
     private auth: AuthService,
@@ -57,8 +60,29 @@ export class ViewCharactersComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(){
-    this.auth.user$.subscribe(data => this.user = data);
-   
-  }
+    this.auth.user$.subscribe(user => this.user = user);
+
+    this.auth.user$.subscribe(user => {
+       if (user) {
+         
+ 
+         this.afs.collection('character', ref => ref.where('uid', '==', user.uid))
+         .valueChanges().pipe(
+           map(res => res.map( results => new CharacterSheetObj(results) ))
+         ).subscribe(res => this.playerSheet = res)
+       } 
+     }
+    )};
+
+
+
+
+
+
+
+
+
+
+    
 
 }

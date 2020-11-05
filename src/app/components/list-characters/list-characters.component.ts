@@ -19,8 +19,6 @@ import { CharacterSheet } from 'src/app/models/character/characterSheet';
 export class ListCharactersComponent implements OnInit {
   user: User;
   playerSheet: CharacterSheetObj[];
-  selectedCharacter: string[];
-  radioSelected: any;
   selectedOption;
 
   constructor(
@@ -32,8 +30,8 @@ export class ListCharactersComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.selectedCharacter = new Array<string>();
-    this.auth.user$.subscribe(user => this.user = user);
+  this.auth.user$.subscribe(user => this.user = user);
+
    this.auth.user$.subscribe(user => {
       if (user) {
         
