@@ -71,7 +71,7 @@ export class GameSessionComponent implements OnInit {
 
     this.tester = this.afs.collection('users').valueChanges().subscribe(data => this.tester = data);
 
-    this.tester.console.log(JSON.parse(this.tester))
+  
 
 
 

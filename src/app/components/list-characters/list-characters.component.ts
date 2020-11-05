@@ -49,7 +49,7 @@ export class ListCharactersComponent implements OnInit {
 
    toggle() {
     console.log(this.selectedOption);
-  
+    this.router.navigate(['viewchar']);
    }
 
 
