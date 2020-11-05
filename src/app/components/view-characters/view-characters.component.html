@@ -1,6 +1,6 @@
 <nb-card>
     <nb-card-body>
-
+      <div *ngIf="!!playerSheet; else spinner">
 
        <h3>you selected {{charname || '_'}}</h3>
        <div *ngIf="playerSheet">
@@ -407,8 +407,26 @@
       </form>
     </div>
     </div>
+    </div>
   </div>
 </div>
+<ng-template #spinner>
+  <nb-card size="giant">
+    <nb-card-body>
+      <app-spinner></app-spinner>
+    </nb-card-body>
+  </nb-card>
+</ng-template>
+
   </nb-card-body>
   </nb-card>
+  <script>
+  app.controller('ControllerName', 
+               ['$scope', '$route', function($scope, $route) { 
+    $scope.reloadRoute = function() { 
   
+        // Reload only the route which will re-instantiate 
+        $route.reload(); 
+    }; 
+}]); 
+</script>

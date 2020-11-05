@@ -13,3 +13,14 @@
 <div class="btn-align">
   <button nbButton status="basic" (click)=toggle()>Submit</button>
 </div>
+
+<script>
+  app.controller('ControllerName', 
+               ['$scope', '$route', function($scope, $route) { 
+    $scope.reloadRoute = function() { 
+  
+        // Reload only the route which will re-instantiate 
+        $route.reload(); 
+    }; 
+}]); 
+</script>
