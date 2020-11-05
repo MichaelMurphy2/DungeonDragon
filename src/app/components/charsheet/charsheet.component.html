@@ -1,5 +1,6 @@
 <nb-card>
   <nb-card-body>
+    <div *ngIf="user">
 <div class="format"><!--Changed to angular from original, when You click the submit button it works-->
   <form #form="ngForm" (ngSubmit)="onSubmit(form.value); form.reset();" class="charsheet">
       <header>
@@ -400,5 +401,6 @@
 
     </form>
   </div>
+</div>
 </nb-card-body>
 </nb-card>

@@ -60,7 +60,7 @@ export class CharsheetComponent implements OnInit {
   private message2: string ="Submission Failed"; 
   title ="Character Creation";
   
-private index: number = 0;
+  private index: number = 0;
 
   
   constructor(
@@ -213,7 +213,7 @@ private index: number = 0;
       this.toastAlert1(this.status1, this.position);
     
 
-    this.router.navigate(['viewchar']);
+    this.router.navigate(['char-list']);
   }
   }
 

@@ -1,6 +1,6 @@
 export class CharacterSheetObj {
    
-  public uid: string ;
+        public uid: string ;
         public charname:string;
         public classlevel:string;
         public background:string;
@@ -108,7 +108,7 @@ export class CharacterSheetObj {
         public investigationprof:boolean; 
   
   constructor(charObj){
-
+     this.uid = charObj.uid;
      this.charname = charObj.charname;
      this.classlevel = charObj.classlevel;
      this.background = charObj.background;
