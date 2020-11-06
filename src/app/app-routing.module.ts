@@ -32,7 +32,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
   {path: 'charsheet', component: CharsheetComponent, canActivate: [AuthGuardService]},
   {path: 'char-list', component:ListCharactersComponent, canActivate: [AuthGuardService]},
-  {path: 'game-session', component: GameSessionComponent, canActivate: [AuthGuardService]},
+  {path: 'game-session/:charname', component: GameSessionComponent, canActivate: [AuthGuardService]},
   {path: 'uploader', component: UploaderComponent, canActivate: [AuthGuardService]},
   {path: 'viewuploads', component: ViewUploadsComponent, canActivate: [AuthGuardService]},
   {path: 'view-files', component: ViewFilesComponent, canActivate: [AuthGuardService]},

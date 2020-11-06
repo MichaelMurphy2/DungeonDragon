@@ -24,7 +24,7 @@ selectedCharacters: string[];
 selectedFile:string[];
 public images: Photo[];
 
- 
+  charname;
   checked3 = false;
   online:Observable<any[]>;
   user: User;
@@ -61,6 +61,8 @@ public images: Photo[];
     this.selectedMembers = new Array<string>();
     this.gameSessions = new Array<string>();
     this.selectedCharacters = new Array<string>();
+
+   
     
     this.auth.user$.subscribe(user => {
       if (user) {
@@ -140,7 +142,8 @@ imgChoice(){
     this.afs.collection('groupsession').doc(this.user.uid).set(gamesession);
     this.afs.collection('groupsession').doc(this.user.uid).update({"partyLeader": this.user.uid, "selectedMembers": this.selectedMembers, "selectedCharacters": this.selectedCharacters, "downloadUrl": this.downloadUrl, "user": this.user})
     this.showToast();
-    this.router.navigate(['game-session']);
+    this.charname = this.selectedCharacters.toString();
+    this.router.navigate(['game-session/' + this.charname]);
   }
 
 

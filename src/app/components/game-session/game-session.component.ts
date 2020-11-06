@@ -9,7 +9,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { gameSession } from '../../models/gameSession/gameSession';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NbToastrService, NbToastRef } from '@nebular/theme';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { map } from 'rxjs/operators';
 
@@ -26,6 +26,7 @@ export class GameSessionComponent implements OnInit {
 
   public game: gameSession[];
 
+  charname: string;
 
   diceRolls;
 
@@ -40,18 +41,20 @@ export class GameSessionComponent implements OnInit {
     public auth: AuthService,
     private db: AngularFireDatabase,
     private toastrService: NbToastrService,
+    private route: ActivatedRoute,
     private router: Router,
   ) { }
 
   ngOnInit() {
-
+    this.charname = this.route.snapshot.paramMap.get('charname');
     this.auth.user$.subscribe(user => this.user = user);
 
     this.auth.user$.subscribe(user => {
       if (user) {
+      
         this.isLoggedIn = true;
 
-        this.afs.collection('groupsession', ref => ref.where('gamesessionID', '==', 'Warriors of Thunderbutt'))
+        this.afs.collection('groupsession', ref => ref.where('partyLeader', '==', user.uid))
         .valueChanges().pipe(
           map(res => res.map( data => new gameSession(data) ))
         ).subscribe(res => this.game = res)

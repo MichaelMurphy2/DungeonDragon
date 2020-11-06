@@ -1,4 +1,4 @@
-
+<div *ngIf="selectedOption"></div>
 
   
     <!--Yes I should use radio buttons here, that is what they are designed for.. and I could just style the css to have boxes if the look is what I wanted..NbRadio is a component but I could not get it working-->
@@ -6,19 +6,7 @@
      <nb-card-body>
 <nb-layout>
     
-    <nb-layout-column class="colored-column-info">
-        <h1>Dice rolls</h1>
-       <app-dice-roller></app-dice-roller>
-   <div *ngIf="diceRolls">
-    <p>D2:{{diceRolls.d2}}  D4:{{diceRolls.d4}} D6:{{diceRolls.d6}} D8:{{diceRolls.d8}} D10:{{diceRolls.d10}} D20:{{diceRolls.d20}} D100:  {{diceRolls.d100}}</p>
-   </div>
 
-
-  
-  
-
-
-    </nb-layout-column>
     <nb-layout-column class="colored-column-info">
         <h1 style="text-align: center;">Game Map</h1>
 
@@ -29,7 +17,11 @@
           </nb-card-body>
             </nb-card>
             </div>
-
+            <h1>Dice rolls</h1>
+            <app-dice-roller></app-dice-roller>
+        <div *ngIf="diceRolls">
+         <p>D2:{{diceRolls.d2}}  D4:{{diceRolls.d4}} D6:{{diceRolls.d6}} D8:{{diceRolls.d8}} D10:{{diceRolls.d10}} D20:{{diceRolls.d20}} D100:  {{diceRolls.d100}}</p>
+        </div>
 
 
     </nb-layout-column>
