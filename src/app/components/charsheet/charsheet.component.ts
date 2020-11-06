@@ -57,7 +57,7 @@ export class CharsheetComponent implements OnInit {
   status = 'danger';
   status1 = 'primary';
   message ="Sucessfully Created Character";
-  private message2: string ="Submission Failed"; 
+  message2: "Submission Failed"; 
   title ="Character Creation";
   
   private index: number = 0;

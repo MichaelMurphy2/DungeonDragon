@@ -22,7 +22,7 @@ import { map } from 'rxjs/operators';
 export class GameSessionComponent implements OnInit {
   user: User;
   public images: Photo[];
-  private isLoggedIn: boolean = false;
+
 
   public game: gameSession[];
 
@@ -52,14 +52,14 @@ export class GameSessionComponent implements OnInit {
     this.auth.user$.subscribe(user => {
       if (user) {
       
-        this.isLoggedIn = true;
+       
 
         this.afs.collection('groupsession', ref => ref.where('partyLeader', '==', user.uid))
         .valueChanges().pipe(
           map(res => res.map( data => new gameSession(data) ))
         ).subscribe(res => this.game = res)
       } else {
-        this.isLoggedIn = false;
+       
 
         this.afs.collection('groupsession', ref => ref.where('selectedMembers', '==', user.uid))
         .valueChanges().pipe(
