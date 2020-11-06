@@ -42,7 +42,7 @@ public images: Photo[];
   title ="Create Party";
 
   private isLoggedIn: boolean = false;
-  createdGame;
+  createdGame: boolean = false;
 
  
 
@@ -141,7 +141,7 @@ imgChoice(){
     this.saveDungeonMaster(this.user.uid);
     this.afs.collection('groupsession').doc(this.user.uid).set(gamesession);
     this.afs.collection('groupsession').doc(this.user.uid).update({"partyLeader": this.user.uid, "selectedMembers": this.selectedMembers, "selectedCharacters": this.selectedCharacters, "downloadUrl": this.downloadUrl, "user": this.user})
-    this.showToast();
+    this.showToast(this.createdGame = true);
     this.charname = this.selectedCharacters.toString();
     this.router.navigate(['game-session/' + this.charname]);
   }
@@ -152,13 +152,13 @@ imgChoice(){
     itemRef.update({isDungeonMaster: this.model.isDungeonMaster});
   }
 
-  showToast() {
- // if(createdGame == true){
-  //    this.toastAlert(this.status, this.position);
- //   }
- // if(createdGame == false){
- //     this.toastAlert1(this.status, this.position);
- //   }  
+  showToast(createdGame) {
+  if(createdGame == true){
+      this.toastAlert(this.status, this.position);
+   }
+ if(createdGame == false){
+      this.toastAlert1(this.status, this.position);
+    }  
   }
 
 
