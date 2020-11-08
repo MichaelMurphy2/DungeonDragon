@@ -4,12 +4,43 @@
     <!--Yes I should use radio buttons here, that is what they are designed for.. and I could just style the css to have boxes if the look is what I wanted..NbRadio is a component but I could not get it working-->
    <nb-card>
      <nb-card-body>
-<nb-layout>
-    
 
-    <nb-layout-column class="colored-column-info">
-      <app-gamepanel></app-gamepanel>
-        <h1 style="text-align: center;">Game Map</h1>
+        
+        <div class="col-container">
+          <div class="col">
+          
+
+       
+
+       <h1>Party Leader</h1>
+       <div *ngFor="let game of game">
+         {{game.selectedCharacters}}
+      </div>
+
+         
+            
+            <h1>Game Members</h1>
+            <div *ngFor="let game of game">
+              <ul *ngFor="let doc of game.selectedMembers">
+                <div *ngIf="doc === 'tester.displayName' "></div>
+
+                </ul>
+               
+                <div *ngFor="let tester of tester">
+                  {{tester.displayName}}
+                </div>
+      
+              <h1>Selected Character</h1>
+              <h4>{{game.selectedCharacters}}</h4>
+      
+              
+              <app-gamepanel></app-gamepanel>
+      
+            </div>
+          </div>
+        
+
+ <h1 style="text-align: center;">Game Map</h1>
 
         <div *ngFor="let game of game">
           <nb-card>
@@ -18,74 +49,25 @@
           </nb-card-body>
             </nb-card>
             </div>
-            <h1>Dice rolls</h1>
-          
-        <div *ngIf="diceRolls">
-         <p>D2:{{diceRolls.d2}}  D4:{{diceRolls.d4}} D6:{{diceRolls.d6}} D8:{{diceRolls.d8}} D10:{{diceRolls.d10}} D20:{{diceRolls.d20}} D100:  {{diceRolls.d100}}</p>
+
+
+            <div class="col-container">
+            <div class="col">
+
+              <div *ngIf="diceRolls">
+                <p>D2:{{diceRolls.d2}}  D4:{{diceRolls.d4}} D6:{{diceRolls.d6}} D8:{{diceRolls.d8}} D10:{{diceRolls.d10}} D20:{{diceRolls.d20}} D100:  {{diceRolls.d100}}</p>
+               </div>
+           
+
+           
+          </div>
+        </div>
+           
+        
         </div>
 
-
-    </nb-layout-column>
-    
-    <nb-layout-column left *ngIf="user">
-        
-       
-        
-       
-        <h1>Party Leader</h1>
-
-
-       
-
-       <h1>Display name</h1>
-       <div *ngFor="let game of game">
-         {{game.selectedCharacters}}
-      </div>
-
-    
-
-      <h1>Game Members</h1>
-      <div *ngFor="let game of game">
-        <ul *ngFor="let doc of game.selectedMembers">
-
-          <div *ngIf="doc === 'tester.displayName' "></div>
-            
-            
-            
-            
-            
-            
-          
-           
-         
-
-        
-          </ul>
-         
-          <div *ngFor="let tester of tester">
-            {{tester.displayName}}
-          </div>
-
-        <h1>Selected Character</h1>
-        <h4>{{game.selectedCharacters}}</h4>
-
-        
-
-
-      </div>
-
-
-
-
-
-
-    </nb-layout-column>
-  </nb-layout>
 </nb-card-body>
 </nb-card>
 
-  
-  
-  
 
  
