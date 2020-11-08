@@ -14,7 +14,7 @@
 
        <h1>Party Leader</h1>
        <div *ngFor="let game of game">
-         {{game.selectedCharacters}}
+       <p> {{game.selectedCharacters}}</p> 
       </div>
 
          
@@ -27,21 +27,21 @@
                 </ul>
                
                 <div *ngFor="let tester of tester">
-                  {{tester.displayName}}
+                  <p>{{tester.displayName}}</p> 
                 </div>
-      
+      <hr>
               <h1>Selected Character</h1>
               <h4>{{game.selectedCharacters}}</h4>
       
               
-              <app-gamepanel></app-gamepanel>
+             
       
             </div>
           </div>
         
 
  <h1 style="text-align: center;">Game Map</h1>
-
+ 
         <div *ngFor="let game of game">
           <nb-card>
             <nb-card-body>
@@ -52,8 +52,8 @@
 
 
             <div class="col-container">
-            <div class="col">
-
+            <div class="col-die">
+              <h1 style="text-align: left;">Player Rolls</h1>
               <div *ngIf="diceRolls">
                 <p>D2:{{diceRolls.d2}}  D4:{{diceRolls.d4}} D6:{{diceRolls.d6}} D8:{{diceRolls.d8}} D10:{{diceRolls.d10}} D20:{{diceRolls.d20}} D100:  {{diceRolls.d100}}</p>
                </div>
@@ -61,6 +61,17 @@
 
            
           </div>
+
+          <div class="col-2">
+            <div style="text-align: center;">
+            <app-gamepanel></app-gamepanel>
+          </div>
+          </div>
+
+
+
+
+
         </div>
            
         
