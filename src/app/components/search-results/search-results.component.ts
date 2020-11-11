@@ -29,3 +29,12 @@ export class SearchResultsComponent implements OnInit {
 
 
 }
+
+function MyReload(){
+  if(location.search.indexOf('r') < 0){
+    var hash = window.location.hash;
+    var loc = window.location.href.replace(hash, '');
+    loc += (loc.indexOf('?') < 0? '?' : '&') + 'r';
+    setTimeout(function(){window.location.href = loc + hash;}, 2000);
+}
+}
