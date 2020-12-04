@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Party Dungeon User Manual
-https://docs.google.com/document/d/1q5yealX9_2LphmZxotTQV9GjOu0sE2iIR43nkZCIxJY/edit
+https://github.com/MichaelMurphy2/DungeonDragon/blob/master/Party%20Dungeon%20User%20Manual%20v1.0.pdf
