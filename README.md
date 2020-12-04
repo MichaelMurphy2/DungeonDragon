@@ -5,6 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Party Dungeon User Manual
 https://github.com/MichaelMurphy2/DungeonDragon/blob/master/Party%20Dungeon%20User%20Manual%20v1.0.pdf
 
+## Live Server
+https://nebularproj2.web.app/home
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
