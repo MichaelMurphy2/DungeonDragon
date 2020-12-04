@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
-##Project Report.pdf
+## Project Report.pdf
 This is the project report going over the end state of our project.
 
 ## Party Dungeon User Manual
