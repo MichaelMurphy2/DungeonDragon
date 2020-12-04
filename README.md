@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
+## Party Dungeon User Manual
+https://github.com/MichaelMurphy2/DungeonDragon/blob/master/Party%20Dungeon%20User%20Manual%20v1.0.pdf
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -27,5 +30,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-## Party Dungeon User Manual
-https://github.com/MichaelMurphy2/DungeonDragon/blob/master/Party%20Dungeon%20User%20Manual%20v1.0.pdf
