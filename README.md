@@ -20,12 +20,7 @@ https://github.com/MichaelMurphy2/DungeonDragon/tree/master/src/app/components  
 
 ## Services 
 
-
-
-
-
-
-
+https://github.com/MichaelMurphy2/DungeonDragon/tree/master/src/app/services    Listing of services, authentication, presenence, webapi
 
 
 ## Code scaffolding
